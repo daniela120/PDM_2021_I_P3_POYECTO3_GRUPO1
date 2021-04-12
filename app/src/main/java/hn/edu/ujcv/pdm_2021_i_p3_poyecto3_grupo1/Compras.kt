@@ -9,7 +9,7 @@ class Compras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compras)
-        btn_añadirC.setOnClickListener { Regresar() }
+        btn_RegresarC.setOnClickListener { Regresar() }
 
     }
     private fun Regresar() {

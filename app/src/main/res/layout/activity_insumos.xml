@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/btn_RegresarInsumos"
-        android:layout_width="305dp"
-        android:layout_height="35dp"
+        android:layout_width="152dp"
+        android:layout_height="56dp"
         android:background="@drawable/boton_redondo"
         android:text="REGRESAR"
         android:textColor="@color/white"
@@ -19,9 +19,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.837" />
+
+    <Button
+        android:id="@+id/btn_AñadirI"
+        android:layout_width="165dp"
+        android:layout_height="54dp"
+        android:background="@drawable/boton_redondo"
+        android:text="AGREGAR"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
 
     <EditText
         android:id="@+id/txt_IdInsumo"

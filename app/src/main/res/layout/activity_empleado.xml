@@ -8,7 +8,7 @@
     tools:context=".Empleado">
 
     <Button
-        android:id="@+id/btn_RegresarCompras4"
+        android:id="@+id/btn_RegresarE"
         android:layout_width="181dp"
         android:layout_height="42dp"
         android:background="@drawable/boton_redondo"
