@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/e"
+    android:background="@drawable/fondo3"
     tools:context=".Ventas">
 
     <TextView
@@ -23,9 +23,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.125" />
 
     <Button
         android:id="@+id/button"
@@ -38,7 +39,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.896" />
@@ -356,13 +357,14 @@
 
     <EditText
         android:id="@+id/txt_VentaId"
-        android:layout_width="230dp"
-        android:layout_height="28dp"
+        android:layout_width="253dp"
+        android:layout_height="41dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="INGRESE EL ID "
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

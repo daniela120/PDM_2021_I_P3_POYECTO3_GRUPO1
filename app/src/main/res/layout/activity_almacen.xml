@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Almacen"
-    android:background="@drawable/e">
+    android:background="@drawable/fondo3">
 
 
     <SearchView
@@ -13,7 +13,7 @@
         android:layout_height="61dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="548dp"
+        android:layout_marginBottom="524dp"
         android:background="@color/black3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:text="ID ALMACEN:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,19 +98,20 @@
 
     <TextView
         android:id="@+id/txvTITULO2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="241dp"
+        android:layout_height="43dp"
         android:text="ALMACEN"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_200"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <EditText
         android:id="@+id/txt_IdAl"
@@ -188,6 +189,8 @@
         android:layout_width="367dp"
         android:layout_height="61dp"
         android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/black3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

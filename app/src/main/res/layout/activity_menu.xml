@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/e"
+    app:layout_anchorGravity="bottom"
     tools:context=".MainActivity">
 
     <Button
@@ -143,34 +144,37 @@
 
     <TextView
         android:id="@+id/txvTITULO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="51dp"
+        android:fontFamily="sans-serif-black"
         android:text="PRINCIPAL"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <Button
         android:id="@+id/btn_Produccion"
-        android:layout_width="305dp"
-        android:layout_height="35dp"
-        android:background="@drawable/boton_redondo"
+        android:layout_width="186dp"
+        android:layout_height="181dp"
+        android:background="@drawable/produccion"
         android:text="PRODUCCION"
         android:textColor="@color/white"
         android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.176" />
 
     <Button
         android:id="@+id/btn_Usuario"
@@ -183,35 +187,57 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <Button
         android:id="@+id/btn_Empleado"
-        android:layout_width="305dp"
-        android:layout_height="35dp"
-        android:background="@drawable/boton_redondo"
-        android:text="EMPLEADO"
-        android:textColor="@color/white"
+        android:layout_width="145dp"
+        android:layout_height="118dp"
+        android:background="@drawable/emp"
+        android:backgroundTintMode="add"
+        android:fadingEdge="horizontal"
+        android:foregroundTint="#CC7777"
+        android:gravity="center_horizontal|center_vertical|fill_vertical"
+        android:textAlignment="center"
+        android:textColor="@color/red5"
         android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/btn_regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.55"
+        android:backgroundTint="@color/red1"
         android:foreground="@android:drawable/ic_menu_revert"
         android:foregroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/produccion"
+        tools:layout_editor_absoluteY="288dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
