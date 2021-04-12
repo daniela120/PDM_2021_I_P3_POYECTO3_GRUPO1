@@ -9,7 +9,7 @@ class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
-  btn_RegresarPRODUCTOS.setOnClickListener { Regresar() }
+         btn_RegresarPRODUCTOS.setOnClickListener { Regresar() }
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
