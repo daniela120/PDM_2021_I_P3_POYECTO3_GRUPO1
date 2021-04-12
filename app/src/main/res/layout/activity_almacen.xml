@@ -4,18 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Almacen">
+    tools:context=".Almacen"
+    android:background="@drawable/e">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="418dp"
-        android:layout_height="755dp"
+
+    <SearchView
+        android:layout_width="367dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="548dp"
+        android:background="@color/black3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/btn_RegresarAl"
@@ -38,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="UBICACION:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +58,7 @@
         android:layout_height="wrap_content"
         android:text="NOMBRE:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +72,7 @@
         android:layout_height="wrap_content"
         android:text="ID ALMACEN:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="CAPACIDAD:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +102,7 @@
         android:layout_height="wrap_content"
         android:text="ALMACEN"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white2"
+        android:textColor="@color/black"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
