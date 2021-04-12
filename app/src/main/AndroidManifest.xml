@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1">
-        <activity android:name=".MainActivity12"></activity>
-        <activity android:name=".MainActivity11" />
-        <activity android:name=".MainActivity10" />
-        <activity android:name=".MainActivity9" />
+        <activity android:name=".Tela"></activity>
+        <activity android:name=".Insumos" />
+        <activity android:name=".Costos" />
+        <activity android:name=".Compras" />
         <activity android:name=".Almacen" />
         <activity android:name=".Inventario" />
         <activity android:name=".Produccion" />
