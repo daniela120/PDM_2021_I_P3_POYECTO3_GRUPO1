@@ -13,6 +13,7 @@ class Ventas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ventas)
         btn_RegresarVen.setOnClickListener { Regresar()}
+        btn_Guardar.setOnClickListener { guardar() }
     }
 
     private  fun guardar() {
