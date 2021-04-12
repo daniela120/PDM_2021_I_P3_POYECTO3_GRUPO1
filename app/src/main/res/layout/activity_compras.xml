@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/btn_RegresarCompras"
+        android:id="@+id/btn_RegresarC"
         android:layout_width="176dp"
         android:layout_height="43dp"
         android:background="@drawable/boton_redondo"
@@ -22,7 +22,23 @@
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.842" />
+
+    <Button
+        android:id="@+id/btn_añadirC"
+        android:layout_width="176dp"
+        android:layout_height="43dp"
+        android:background="@drawable/boton_redondo"
+        android:text="AGREGAR"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.844" />
 
     <EditText
         android:id="@+id/txt_IdCompra"
