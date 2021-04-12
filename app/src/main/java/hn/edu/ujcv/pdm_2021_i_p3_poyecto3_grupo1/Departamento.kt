@@ -15,4 +15,8 @@ class Departamento : AppCompatActivity() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
     }
+    private fun Regresar() {
+        val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+    }
 }
