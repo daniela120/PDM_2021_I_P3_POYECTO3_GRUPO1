@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/btn_Departamento"
-        android:layout_width="186dp"
-        android:layout_height="148dp"
+        android:layout_width="109dp"
+        android:layout_height="95dp"
         android:background="@drawable/departamento"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -23,15 +23,14 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.248" />
 
     <Button
         android:id="@+id/btn_Tela"
-        android:layout_width="200dp"
-        android:layout_height="160dp"
+        android:layout_width="114dp"
+        android:layout_height="93dp"
         android:background="@drawable/telas"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -43,15 +42,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintHorizontal_bias="0.742"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <Button
         android:id="@+id/btn_insumos"
-        android:layout_width="197dp"
-        android:layout_height="158dp"
+        android:layout_width="106dp"
+        android:layout_height="96dp"
         android:background="@drawable/insumos"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -63,15 +62,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <Button
         android:id="@+id/btn_Costos"
-        android:layout_width="203dp"
-        android:layout_height="157dp"
+        android:layout_width="125dp"
+        android:layout_height="91dp"
         android:background="@drawable/costos"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -83,15 +82,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
+        app:layout_constraintVertical_bias="0.949" />
 
     <Button
         android:id="@+id/btn_Compras"
-        android:layout_width="201dp"
-        android:layout_height="149dp"
+        android:layout_width="120dp"
+        android:layout_height="103dp"
         android:background="@drawable/compras"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -103,15 +102,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <Button
         android:id="@+id/btn_Almacen"
-        android:layout_width="193dp"
-        android:layout_height="159dp"
+        android:layout_width="120dp"
+        android:layout_height="92dp"
         android:background="@drawable/almacen"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -123,15 +122,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintVertical_bias="0.694" />
 
     <Button
         android:id="@+id/btn_Productos"
-        android:layout_width="198dp"
-        android:layout_height="147dp"
+        android:layout_width="104dp"
+        android:layout_height="102dp"
         android:background="@drawable/productos"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -143,15 +142,16 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.959"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0.469" />
+
 
     <Button
         android:id="@+id/btn_Inventario"
-        android:layout_width="211dp"
-        android:layout_height="157dp"
+        android:layout_width="112dp"
+        android:layout_height="94dp"
         android:background="@drawable/inventario"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -163,15 +163,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.699" />
 
     <Button
         android:id="@+id/btn_Ventas"
-        android:layout_width="202dp"
-        android:layout_height="138dp"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
         android:background="@drawable/ventas"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -183,16 +183,15 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
+        app:layout_constraintVertical_bias="0.461" />
 
     <TextView
         android:id="@+id/txvTITULO"
-        android:layout_width="456dp"
-        android:layout_height="42dp"
+        android:layout_width="379dp"
+        android:layout_height="35dp"
         android:fontFamily="sans-serif-black"
         android:text="MENU PRINCIPAL"
         android:textAlignment="center"
@@ -207,10 +206,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.123" />
 
+
     <Button
         android:id="@+id/btn_Empleado"
-        android:layout_width="184dp"
-        android:layout_height="144dp"
+        android:layout_width="103dp"
+        android:layout_height="90dp"
         android:background="@drawable/emp"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -222,11 +222,10 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
-
+        app:layout_constraintVertical_bias="0.245" />
 
     <Button
         android:id="@+id/btn_regresar"
@@ -244,8 +243,8 @@
 
     <Button
         android:id="@+id/btn_Produccion"
-        android:layout_width="187dp"
-        android:layout_height="143dp"
+        android:layout_width="99dp"
+        android:layout_height="90dp"
         android:background="@drawable/producion"
         android:backgroundTintMode="add"
         android:fadingEdge="horizontal"
@@ -257,9 +256,9 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.247" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

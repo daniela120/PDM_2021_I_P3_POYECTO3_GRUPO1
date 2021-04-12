@@ -9,16 +9,16 @@
 
 
     <SearchView
-        android:layout_width="367dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="339dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/black3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <Button
         android:id="@+id/btn_RegresarAl"
@@ -66,18 +66,18 @@
 
     <TextView
         android:id="@+id/txv_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="38dp"
         android:text="ID ALMACEN:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <TextView
         android:id="@+id/txv_Capacidad"
@@ -114,8 +114,8 @@
     <EditText
         android:id="@+id/txt_IdAl"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
+        android:layout_width="203dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="text"
@@ -124,10 +124,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintHorizontal_bias="0.778"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <EditText
         android:id="@+id/txt_NombreAl"
