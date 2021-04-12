@@ -8,6 +8,22 @@
     tools:context=".Productos">
 
 
+    <Button
+        android:id="@+id/btn_RegresarCompras6"
+        android:layout_width="181dp"
+        android:layout_height="42dp"
+        android:background="@drawable/boton_redondo"
+        android:text="REGRESAR"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
     <SearchView
         android:layout_width="367dp"
         android:layout_height="61dp"
@@ -44,8 +60,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="233dp"
-        android:layout_height="56dp"
+        android:layout_width="185dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/boton_redondo"
@@ -53,10 +69,10 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89" />
+        app:layout_constraintVertical_bias="0.899" />
 
     <EditText
         android:id="@+id/txtId2"

@@ -9,4 +9,6 @@ class Ventas : AppCompatActivity() {
         setContentView(R.layout.activity_ventas)
 
     }
+
+
 }

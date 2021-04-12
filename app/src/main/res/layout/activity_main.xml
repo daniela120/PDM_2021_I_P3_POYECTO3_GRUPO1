@@ -6,22 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="298dp"
-        android:layout_height="47dp"
-        android:background="@color/white"
-        android:text="LOGIN"
-        android:textColor="@color/blue7"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="505dp"
@@ -50,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <EditText
         android:id="@+id/txt_Password"
@@ -68,6 +52,23 @@
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="393dp"
+        android:layout_height="65dp"
+
+        android:background="@drawable/boton_redondo"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
