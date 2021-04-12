@@ -181,10 +181,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <EditText
         android:id="@+id/txtId"
@@ -268,30 +268,14 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="253dp"
-        android:layout_height="50dp"
-        android:background="?android:attr/colorEdgeEffect"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.924"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="165dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="255dp"
+        android:layout_height="44dp"
         android:background="@drawable/boton_redondo"
-        android:text="AGREGAR"
-        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintVertical_bias="0.737" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

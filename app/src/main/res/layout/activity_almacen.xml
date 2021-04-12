@@ -8,6 +8,62 @@
     android:background="@drawable/fondo3">
 
 
+    <Button
+        android:id="@+id/btn_LimpiarAl"
+        android:layout_width="103dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/ic_menu_delete"
+        android:backgroundTint="@color/teal_200"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <Button
+        android:id="@+id/btn_Guardar8"
+        android:layout_width="116dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/ic_menu_save"
+        android:backgroundTint="@color/teal_200"
+        android:fadingEdge="vertical"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
+
+    <Button
+        android:id="@+id/btn_RegresarAl"
+        android:layout_width="103dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/ic_menu_revert"
+        android:backgroundTint="@color/teal_200"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
+
     <SearchView
         android:layout_width="339dp"
         android:layout_height="36dp"
@@ -19,38 +75,6 @@
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.265" />
-
-    <Button
-        android:id="@+id/btn_RegresarAl"
-        android:layout_width="157dp"
-        android:layout_height="32dp"
-        android:background="@drawable/boton_redondo"
-        android:text="REGRESAR"
-        android:textColor="@color/white"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
-
-    <Button
-        android:id="@+id/btn_AñadirAl"
-        android:layout_width="162dp"
-        android:layout_height="32dp"
-        android:background="@drawable/boton_redondo"
-        android:text="AGREGAR"
-        android:textColor="@color/white"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
 
     <TextView
         android:id="@+id/txv_ubicacion"
