@@ -12,6 +12,7 @@ class Departamento : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_departamento)
         btn_RegresarDepto.setOnClickListener { Regresar() }
+        btn_Guardar2.setOnClickListener { guardar() }
     }
 
     private  fun guardar() {

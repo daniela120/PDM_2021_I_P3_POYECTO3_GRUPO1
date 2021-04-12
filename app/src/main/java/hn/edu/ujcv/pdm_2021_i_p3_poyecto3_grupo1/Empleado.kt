@@ -11,6 +11,9 @@ class Empleado : AppCompatActivity() {
         setContentView(R.layout.activity_empleado)
         btn_RegresarE.setOnClickListener { Regresar() }
     }
+
+
+
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
