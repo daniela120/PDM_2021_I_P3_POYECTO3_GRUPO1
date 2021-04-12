@@ -8,7 +8,7 @@
     tools:context=".Empleado">
 
     <Button
-        android:id="@+id/btn_Limpiar"
+        android:id="@+id/btn_L"
         android:layout_width="103dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
