@@ -4,16 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Produccion">
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="418dp"
-        android:layout_height="755dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="@drawable/e"
+    tools:context=".Produccion"/>
