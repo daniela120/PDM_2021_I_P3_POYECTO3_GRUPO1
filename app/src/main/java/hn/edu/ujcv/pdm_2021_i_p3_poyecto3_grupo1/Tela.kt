@@ -12,29 +12,27 @@ class Tela : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela)
         btn_RegresarT.setOnClickListener { Regresar() }
+        btn_GuardarT.setOnClickListener { guardar() }
     }
 
     private  fun guardar() {
 
-        if (txtI_CostoID.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID del costo", Toast.LENGTH_SHORT).show()
+        if (txt_IdTela.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese ID de la Tela", Toast.LENGTH_SHORT).show()
         }else {
-            if (txt_IdCompraC.text.toString().isEmpty()) {
+            if (txt_NombreTela.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese un Nombre", Toast.LENGTH_SHORT).show()
             } else {
-                if (txt_ManoObra.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese mano de obra", Toast.LENGTH_SHORT).show()
+                if (txt_MaterialTela.text.toString().isEmpty()) {
+                    Toast.makeText(this, "Ingrese el Material", Toast.LENGTH_SHORT).show()
                 } else {
-                    if (txt_CantidadC.text.toString().isEmpty()) {
+                    if (txt_ColorTela.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese una cantidad", Toast.LENGTH_SHORT).show()
-                        if(txt_PrecioC.text.toString().isEmpty()){
-                            Toast.makeText(this, "Ingrese un precio", Toast.LENGTH_SHORT).show()
-                        } else {
-                            if (txt_TotalC.text.toString().isEmpty()) {
-                                Toast.makeText(this, "Inreges el total", Toast.LENGTH_SHORT).show()
-                            }else{
-                                Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
-                            }
+                    } else {
+                        if (txt_TipoCompta_Tela.text.toString().isEmpty()) {
+                            Toast.makeText(this, "Inreges el tipo de compra", Toast.LENGTH_SHORT).show()
+                        }else{
+                            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
