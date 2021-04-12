@@ -4,16 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/e"
     tools:context=".Empleado">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="418dp"
-        android:layout_height="755dp"
+    <TextView
+        android:id="@+id/txvTitulo"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="REGISTRO DE EMPLEADO"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#00040C"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
+        app:layout_constraintVertical_bias="0.067" />
 </androidx.constraintlayout.widget.ConstraintLayout>
