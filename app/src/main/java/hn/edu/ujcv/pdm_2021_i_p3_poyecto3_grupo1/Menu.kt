@@ -10,7 +10,7 @@ class Menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         btn_regresar.setOnClickListener { regresarMain() }
-        //btn_Usuario.setOnClickListener { irUsuario() }
+        /*btn_Usuario.setOnClickListener { irUsuario() }*/
         btn_Empleado.setOnClickListener { irEmpleado() }
         btn_Departamento.setOnClickListener { irDepartamento() }
         btn_Ventas.setOnClickListener { irVentas() }

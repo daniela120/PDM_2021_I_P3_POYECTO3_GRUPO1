@@ -20,8 +20,9 @@
         <activity android:name=".Ventas" />
         <activity android:name=".Departamento" />
         <activity android:name=".Empleado" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Menu">
+        <activity android:name=".Menu"/>
+        <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
