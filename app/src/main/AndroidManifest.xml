@@ -13,13 +13,13 @@
         <activity android:name=".MainActivity11" />
         <activity android:name=".MainActivity10" />
         <activity android:name=".MainActivity9" />
-        <activity android:name=".MainActivity8" />
-        <activity android:name=".MainActivity7" />
-        <activity android:name=".MainActivity6" />
-        <activity android:name=".MainActivity5" />
-        <activity android:name=".MainActivity4" />
-        <activity android:name=".MainActivity3" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".Almacen" />
+        <activity android:name=".Inventario" />
+        <activity android:name=".Produccion" />
+        <activity android:name=".Productos" />
+        <activity android:name=".Ventas" />
+        <activity android:name=".Departamento" />
+        <activity android:name=".Empleado" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

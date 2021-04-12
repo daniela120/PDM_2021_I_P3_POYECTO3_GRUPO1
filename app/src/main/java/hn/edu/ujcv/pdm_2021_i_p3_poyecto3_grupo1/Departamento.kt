@@ -3,10 +3,10 @@ package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity5 : AppCompatActivity() {
+class Departamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main5)
+        setContentView(R.layout.activity_departamento)
 
     }
 }

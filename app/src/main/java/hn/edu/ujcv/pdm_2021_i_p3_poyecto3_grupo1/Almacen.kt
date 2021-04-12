@@ -3,10 +3,10 @@ package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity8 : AppCompatActivity() {
+class Almacen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main8)
+        setContentView(R.layout.activity_almacen)
 
     }
 }
