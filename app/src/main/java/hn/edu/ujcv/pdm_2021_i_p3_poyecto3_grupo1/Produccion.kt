@@ -12,6 +12,7 @@ class Produccion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produccion)
         btn_Guardar5.setOnClickListener{ guardar()}
+        btn_RegresarProduc.setOnClickListener { Regresar() }
     }
 
     private  fun guardar() {
