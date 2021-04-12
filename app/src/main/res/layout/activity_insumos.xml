@@ -16,4 +16,147 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fondo" />
+
+    <Button
+        android:id="@+id/btn_RegresarInsumos"
+        android:layout_width="305dp"
+        android:layout_height="35dp"
+        android:background="@drawable/boton_redondo"
+        android:text="REGRESAR"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
+
+    <EditText
+        android:id="@+id/txt_IdInsumo"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <EditText
+        android:id="@+id/txt_TipoCompra_Insumo"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <EditText
+        android:id="@+id/txt_NombreInsumo"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <TextView
+        android:id="@+id/txv_Nom8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TIPO COMPRA:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.599" />
+
+    <TextView
+        android:id="@+id/txv_Nom9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txv_Nom10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID INSUMO:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <SearchView
+        android:layout_width="367dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="548dp"
+        android:background="@color/black3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/txvTITULO5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSUMOS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white2"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
 </androidx.constraintlayout.widget.ConstraintLayout>

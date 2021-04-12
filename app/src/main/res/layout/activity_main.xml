@@ -24,8 +24,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="457dp"
-        android:layout_height="851dp"
+        android:layout_width="505dp"
+        android:layout_height="880dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="USUARIO"
+        android:hint="EMAIL"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/white"
