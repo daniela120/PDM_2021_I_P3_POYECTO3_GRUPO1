@@ -12,17 +12,17 @@
         android:layout_width="122dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Mano de Obra"
+        android:text="MANO DE OBRA"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+        app:layout_constraintVertical_bias="0.557" />
 
     <EditText
         android:id="@+id/txt_ManoObra"
@@ -44,7 +44,7 @@
         android:layout_width="367dp"
         android:layout_height="61dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="404dp"
         android:background="@color/black3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,24 +108,24 @@
 
     <TextView
         android:id="@+id/txv_IdCosto"
-        android:layout_width="112dp"
+        android:layout_width="122dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="ID Cosot"
+        android:text="ID COSTOS"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+        app:layout_constraintVertical_bias="0.357" />
 
     <TextView
         android:id="@+id/txv_IdCompraC"
-        android:layout_width="112dp"
+        android:layout_width="122dp"
         android:layout_height="40dp"
         android:gravity="center"
         android:text="NOMBRE"
@@ -135,10 +135,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <EditText
         android:id="@+id/txt_CantidadC"
@@ -158,17 +158,17 @@
 
     <TextView
         android:id="@+id/txv_CantidadC"
-        android:layout_width="108dp"
-        android:layout_height="37dp"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
         android:gravity="center"
-        android:text="Cantidad"
+        android:text="CANTIDAD"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.634" />
@@ -191,37 +191,37 @@
 
     <TextView
         android:id="@+id/txvPrecioC"
-        android:layout_width="115dp"
-        android:layout_height="29dp"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
         android:gravity="center"
-        android:text="Precio"
+        android:text="PRECIO"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <TextView
         android:id="@+id/txvTotalC"
-        android:layout_width="113dp"
-        android:layout_height="30dp"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
         android:gravity="center"
-        android:text="Total"
+        android:text="TOTAL"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <EditText
         android:id="@+id/txt_TotalC"
