@@ -8,7 +8,7 @@
     tools:context=".Departamento">
 
     <Button
-        android:id="@+id/btn_RegresarCompras3"
+        android:id="@+id/btn_RegresarDepto"
         android:layout_width="181dp"
         android:layout_height="42dp"
         android:background="@drawable/boton_redondo"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.243" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_AgregarDepto"
         android:layout_width="161dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
