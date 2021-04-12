@@ -33,13 +33,13 @@
         app:srcCompat="@drawable/login" />
 
     <EditText
-        android:id="@+id/txt_Email"
+        android:id="@+id/txt_Usuario"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="260dp"
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="EMAIL"
+        android:hint="USUARIO"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/white"
