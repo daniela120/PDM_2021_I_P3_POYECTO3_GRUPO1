@@ -12,7 +12,7 @@ class Inventario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventario)
         btn_RegresarInventario.setOnClickListener { Regresar() }
-        btn_LimpiarInv.setOnClickListener { guardar() }
+        btn_Guardar3.setOnClickListener { guardar() }
 
     }
     private fun Regresar() {

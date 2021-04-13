@@ -12,7 +12,7 @@ class Insumos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insumos)
         btn_RegresarInsumos.setOnClickListener { Regresar() }
-        btn_LimpiarInsum.setOnClickListener { guardar() }
+        btn_Guardar4.setOnClickListener { guardar() }
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
