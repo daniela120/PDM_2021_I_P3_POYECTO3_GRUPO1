@@ -28,6 +28,7 @@ class Departamento : AppCompatActivity() {
                 } else {
                     if (txt_EncargadoD.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese un encargado", Toast.LENGTH_SHORT).show()
+                    }else{
                         if(txt_IdEmpleadoD.text.toString().isEmpty()){
                             Toast.makeText(this, "Ingrese ID del Empleado", Toast.LENGTH_SHORT).show()
                         } else{

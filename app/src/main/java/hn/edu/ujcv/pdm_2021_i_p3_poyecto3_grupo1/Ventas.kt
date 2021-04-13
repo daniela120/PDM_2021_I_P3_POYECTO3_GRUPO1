@@ -29,6 +29,7 @@ class Ventas : AppCompatActivity() {
                 } else {
                     if (txt_IDCLienteV.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese ID de Cliente", Toast.LENGTH_SHORT).show()
+                    }else{
                         if (txt_Nombre.text.toString().isEmpty()) {
                             Toast.makeText(this, "Ingrese Nombre de Cliente", Toast.LENGTH_SHORT).show()
                         } else {

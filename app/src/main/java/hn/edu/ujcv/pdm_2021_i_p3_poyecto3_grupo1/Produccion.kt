@@ -11,6 +11,7 @@ class Produccion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produccion)
+        btn_RegresarProduc.setOnClickListener { Regresar() }
         btn_Guardar5.setOnClickListener{ guardar()}
     }
 
@@ -23,7 +24,7 @@ class Produccion : AppCompatActivity() {
                 Toast.makeText(this, "Ingrese ID de Producto", Toast.LENGTH_SHORT).show()
             } else {
                 if (txt_IdEmpleadoP.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese un Empleado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Ingrese ID Empleado", Toast.LENGTH_SHORT).show()
                 } else {
                     if (txt_DescripcionP2.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese la Descripcion", Toast.LENGTH_SHORT).show()
