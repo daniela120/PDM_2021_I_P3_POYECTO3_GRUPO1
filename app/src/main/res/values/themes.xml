@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PDM_2021_I_P3_POYECTO3_GRUPO1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

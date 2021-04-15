@@ -5,24 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_insumos.*
-import kotlinx.android.synthetic.main.activity_inventario.*
+import kotlinx.android.synthetic.main.activity_proveedores.*
 
-class Inventario : AppCompatActivity() {
+class Proveedores : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inventario)
-        btn_RegresarInventario.setOnClickListener { Regresar() }
-        btn_LimpiarInv.setOnClickListener { guardar() }
+        setContentView(R.layout.activity_proveedores)
+
 
     }
-    private fun Regresar() {
+    /*private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
     }
     private  fun guardar() {
 
         if (txt_IdAlmacen_Inventario.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID del Inventario", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Ingrese ID del Proveedores", Toast.LENGTH_SHORT).show()
         }else {
             if (txt_IdProduccion_Inventario.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese un Id de Produccion", Toast.LENGTH_SHORT).show()
@@ -34,5 +33,5 @@ class Inventario : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 }

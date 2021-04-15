@@ -1,264 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo3"
-    app:layout_anchorGravity="bottom"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_Departamento"
-        android:layout_width="109dp"
-        android:layout_height="95dp"
-        android:background="@drawable/departamento"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.248" />
-
-    <Button
-        android:id="@+id/btn_Tela"
-        android:layout_width="114dp"
-        android:layout_height="93dp"
-        android:background="@drawable/telas"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
-
-    <Button
-        android:id="@+id/btn_insumos"
-        android:layout_width="106dp"
-        android:layout_height="96dp"
-        android:background="@drawable/insumos"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.976"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
-
-    <Button
-        android:id="@+id/btn_Costos"
-        android:layout_width="125dp"
-        android:layout_height="91dp"
-        android:background="@drawable/costos"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
-
-    <Button
-        android:id="@+id/btn_Compras"
-        android:layout_width="120dp"
-        android:layout_height="103dp"
-        android:background="@drawable/compras"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
-
-    <Button
-        android:id="@+id/btn_Almacen"
-        android:layout_width="120dp"
-        android:layout_height="92dp"
-        android:background="@drawable/almacen"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694" />
-
-    <Button
-        android:id="@+id/btn_Productos"
-        android:layout_width="104dp"
-        android:layout_height="102dp"
-        android:background="@drawable/productos"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
-
-
-    <Button
-        android:id="@+id/btn_Inventario"
-        android:layout_width="112dp"
-        android:layout_height="94dp"
-        android:background="@drawable/inventario"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
-
-    <Button
-        android:id="@+id/btn_Ventas"
-        android:layout_width="105dp"
-        android:layout_height="99dp"
-        android:background="@drawable/ventas"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
-
-    <TextView
-        android:id="@+id/txvTITULO"
-        android:layout_width="379dp"
-        android:layout_height="35dp"
-        android:fontFamily="sans-serif-black"
-        android:text="MENU PRINCIPAL"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/design_default_color_secondary"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
-
-
-    <Button
-        android:id="@+id/btn_Empleado"
-        android:layout_width="103dp"
-        android:layout_height="90dp"
-        android:background="@drawable/emp"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
-
-    <Button
-        android:id="@+id/btn_regresar"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="572dp"
-        android:alpha="0.55"
-        android:backgroundTint="@color/teal_700"
-        android:foreground="@android:drawable/ic_menu_revert"
-        android:foregroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+        android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.AppBarOverlay">
 
-    <Button
-        android:id="@+id/btn_Produccion"
-        android:layout_width="99dp"
-        android:layout_height="90dp"
-        android:background="@drawable/producion"
-        android:backgroundTintMode="add"
-        android:fadingEdge="horizontal"
-        android:foregroundTint="#CC7777"
-        android:gravity="center_horizontal|center_vertical|fill_vertical"
-        android:scaleType="fitEnd"
-        android:textAlignment="center"
-        android:textColor="@color/red5"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"
+                android:src="@drawable/confex" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

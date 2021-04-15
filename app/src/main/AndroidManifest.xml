@@ -9,26 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1">
-        <activity android:name=".Tela"></activity>
-        <activity android:name=".Insumos" />
-        <activity android:name=".Costos" />
-        <activity android:name=".Compras" />
-        <activity android:name=".Almacen" />
-        <activity android:name=".Inventario" />
-        <activity android:name=".Produccion" />
-        <activity android:name=".Productos" />
-        <activity android:name=".Ventas" />
-        <activity android:name=".Departamento" />
-        <activity android:name=".Empleado" />
-        <activity android:name=".Menu"/>
         <activity android:name=".MainActivity">
-
+            android:label="@string/app_name"
+            android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Cliente"/>
+        <activity android:name=".Insumos" />
+        <activity android:name=".TipoPago" />
+        <activity android:name=".Compras" />
+        <activity android:name=".Proveedores" />
+        <activity android:name=".Produccion" />
+        <activity android:name=".Productos" />
+        <activity android:name=".Ventas" />
+        <activity android:name=".Departamento" />
+        <activity android:name=".Empleado" />
+        <activity android:name=".Menu"
+            android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -13,10 +13,10 @@ class Ventas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ventas)
         btn_RegresarVen.setOnClickListener { Regresar()}
-        btn_Guardar.setOnClickListener { guardar() }
+
     }
 
-    private  fun guardar() {
+   /* private  fun guardar() {
 
         if (txt_VentaId.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese ID de Venta", Toast.LENGTH_SHORT).show()
@@ -27,12 +27,12 @@ class Ventas : AppCompatActivity() {
                 if (txt_IDEmpleadoV.text.toString().isEmpty()) {
                     Toast.makeText(this, "Ingrese ID de Empleado", Toast.LENGTH_SHORT).show()
                 } else {
-                    if (txt_IDCLienteV.text.toString().isEmpty()) {
+                    if (txt_CaiVenta.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese ID de Cliente", Toast.LENGTH_SHORT).show()
-                        if (txt_Nombre.text.toString().isEmpty()) {
+                        if (txt_DescripcionVenta.text.toString().isEmpty()) {
                             Toast.makeText(this, "Ingrese Nombre de Cliente", Toast.LENGTH_SHORT).show()
                         } else {
-                            if (txt_DescripcionV.text.toString().isEmpty()) {
+                            if (txt_NoTarjetaVenta.text.toString().isEmpty()) {
                                 Toast.makeText(this, "Ingrese Una descripcion",Toast.LENGTH_SHORT).show()
                             } else {
                                 if (txt_CantidadV.text.toString().isEmpty()) {
@@ -43,10 +43,10 @@ class Ventas : AppCompatActivity() {
                                     } else {
                                         if (txt_SubtotalV.text.toString().isEmpty()) {
                                             Toast.makeText(this, "Ingrese un Subtotal", Toast.LENGTH_SHORT).show()
-                                            if (txt_ISVVenta.text.toString().isEmpty()) {
+                                            if (txt_FormaPagoVenta.text.toString().isEmpty()) {
                                                 Toast.makeText(this, "Ingrese ISV", Toast.LENGTH_SHORT).show()
                                             }else{
-                                                if(txt_TotalV.text.toString().isEmpty()){
+                                                if(txt_TotaVenta.text.toString().isEmpty()){
                                                     Toast.makeText(this, "Ingrese EL Total a Pagar", Toast.LENGTH_SHORT).show()
                                                 }
                                             Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
@@ -60,7 +60,7 @@ class Ventas : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)

@@ -11,11 +11,10 @@ class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
-         btn_RegresarPRODUCTOS.setOnClickListener { Regresar() }
-        btn_Guardar6.setOnClickListener { guardar() }
+
     }
 
-    private  fun guardar() {
+    /*private  fun guardar() {
 
         if (txtId2.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese ID del Producto", Toast.LENGTH_SHORT).show()
@@ -43,5 +42,5 @@ class Productos : AppCompatActivity() {
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }
+    }*/
 }

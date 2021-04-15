@@ -4,19 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_almacen.*
-import kotlinx.android.synthetic.main.activity_costos.*
+import kotlinx.android.synthetic.main.activity_tipo_pago.*
 import kotlinx.android.synthetic.main.activity_departamento.*
 
-class Costos : AppCompatActivity() {
+class TipoPago : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_costos)
-        btn_RegresarCosto.setOnClickListener { Regresar() }
-        btn_Guardar7.setOnClickListener { guardar() }
+        setContentView(R.layout.activity_tipo_pago)
+
     }
 
-    private  fun guardar() {
+    /*private  fun guardar() {
 
         if (txtI_CostoID.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese ID del costo", Toast.LENGTH_SHORT).show()
@@ -47,5 +45,7 @@ class Costos : AppCompatActivity() {
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }
+    }*/
+
+
 }

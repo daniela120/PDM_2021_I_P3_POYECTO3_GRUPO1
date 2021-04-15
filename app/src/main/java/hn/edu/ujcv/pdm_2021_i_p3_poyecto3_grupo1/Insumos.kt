@@ -11,8 +11,7 @@ class Insumos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insumos)
-        btn_RegresarInsumos.setOnClickListener { Regresar() }
-        btn_LimpiarInsum.setOnClickListener { guardar() }
+
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

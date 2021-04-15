@@ -11,11 +11,10 @@ class Empleado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleado)
-        btn_RegresarE.setOnClickListener { Regresar() }
-        btn_GuardarE.setOnClickListener { guardar() }
+
     }
 
-    private  fun guardar() {
+    /*private  fun guardar() {
 
         if (txtId.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese ID del Empleado", Toast.LENGTH_SHORT).show()
@@ -43,5 +42,5 @@ class Empleado : AppCompatActivity() {
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }
+    }*/
 }

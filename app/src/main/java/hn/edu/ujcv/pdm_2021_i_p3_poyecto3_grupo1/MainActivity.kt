@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         btn_login.setOnClickListener { Pruebaregistrar() }
     }
     private fun Pruebaregistrar() {
-        if (txt_Usuario.text.toString()=="Helen Galo" && txt_Password.text.toString()=="helen" ) {
+        /*if (txt_Usuario.text.toString()=="Helen Galo" && txt_Password.text.toString()=="helen" ) {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         } else {
@@ -32,5 +32,11 @@ class MainActivity : AppCompatActivity() {
 
                         Toast.makeText(this, "Ingrese un usuario valido ", Toast.LENGTH_SHORT).show()
                     }
-                }}}}
+                }
+
+         } }*/
+        val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+}
+
 }
