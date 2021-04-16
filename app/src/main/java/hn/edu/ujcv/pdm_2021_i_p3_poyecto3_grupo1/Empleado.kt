@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PersonDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import kotlinx.android.synthetic.main.activity_empleado.*
 import kotlinx.android.synthetic.main.activity_productos.*
 import retrofit2.Call
@@ -53,16 +53,16 @@ class Empleado : AppCompatActivity() {
 
     private fun callServiceGetPerson() {
         val personService:PersonService = RestEngine.buildService().create(PersonService::class.java)
-        var result: Call<PersonDataCollectionItem> = personService.getPersonById(1)
+        var result: Call<ClienteDataCollectionItem> = personService.getPersonById(1)
 
-        result.enqueue(object : Callback<PersonDataCollectionItem> {
-            override fun onFailure(call: Call<PersonDataCollectionItem>, t: Throwable) {
+        result.enqueue(object : Callback<ClienteDataCollectionItem> {
+            override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
                 Toast.makeText(this@Empleado,"Error",Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(
-                call: Call<PersonDataCollectionItem>,
-                response: Response<PersonDataCollectionItem>
+                call: Call<ClienteDataCollectionItem>,
+                response: Response<ClienteDataCollectionItem>
             ) {
                 Toast.makeText(this@Empleado,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
             }
