@@ -29,7 +29,7 @@ class MostrarCLiente:  AppCompatActivity() {
         }
     private fun callServiceGetPerson() {
         val clienteService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
-        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById()ById(1)
+        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(txt_IdCliente2.text.toString().toLong())
 
         result.enqueue(object : Callback<ClienteDataCollectionItem> {
             override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {

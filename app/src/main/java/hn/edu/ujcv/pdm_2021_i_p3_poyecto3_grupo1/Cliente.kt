@@ -35,7 +35,7 @@ class Cliente : AppCompatActivity() {
                 telefono = txt_TelefonoCliente.text.toString().toLong(),
                 dni = txt_dniCliente.text.toString().toLong(),
                 rtn = txt_dniCliente.text.toString(),
-                correo = txt_CorreoCliente2.text.toString(),
+                correo = txt_CorreoCliente.text.toString(),
                 direccion =txt_DireccionCliente.text.toString()
         )
 

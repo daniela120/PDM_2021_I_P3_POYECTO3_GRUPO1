@@ -3,16 +3,20 @@ package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.getbase.floatingactionbutton.FloatingActionButton
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_compras.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 import java.time.Month
 import java.time.MonthDay
 import java.time.Year
@@ -26,6 +30,7 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
         txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
+        initial()
     }
 
     fun showDatePickerDialog() {
@@ -48,7 +53,7 @@ class Compras : AppCompatActivity() {
                 insumos = null
         )
 
-            addPerson(compraInfo) {
+            addCompra(compraInfo) {
                 if (it?.id != null) {
                     Toast.makeText(this@Compras,"OK"+it?.id,Toast.LENGTH_LONG).show()
                 } else {
@@ -58,7 +63,7 @@ class Compras : AppCompatActivity() {
         }
 
 
-    fun addPerson(compraData: ComprasDataCollectionItem, onResult: (ComprasDataCollectionItem?) -> Unit){
+    fun addCompra(compraData: ComprasDataCollectionItem, onResult: (ComprasDataCollectionItem?) -> Unit){
         val retrofit = RestEngine.buildService().create(ComprasService::class.java)
         var result: Call<ComprasDataCollectionItem> = retrofit.addCompras(compraData)
 
@@ -84,6 +89,59 @@ class Compras : AppCompatActivity() {
         }
         )
     }
+
+
+
+    private fun callServiceGetTipo():List<String> {
+        var A:ArrayList<String> = ArrayList()
+        val pagoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
+        var result: Call<List<PagoDataCollectionItem>> = pagoService.listPagos()
+
+        result.enqueue(object :  Callback<List<PagoDataCollectionItem>> {
+            override fun onFailure(call: Call<List<PagoDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<PagoDataCollectionItem>>,
+                    response: Response<List<PagoDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!){
+                        A.add(i.id.toString())
+
+                    }
+                    Toast.makeText(this@Compras,"OK"+response.body()!!.get(0).descripcion,Toast.LENGTH_LONG).show()
+
+                }catch (e:Exception){
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+        return A
+    }
+
+    fun initial(){
+        var A = callServiceGetTipo()
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, A)
+        spinnerFormaPago.adapter =adaptador
+        spinnerFormaPago.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                    parent: AdapterView<*>?, view: View?, position: Int, id: Long){
+                println(A[position].toString())
+
+            }
+
+        }
+    }
+
 
 
 
