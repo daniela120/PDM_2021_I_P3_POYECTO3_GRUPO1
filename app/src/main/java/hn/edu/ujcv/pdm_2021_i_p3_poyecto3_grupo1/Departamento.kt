@@ -45,7 +45,7 @@ class Departamento : AppCompatActivity() {
     }
 
     fun addDepartamento(departamentoData: DepartamentoDataCollectionItem, onResult: (DepartamentoDataCollectionItem?) -> Unit) {
-        val retrofit = RestEngine.buildService().create(ProveedoresService::class.java)
+        val retrofit = RestEngine.buildService().create(DepartamentoService::class.java)
         var result: Call<DepartamentoDataCollectionItem> = retrofit.addDepartamento(departamentoData)
 
         result.enqueue(object : Callback<DepartamentoDataCollectionItem> {
