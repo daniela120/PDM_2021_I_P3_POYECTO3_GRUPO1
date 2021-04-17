@@ -7,6 +7,63 @@
     android:background="@drawable/fondo3"
     tools:context=".MostrarInsumos">
 
+    <EditText
+        android:id="@+id/txt_MostrarInsCantidad"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <EditText
+        android:id="@+id/txt_MostrarInsPVenta"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <EditText
+        android:id="@+id/txt_MostrarInsPCompra"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
+
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/grupoFab_Insumos2"
         android:layout_width="39dp"
@@ -60,61 +117,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.232" />
 
-    <TextView
-        android:id="@+id/txv_MostrarInsCantidad"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    <EditText
+        android:id="@+id/txt_MostrarInsNombre"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20dp"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.599"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintVertical_bias="0.334" />
 
-    <TextView
-        android:id="@+id/txv_MostrarInsPrecioVenta"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    <EditText
+        android:id="@+id/txt_MostrarInsTipo"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20dp"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.599"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
-
-    <TextView
-        android:id="@+id/txv_MostrarInsPrecioCompra"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
-
-    <TextView
-        android:id="@+id/txv_MostrarInsNombre"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <Button
         android:id="@+id/btn_regresarInsumos2"
@@ -178,20 +217,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.347" />
-
-    <TextView
-        android:id="@+id/txv_MostrarInsTipo"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441" />
 
     <TextView
         android:id="@+id/txv_MostrarCCAI"
