@@ -8,6 +8,7 @@ import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
+import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
 
 class MostrarEmpleado:  AppCompatActivity() {
@@ -39,6 +40,12 @@ class MostrarEmpleado:  AppCompatActivity() {
                 Toast.makeText(this@MostrarEmpleado,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
             }
         })
+        txt_CargoEmpleado2.isEnabled
+        txt_ClaveEmpleado2.isEnabled
+        txt_CorreoEmpleado2.isEnabled
+        txt_NombreEmpleado2.isEnabled
+        txt_TelefonoEmpleado2.isEnabled
+
     }
 
 }
