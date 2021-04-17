@@ -14,10 +14,9 @@ class Cliente : AppCompatActivity() {
         setContentView(R.layout.activity_cliente)
         btn_regresarCliente.setOnClickListener { Regresar() }
 
-        findViewById<FloatingActionButton>(R.id.idFabActualizar_Cli).setOnClickListener {
-            Regresar() }
-        findViewById<FloatingActionButton>(R.id.idFabEliminar_Cli).setOnClickListener { view ->
-            Snackbar.make(view, "registro eliminado", Snackbar.LENGTH_LONG) }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+            Mostrar() }
+
 
     }
 
@@ -49,6 +48,11 @@ class Cliente : AppCompatActivity() {
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+    }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarCLiente::class.java)
         startActivity(intent)
     }
 }

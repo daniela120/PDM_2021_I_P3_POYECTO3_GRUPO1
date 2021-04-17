@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
+/*import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem*/
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_empleado.*
 import kotlinx.android.synthetic.main.activity_productos.*
 /*import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response*/
+import com.getbase.floatingactionbutton.FloatingActionButton
 
 class Empleado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,8 @@ class Empleado : AppCompatActivity() {
         val botonGetId = findViewById<Button>(R.id.btn_BuscarEmpleado)
         /*botonGetId.setOnClickListener {v -> callServiceGetPerson()}*/
         btn_regresarEmpleado.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Empleado).setOnClickListener {
+            Mostrar() }
 
     }
 
@@ -50,6 +53,11 @@ class Empleado : AppCompatActivity() {
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+    }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarEmpleado::class.java)
         startActivity(intent)
     }
 

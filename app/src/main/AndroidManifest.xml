@@ -32,6 +32,11 @@
         <activity android:name=".Ventas" />
         <activity android:name=".Departamento" />
         <activity android:name=".Empleado" />
+        <activity android:name=".MostrarCLiente" />
+        <activity android:name=".MostrarEmpleado" />
+        <activity android:name=".MostrarDepartamento" />
+        <activity android:name=".MostrarProductos" />
+        <activity android:name=".MostrarTipoPago" />
         <activity android:name=".Menu"
             android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar"></activity>
     </application>

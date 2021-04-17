@@ -159,7 +159,7 @@
         tools:ignore="MissingConstraints">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabConfirmar"
+            android:id="@+id/idFabConfirmarago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
@@ -167,7 +167,7 @@
             app:fab_size="mini" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabListar"
+            android:id="@+id/idFabListarPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
@@ -175,7 +175,7 @@
             app:fab_size="mini" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabActualizar"
+            android:id="@+id/idFabActualizarago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
@@ -183,7 +183,7 @@
             app:fab_size="mini" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabEliminar"
+            android:id="@+id/idFabEliminarPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"

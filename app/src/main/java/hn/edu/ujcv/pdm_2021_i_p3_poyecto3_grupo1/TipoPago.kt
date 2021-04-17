@@ -7,12 +7,15 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_tipo_pago.*
 import kotlinx.android.synthetic.main.activity_departamento.*
+import com.getbase.floatingactionbutton.FloatingActionButton
 
 class TipoPago : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tipo_pago)
         btn_regresarPago.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListarPago).setOnClickListener {
+            Mostrar() }
     }
 
     /*private  fun guardar() {
@@ -45,6 +48,11 @@ class TipoPago : AppCompatActivity() {
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+    }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarTipoPago::class.java)
         startActivity(intent)
     }
 

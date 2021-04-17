@@ -7,13 +7,15 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_produccion.*
 import kotlinx.android.synthetic.main.activity_productos.*
-
+import com.getbase.floatingactionbutton.FloatingActionButton
 
 class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
         btn_regresarProductos.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Productos).setOnClickListener {
+            Mostrar() }
     }
 
     /*private  fun guardar() {
@@ -43,6 +45,11 @@ class Productos : AppCompatActivity() {
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+    }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarProductos::class.java)
         startActivity(intent)
     }
 }

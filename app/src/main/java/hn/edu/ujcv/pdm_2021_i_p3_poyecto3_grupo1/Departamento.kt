@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_departamento.*
@@ -13,6 +14,8 @@ class Departamento : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_departamento)
         btn_regresarDepartamento.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
+            Mostrar() }
 
     }
 
@@ -43,6 +46,9 @@ class Departamento : AppCompatActivity() {
 
 
 
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarDepartamento::class.java)
+        startActivity(intent)}
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

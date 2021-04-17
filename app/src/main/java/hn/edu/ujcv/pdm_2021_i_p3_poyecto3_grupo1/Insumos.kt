@@ -7,6 +7,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_insumos.*
+import com.getbase.floatingactionbutton.FloatingActionButton
 
 class Insumos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
