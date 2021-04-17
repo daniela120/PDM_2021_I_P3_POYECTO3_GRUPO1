@@ -7,6 +7,44 @@
     android:background="@drawable/fondo3"
     tools:context=".Produccion">
 
+    <EditText
+        android:id="@+id/txt_BaseparaSpinner2"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="296dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <EditText
+        android:id="@+id/txt_BaseparaSpinner3"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="296dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
     <Spinner
         android:id="@+id/spinnerIdEmpleado"
         android:layout_width="282dp"
