@@ -8,11 +8,11 @@ class VentasDataCollection : ArrayList<VentasDataCollectionItem>()
 data class  VentasDataCollectionItem(
     val id:Long?,
     val descripcion:String,
-    val idempleado:String,
-    val cai:String,
-    val idcliente:String,
-    val numerotarjeta:String,
-    val formadepago:String,
-    val fechaventa:String,
-    val fechaentrega:String
+    val idempleado:Long?,
+    val cai:Long?,
+    val idcliente:Long?,
+    val numerotarjeta:Long?,
+    val formadepago:Long?,
+    val fechaventa:Date?,
+    val fechaentrega:Date?
 )

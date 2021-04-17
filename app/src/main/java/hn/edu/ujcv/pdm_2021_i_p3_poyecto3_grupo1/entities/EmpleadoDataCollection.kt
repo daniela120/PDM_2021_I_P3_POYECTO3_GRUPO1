@@ -5,7 +5,7 @@ class EmpleadoDataCollection : ArrayList<EmpleadoDataCollectionItem>()
 data class EmpleadoDataCollectionItem(
     val id:Long?,
     val nombrecompleto:String,
-    val telefono: String,
+    val telefono: Long?,
     val correo: String,
     val clave: String,
     val cargo:String,
