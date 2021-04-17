@@ -37,7 +37,7 @@ class Productos : AppCompatActivity() {
 
 
 
-        addProductos(productosInfo) {
+        addProducto(productosInfo) {
             if (it?.id != null) {
                 android.widget.Toast.makeText(this@Productos, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
             } else {
@@ -46,9 +46,9 @@ class Productos : AppCompatActivity() {
         }
     }
 
-    fun addProductos(productoData: ProductoDataCollectionItem, onResult: (ProductoDataCollectionItem?) -> Unit) {
+    fun addProducto(productoData: ProductoDataCollectionItem, onResult: (ProductoDataCollectionItem?) -> Unit) {
         val retrofit = RestEngine.buildService().create(ProductoService::class.java)
-        var result: Call<ProductoDataCollectionItem> = retrofit.addProductos(productoData)
+        var result: Call<ProductoDataCollectionItem> = retrofit.addProducto(productoData)
 
         result.enqueue(object : Callback<ProductoDataCollectionItem> {
             override fun onFailure(call: Call<ProductoDataCollectionItem>, t: Throwable) {
