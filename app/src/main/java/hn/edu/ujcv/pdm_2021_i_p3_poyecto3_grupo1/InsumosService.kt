@@ -12,11 +12,13 @@ interface InsumosService {
     @GET("insumos/id/{id}")
     fun getInsumosById(@Path("id") id: Long): Call<InsumosDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("insumos/addInsumos")
-    fun addInsumos(@Body personData: InsumosDataCollectionItem): Call<InsumosDataCollectionItem>
+    @POST("insumos/addInsumo")
+    fun addInsumos(@Body insumoData: InsumosDataCollectionItem):Call<InsumosDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("insumos")
-    fun updateInsumos(@Body personData: InsumosDataCollectionItem): Call<InsumosDataCollectionItem>
+    fun updateInsumos(@Body insumoData: InsumosDataCollectionItem): Call<InsumosDataCollectionItem>
     @DELETE("insumos/delete/{id}")
     fun deleteInsumos(@Path("id") id: Long): Call<ResponseBody>
+
+
 }

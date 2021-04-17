@@ -6,12 +6,12 @@ import kotlin.collections.ArrayList
 class ClienteDataCollection : ArrayList<ClienteDataCollectionItem>()
 
 data class ClienteDataCollectionItem(
-    val id:Long?,
-    val nombrecompleto:String,
-    val telefono: Long?,
-    val dni:Long?,
-    val rtn: String,
-    val correo: String,
-    val direccion: String
+        val id: Long?,
+        val nombrecompleto: String,
+        val telefono: Long?,
+        val dni: Long?,
+        val rtn: String,
+        val correo: String,
+        val direccion: String
 
 )

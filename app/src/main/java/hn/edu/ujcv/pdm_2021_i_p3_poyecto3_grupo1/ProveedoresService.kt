@@ -12,10 +12,10 @@ interface ProveedoresService {
     fun getProveedoresById(@Path("id") id: Long): Call<ProveedoresDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("proveedores/addProveedores")
-    fun addProveedores(@Body personData: ProveedoresDataCollectionItem): Call<ProveedoresDataCollectionItem>
+    fun addProveedores(@Body proveedoresData: ProveedoresDataCollectionItem): Call<ProveedoresDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("proveedores")
-    fun updateProveedores(@Body personData: ProveedoresDataCollectionItem): Call<ProveedoresDataCollectionItem>
+    fun updateProveedores(@Body proveedoresData: ProveedoresDataCollectionItem): Call<ProveedoresDataCollectionItem>
     @DELETE("proveedores/delete/{id}")
     fun deleteProveedores(@Path("id") id: Long): Call<ResponseBody>
 }
