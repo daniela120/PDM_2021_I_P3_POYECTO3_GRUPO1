@@ -9,8 +9,9 @@ data class ClienteDataCollectionItem(
     val id:Long?,
     val nombrecompleto:String,
     val telefono: Long?,
-    val correo: String,
-    val direccion: String,
     val dni:Long?,
-    val rtn: String
+    val rtn: String,
+    val correo: String,
+    val direccion: String
+
 )
