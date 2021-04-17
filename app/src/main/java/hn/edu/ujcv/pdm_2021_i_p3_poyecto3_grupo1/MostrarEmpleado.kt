@@ -28,7 +28,7 @@ class MostrarEmpleado:  AppCompatActivity() {
 
     private fun callServiceGetPerson() {
         val personService:EmpleadoService = RestEngine.buildService().create(EmpleadoService::class.java)
-        var result: Call<EmpleadoDataCollectionItem> = personService.getEmpleadoById(1)
+        var result: Call<EmpleadoDataCollectionItem> = personService.getEmpleadoById(txt_IdCliente2.text.toString().toLong())
 
         result.enqueue(object : Callback<EmpleadoDataCollectionItem> {
             override fun onFailure(call: Call<EmpleadoDataCollectionItem>, t: Throwable) {
