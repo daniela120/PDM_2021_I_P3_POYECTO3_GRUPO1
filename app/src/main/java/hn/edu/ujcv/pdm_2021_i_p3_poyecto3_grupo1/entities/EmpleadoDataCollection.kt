@@ -7,7 +7,7 @@ data class EmpleadoDataCollectionItem(
     val nombrecompleto:String,
     val telefono: String,
     val correo: String,
-    val direccion: String,
-    val dni:String,
-    val rtn: String
+    val clave: String,
+    val cargo:String,
+
 )
