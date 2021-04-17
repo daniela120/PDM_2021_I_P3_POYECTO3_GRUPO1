@@ -9,6 +9,9 @@ import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollection
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_productos.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MostrarProductos:  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +39,7 @@ class MostrarProductos:  AppCompatActivity() {
                     call: Call<ProductoDataCollectionItem>,
                     response: Response<ProductoDataCollectionItem>
             ) {
-                Toast.makeText(this@MostrarProductos,"OK"+response.body()!!.nombrecompleto, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MostrarProductos,"OK"+response.body()!!.descripcion, Toast.LENGTH_LONG).show()
             }
         })
         txt_DescripcionProducto2.isEnabled

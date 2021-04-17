@@ -14,7 +14,7 @@ interface ComprasService {
     fun getComprasById(@Path("id") id: Long): Call<ComprasDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("compras/addCompras")
-    fun addCompras(@Body personData: ComprasDataCollectionItem): Call<ComprasDataCollectionItem>
+    fun addCompras(@Body comprasData: ComprasDataCollectionItem): Call<ComprasDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("compras")
     fun updateCompras(@Body personData: ComprasDataCollectionItem): Call<ComprasDataCollectionItem>

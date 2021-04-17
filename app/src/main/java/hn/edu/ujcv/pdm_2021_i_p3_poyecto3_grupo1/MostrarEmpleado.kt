@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MostrarEmpleado:  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

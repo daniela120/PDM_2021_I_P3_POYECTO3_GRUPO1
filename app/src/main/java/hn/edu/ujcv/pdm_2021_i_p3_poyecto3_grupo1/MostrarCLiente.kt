@@ -29,7 +29,7 @@ class MostrarCLiente:  AppCompatActivity() {
         }
     private fun callServiceGetPerson() {
         val clienteService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
-        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(1)
+        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById()ById(1)
 
         result.enqueue(object : Callback<ClienteDataCollectionItem> {
             override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
@@ -43,11 +43,5 @@ class MostrarCLiente:  AppCompatActivity() {
                 Toast.makeText(this@MostrarCLiente,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
             }
         })
-
-        txt_CorreoCliente2.isEnabled
-        txt_DireccionCliente2.isEnabled
-        txt_NombreCliente2.isEnabled
-        txt_TelefonoCliente2.isEnabled
-        txt_rtnCliente2.isEnabled
     }
 }

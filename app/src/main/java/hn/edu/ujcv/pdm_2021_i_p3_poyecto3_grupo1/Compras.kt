@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.activity_compras.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.Month
+import java.time.MonthDay
+import java.time.Year
 
 class Compras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +43,7 @@ class Compras : AppCompatActivity() {
                 proveedores = txt_TelefonoCliente.text.toString().toLong(),
                 numerotarjeta = txt_dniCliente.text.toString().toLong(),
                 formapago = txt_dniCliente.text.toString(),
-                fechaentrega = txt_CorreoCliente2.text.toString(),
+                fechaentrega = txt_CorreoCliente.text.toString(),
                 fechacompra = txt_DireccionCliente.text.toString(),
                 insumos = txt_ins
         )

@@ -8,6 +8,9 @@ import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_compras.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MostrarCompras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +37,7 @@ class MostrarCompras : AppCompatActivity() {
                     call: Call<ComprasDataCollectionItem>,
                     response: Response<ComprasDataCollectionItem>
             ) {
-                Toast.makeText(this@MostrarCompras,"OK"+response.body()!!.nombrecompleto, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MostrarCompras,"OK"+response.body()!!.cai, Toast.LENGTH_LONG).show()
             }
         })
     }

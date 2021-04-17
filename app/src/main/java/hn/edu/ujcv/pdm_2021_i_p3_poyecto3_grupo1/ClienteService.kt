@@ -7,12 +7,12 @@ import retrofit2.http.*
 
 interface ClienteService {
     @GET("clientes")
-    fun listCliente(): Call<List<ClienteDataCollectionItem>>
+    fun listClientes(): Call<List<ClienteDataCollectionItem>>
     @GET("clientes/id/{id}")
     fun getClienteById(@Path("id") id: Long): Call<ClienteDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("clientes/addCliente")
-    fun addCliente(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>
+    fun addClientes(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("clientes")
     fun updateCliente(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>

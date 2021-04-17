@@ -21,12 +21,16 @@ class Cliente : AppCompatActivity() {
             Mostrar() }
 
 
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Cli).setOnClickListener {
+            callServicePostCliente() }
+
+
     }
 
 
     private fun callServicePostCliente() {
 
-        val clienteInfo = ClienteDataCollectionItem(
+        val clienteInfo = ClienteDataCollectionItem(id = null,
                 nombrecompleto = txt_NombreCliente.text.toString(),
                 telefono = txt_TelefonoCliente.text.toString().toLong(),
                 dni = txt_dniCliente.text.toString().toLong(),
@@ -35,36 +39,36 @@ class Cliente : AppCompatActivity() {
                 direccion =txt_DireccionCliente.text.toString()
         )
 
-        addPerson(personInfo) {
+        addCliente(clienteInfo) {
             if (it?.id != null) {
-                Toast.makeText(this@MainActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Cliente,"CLIENTE GUARDADO EXITOSAMENTE",Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Cliente,"Error",Toast.LENGTH_LONG).show()
             }
         }
     }
 
 
-    fun addPerson(clienteData: ClienteDataCollectionItem, onResult: (ClienteDataCollectionItem?) -> Unit){
-        val retrofit = RestEngine.buildService().create(Cliente::class.java)
-        var result: Call<PersonDataCollectionItem> = retrofit.addPerson(personData)
+    fun addCliente(clienteData: ClienteDataCollectionItem, onResult: (ClienteDataCollectionItem?) -> Unit){
+        val retrofit = RestEngine.buildService().create(ClienteService::class.java)
+        var result: Call<ClienteDataCollectionItem> = retrofit.addClientes(clienteData)
 
-        result.enqueue(object : Callback<PersonDataCollectionItem> {
-            override fun onFailure(call: Call<PersonDataCollectionItem>, t: Throwable) {
+        result.enqueue(object : Callback<ClienteDataCollectionItem> {
+            override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
                 onResult(null)
             }
 
-            override fun onResponse(call: Call<PersonDataCollectionItem>,
-                                    response: Response<PersonDataCollectionItem>) {
+            override fun onResponse(call: Call<ClienteDataCollectionItem>,
+                                    response: Response<ClienteDataCollectionItem>) {
                 if (response.isSuccessful) {
                     val addedPerson = response.body()!!
                     onResult(addedPerson)
                 }
                 else if (response.code() == 401){
-                    Toast.makeText(this@MainActivity,"Sesion expirada",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Cliente,"Sesion expirada",Toast.LENGTH_LONG).show()
                 }
                 else{
-                    Toast.makeText(this@MainActivity,"Fallo al traer el item",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Cliente,"Fallo al traer el item",Toast.LENGTH_LONG).show()
                 }
             }
 
