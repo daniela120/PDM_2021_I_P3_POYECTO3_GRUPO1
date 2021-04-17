@@ -1,10 +1,10 @@
 package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities
 
-class ClienteDataCollection:ArrayList<ClienteDataCollectionItem>()
+class ClienteDataCollection:ArrayList<EmpleadoDataCollectionItem>()
 
-data class ClienteDataCollectionItem(
+data class EmpleadoDataCollectionItem(
     val id:Long?,
-    val nombrecompleto:Long,
+    val nombrecompleto:String,
     val telefono: String,
     val correo: String,
     val direccion: String,
