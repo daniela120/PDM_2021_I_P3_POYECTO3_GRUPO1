@@ -39,14 +39,14 @@ class Compras : AppCompatActivity() {
                 insumos = txt_ins
         )
 
-        addPerson(personInfo) {
-            if (it?.id != null) {
-                Toast.makeText(this@MainActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+            addPerson(personInfo) {
+                if (it?.id != null) {
+                    Toast.makeText(this@MainActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+                }
             }
         }
-    }
 
 
     fun addPerson(clienteData: ClienteDataCollectionItem, onResult: (ClienteDataCollectionItem?) -> Unit){
