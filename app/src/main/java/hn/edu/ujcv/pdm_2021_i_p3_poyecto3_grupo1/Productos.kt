@@ -8,6 +8,9 @@ import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_produccion.*
 import kotlinx.android.synthetic.main.activity_productos.*
 import com.getbase.floatingactionbutton.FloatingActionButton
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollectionItem
+import kotlinx.android.synthetic.main.activity_mostrar_productos.*
+import kotlinx.android.synthetic.main.activity_proveedores.*
 
 class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,32 +19,77 @@ class Productos : AppCompatActivity() {
         btn_regresarProductos.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Productos).setOnClickListener {
             Mostrar() }
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Productos).setOnClickListener {
+            guardar() }
     }
 
-    /*private  fun guardar() {
+    private fun callServicePostProductos() {
 
-        if (txtId2.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID del Producto", Toast.LENGTH_SHORT).show()
-        }else {
-            if (txtNombre2.text.toString().isEmpty()) {
-                Toast.makeText(this, "Ingrese un Nombre", Toast.LENGTH_SHORT).show()
+        val productosInfo = ProductoDataCollectionItem(id = null,
+                nombre = txt_NombreProveedor.text.toString(),
+                descripcion = txt_DescripcionProducto.text.toString(),
+                preciocompra =  txt_PrecioComProducto.text.toString().toLong(),
+                precioventa = txt_PrecioVenProducto.text.toString().toLong()
+        )
+
+
+
+        addProductos(productosInfo) {
+            if (it?.id != null) {
+                android.widget.Toast.makeText(this@Productos, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
             } else {
-                if (txt_TipoTela.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese el tipo de tela", Toast.LENGTH_SHORT).show()
+                android.widget.Toast.makeText(this@Productos, "Error", android.widget.Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    fun addProductos(productoData: ProductoDataCollectionItem, onResult: (ProductoDataCollectionItem?) -> Unit) {
+        val retrofit = RestEngine.buildService().create(ProveedoresService::class.java)
+        var result: Call<ProductoDataCollectionItem> = retrofit.addProductos(productoData)
+
+        result.enqueue(object : Callback<ProductoDataCollectionItem> {
+            override fun onFailure(call: Call<ProductoDataCollectionItem>, t: Throwable) {
+                onResult(null)
+            }
+
+            override fun onResponse(call: Call<ProductoDataCollectionItem>,
+                                    response: Response<ProductoDataCollectionItem>) {
+                if (response.isSuccessful) {
+                    val addedProducto = response.body()!!
+                    onResult(addedProducto)
+                } else if (response.code() == 401) {
+                    Toast.makeText(this@Productos, "Sesion expirada", Toast.LENGTH_LONG).show()
                 } else {
-                    if (txt_DescripcionP.text.toString().isEmpty()) {
-                        Toast.makeText(this, "Ingrese una Descripcion", Toast.LENGTH_SHORT).show()
-                    } else {
-                        if (txt_PrecioP.text.toString().isEmpty()) {
-                            Toast.makeText(this, "Inreges el Precio", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Productos, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+                }
+            }
+
+        }
+        )
+    }
+
+    private  fun guardar() {
+
+        if (txt_NombreProductos.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese el nombre del Producto", Toast.LENGTH_SHORT).show()
+        }else {
+            if (txt_DescripcionProducto.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese la descripcion del Producto", Toast.LENGTH_SHORT).show()
+            } else {
+                if (txt_PrecioComProducto.text.toString().isEmpty()) {
+                    Toast.makeText(this, "Ingrese el precio de compra del Producto", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (txt_PrecioVenProducto.text.toString().isEmpty()) {
+                        Toast.makeText(this, "Ingrese el precio de venta del Producto", Toast.LENGTH_SHORT).show()
                         }else{
+                            callServicePostProductos()
                             Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             }
         }
-    }*/
+
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

@@ -87,6 +87,7 @@ class Compras : AppCompatActivity() {
                 }
             }
 
+
         }
         )
     }
@@ -115,6 +116,7 @@ class Compras : AppCompatActivity() {
                     Toast.makeText(this@Compras,"OK"+response.body()!!.get(0).descripcion,Toast.LENGTH_LONG).show()
 
                 }catch (e:Exception){
+
                     println("No hay datos de tipo de pago")
 
                 }
