@@ -17,7 +17,7 @@ class Proveedores : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_proveedores)
         btn_regresarProveedor.setOnClickListener { Regresar() }
-        findViewById<FloatingActionButton>(R.id.idFabListar_Proveedores).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Proveedores).setOnClickListener {
             guardar()
         }
     }
