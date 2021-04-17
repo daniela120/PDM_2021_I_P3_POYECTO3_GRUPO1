@@ -9,6 +9,6 @@ data class ProductoDataCollectionItem(
     val id:Long?,
     val nombre:String,
     val descripcion:String,
-    val preciocompra:String,
-    val precioventa: String
+    val preciocompra:Long?,
+    val precioventa: Long?
 )
