@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.getbase.floatingactionbutton.FloatingActionButton
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_departamento.*
+import kotlinx.android.synthetic.main.activity_proveedores.*
 
 class Departamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,35 +18,67 @@ class Departamento : AppCompatActivity() {
         btn_regresarDepartamento.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
             Mostrar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
+            guardar() }
 
     }
 
-    /*private  fun guardar() {
+    private fun callServicePostDepartamento() {
 
-        if (txt_DepartamentoID.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID del Departamento", Toast.LENGTH_SHORT).show()
-        }else {
-            if (txtNombreDepartamento.text.toString().isEmpty()) {
-                Toast.makeText(this, "Ingrese un Nombre", Toast.LENGTH_SHORT).show()
+        val departamentosInfo = DepartamentoDataCollectionItem(id = null,
+                nombre = txt_NombreProveedor.text.toString(),
+                descripcion = txt_CompaProveedor.text.toString()
+        )
+
+
+
+        addDepartamento(departamentosInfo) {
+            if (it?.id != null) {
+                android.widget.Toast.makeText(this@Departamento, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
             } else {
-                if (txt_DescripcionDepartamento.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese una descripcion", Toast.LENGTH_SHORT).show()
+                android.widget.Toast.makeText(this@Departamento, "Error", android.widget.Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    fun addDepartamento(departamentoData: DepartamentoDataCollectionItem, onResult: (DepartamentoDataCollectionItem?) -> Unit) {
+        val retrofit = RestEngine.buildService().create(ProveedoresService::class.java)
+        var result: Call<DepartamentoDataCollectionItem> = retrofit.addDepartamento(departamentoData)
+
+        result.enqueue(object : Callback<DepartamentoDataCollectionItem> {
+            override fun onFailure(call: Call<DepartamentoDataCollectionItem>, t: Throwable) {
+                onResult(null)
+            }
+
+            override fun onResponse(call: Call<DepartamentoDataCollectionItem>,
+                                    response: Response<DepartamentoDataCollectionItem>) {
+                if (response.isSuccessful) {
+                    val addedDepartamento= response.body()!!
+                    onResult(addedDepartamento)
+                } else if (response.code() == 401) {
+                    Toast.makeText(this@Departamento, "Sesion expirada", Toast.LENGTH_LONG).show()
                 } else {
-                    if (txt_EncargadoD.text.toString().isEmpty()) {
-                        Toast.makeText(this, "Ingrese un encargado", Toast.LENGTH_SHORT).show()
-                    }else{
-                        if(txt_IdEmpleadoD.text.toString().isEmpty()){
-                            Toast.makeText(this, "Ingrese ID del Empleado", Toast.LENGTH_SHORT).show()
-                        } else{
-                                Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
+                    Toast.makeText(this@Departamento, "Fallo al traer el item", Toast.LENGTH_LONG).show()
                 }
             }
-        }*/
 
+        }
+        )
+    }
 
+    private  fun guardar() {
+
+        if (txt_DescripcionDepartamento.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese la descripcion del Departamento", Toast.LENGTH_SHORT).show()
+        }else {
+            if (txt_NombreDepartamento.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese el Nombre del Departamento", Toast.LENGTH_SHORT).show()
+            } else{
+                callServicePostDepartamento()
+                Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     private fun Mostrar() {
         val intent = Intent(this, MostrarDepartamento::class.java)

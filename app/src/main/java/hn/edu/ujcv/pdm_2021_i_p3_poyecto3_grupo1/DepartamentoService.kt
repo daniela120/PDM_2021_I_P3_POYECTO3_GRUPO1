@@ -12,10 +12,10 @@ interface DepartamentoService {
     fun getDepartamentoById(@Path("id") id: Long): Call<DepartamentoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("departamentos/addDepartamento")
-    fun addDepartamento(@Body personData: DepartamentoDataCollectionItem): Call<DepartamentoDataCollectionItem>
+    fun addDepartamento(@Body departamentoData: DepartamentoDataCollectionItem): Call<DepartamentoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("departamentos")
-    fun updateDepartamento(@Body personData: DepartamentoDataCollectionItem): Call<DepartamentoDataCollectionItem>
+    fun updateDepartamento(@Body departamentoData: DepartamentoDataCollectionItem): Call<DepartamentoDataCollectionItem>
     @DELETE("departamentos/delete/{id}")
     fun deleteDepartamento(@Path("id") id: Long): Call<ResponseBody>
 }
