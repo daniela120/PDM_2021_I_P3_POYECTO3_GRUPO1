@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.253" />
 
     <EditText
-        android:id="@+id/txt_TipoCompra_Insumo"
+        android:id="@+id/txt_Tipo"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="300dp"
         android:layout_height="40dp"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.559" />
 
     <EditText
-        android:id="@+id/txt_TipoCompra_Insumo2"
+        android:id="@+id/txt_TipoCantidad"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="300dp"
         android:layout_height="40dp"
@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.689" />
 
     <EditText
-        android:id="@+id/txt_TipoCompra_Insumo3"
+        android:id="@+id/txt_PrecioCon"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="240dp"
         android:layout_height="40dp"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.971" />
 
     <EditText
-        android:id="@+id/txt_TipoCompra_Insumo4"
+        android:id="@+id/txt_PrecioVenta"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="300dp"
         android:layout_height="40dp"
