@@ -20,6 +20,9 @@ class Proveedores : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Proveedores).setOnClickListener {
             guardar()
         }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Proveedores).setOnClickListener {
+           Mostrar()
+        }
     }
 
     private fun Regresar() {

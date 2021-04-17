@@ -11,6 +11,9 @@ import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_mostrar_productos.*
 import kotlinx.android.synthetic.main.activity_proveedores.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +47,7 @@ class Productos : AppCompatActivity() {
     }
 
     fun addProductos(productoData: ProductoDataCollectionItem, onResult: (ProductoDataCollectionItem?) -> Unit) {
-        val retrofit = RestEngine.buildService().create(ProveedoresService::class.java)
+        val retrofit = RestEngine.buildService().create(ProductoService::class.java)
         var result: Call<ProductoDataCollectionItem> = retrofit.addProductos(productoData)
 
         result.enqueue(object : Callback<ProductoDataCollectionItem> {
