@@ -14,6 +14,10 @@ class Insumos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insumos)
         btn_regresarInsumos.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+            Mostrar() }
+
+
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

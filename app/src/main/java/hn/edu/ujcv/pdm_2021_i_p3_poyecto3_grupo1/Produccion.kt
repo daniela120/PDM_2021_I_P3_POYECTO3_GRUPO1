@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_produccion.*
@@ -13,6 +14,8 @@ class Produccion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produccion)
         btn_regresarProduccion.setOnClickListener { Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+            Mostrar() }
     }
 
     private  fun guardar() {

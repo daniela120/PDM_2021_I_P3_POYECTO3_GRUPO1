@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_insumos.*
 import kotlinx.android.synthetic.main.activity_proveedores.*
@@ -13,7 +14,8 @@ class Proveedores : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_proveedores)
         btn_regresarProveedor.setOnClickListener { Regresar() }
-
+        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+            Mostrar() }
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

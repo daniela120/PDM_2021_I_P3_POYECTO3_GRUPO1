@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.activity_ventas.*
@@ -14,6 +15,8 @@ class Ventas : AppCompatActivity() {
         setContentView(R.layout.activity_ventas)
         btn_regresarVentas.setOnClickListener { Regresar()}
 
+        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+            Mostrar() }
     }
 
    /* private  fun guardar() {
