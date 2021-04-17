@@ -72,25 +72,6 @@
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
-    <Button
-        android:id="@+id/btn_BuscarEmpleado"
-        android:layout_width="41dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:drawable/ic_menu_search"
-        android:backgroundTint="@color/white"
-        android:fadingEdge="vertical"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
-
     <TextView
         android:id="@+id/txv_Nom13"
         android:layout_width="wrap_content"
@@ -101,10 +82,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <EditText
         android:id="@+id/txt_IdEmpleado"
@@ -143,24 +124,6 @@
         app:layout_constraintVertical_bias="0.378" />
 
     <EditText
-        android:id="@+id/txt_ApellidoEmpleado"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
-
-    <EditText
         android:id="@+id/txt_CargoEmpleado"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="130dp"
@@ -197,27 +160,9 @@
         app:layout_constraintVertical_bias="0.804" />
 
     <EditText
-        android:id="@+id/txt_CorreoCliente"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
-
-    <EditText
         android:id="@+id/txt_CorreoEmpleado"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
         android:gravity="center"
@@ -227,10 +172,10 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
+        app:layout_constraintVertical_bias="0.518" />
 
     <EditText
         android:id="@+id/txt_TelefonoEmpleado"
@@ -264,21 +209,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.594" />
-
-    <TextView
-        android:id="@+id/txv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="APELLIDO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
 
     <TextView
         android:id="@+id/txv_Nom11"

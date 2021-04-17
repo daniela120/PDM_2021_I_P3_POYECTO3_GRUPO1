@@ -23,25 +23,6 @@
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@mipmap/ic_atras" />
 
-    <Button
-        android:id="@+id/btn_BuscarDepartamento"
-        android:layout_width="41dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:drawable/ic_menu_search"
-        android:backgroundTint="@color/white"
-        android:fadingEdge="vertical"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
-
     <EditText
         android:id="@+id/txt_DepartamentoID"
         android:layout_width="290dp"
