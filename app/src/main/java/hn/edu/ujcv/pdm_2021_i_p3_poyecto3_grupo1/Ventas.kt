@@ -15,7 +15,7 @@ class Ventas : AppCompatActivity() {
         setContentView(R.layout.activity_ventas)
         btn_regresarVentas.setOnClickListener { Regresar()}
 
-        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabListar_Ventas).setOnClickListener {
             Mostrar() }
     }
 

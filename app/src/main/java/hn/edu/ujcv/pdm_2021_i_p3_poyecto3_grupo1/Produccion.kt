@@ -14,7 +14,7 @@ class Produccion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produccion)
         btn_regresarProduccion.setOnClickListener { Regresar() }
-        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabListar_Produccion).setOnClickListener {
             Mostrar() }
     }
 

@@ -14,7 +14,7 @@ class Insumos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insumos)
         btn_regresarInsumos.setOnClickListener { Regresar() }
-        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabListar_Insumos).setOnClickListener {
             Mostrar() }
 
 
