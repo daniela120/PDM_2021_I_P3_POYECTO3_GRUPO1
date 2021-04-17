@@ -44,5 +44,8 @@ class MostrarDepartamento:  AppCompatActivity() {
                 Toast.makeText(this@MostrarDepartamento,"OK"+response.body()!!.descripcion,Toast.LENGTH_LONG).show()
             }
         })
+        txt_DescripcionDepartamento2.isEnabled
+        txt_NombreDepartamento2.isEnabled
+
     }
 }

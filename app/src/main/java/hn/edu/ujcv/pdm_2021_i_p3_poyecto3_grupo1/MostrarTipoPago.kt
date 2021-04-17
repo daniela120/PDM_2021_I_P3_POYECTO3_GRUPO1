@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
+import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_tipo_pago.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,5 +43,8 @@ class MostrarTipoPago:  AppCompatActivity() {
                 Toast.makeText(this@MostrarTipoPago,"OK"+response.body()!!.descripcion, Toast.LENGTH_LONG).show()
             }
         })
+        txt_EstadoPago2.isEnabled
+        txt_DescripcionPago2.isEnabled
+
     }
 }

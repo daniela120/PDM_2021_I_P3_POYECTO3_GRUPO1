@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
+import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_productos.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,5 +42,10 @@ class MostrarProductos:  AppCompatActivity() {
                 Toast.makeText(this@MostrarProductos,"OK"+response.body()!!.descripcion, Toast.LENGTH_LONG).show()
             }
         })
+        txt_DescripcionProducto2.isEnabled
+        txt_PrecioComProducto2.isEnabled
+        txt_PrecioVenProducto2.isEnabled
+        txt_NombreProductos2.isEnabled
+
     }
 }
