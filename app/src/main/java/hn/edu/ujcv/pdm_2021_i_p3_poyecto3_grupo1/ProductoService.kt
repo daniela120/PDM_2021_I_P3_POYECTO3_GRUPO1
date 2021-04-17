@@ -12,7 +12,7 @@ interface ProductoService {
     @GET("productos/id/{id}")
     fun getProductoById(@Path("id") id: Long): Call<ProductoDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("productos/addPersona")
+    @POST("productos/addProducto")
     fun addProducto(@Body personData: ProductoDataCollectionItem): Call<ProductoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("productos")
