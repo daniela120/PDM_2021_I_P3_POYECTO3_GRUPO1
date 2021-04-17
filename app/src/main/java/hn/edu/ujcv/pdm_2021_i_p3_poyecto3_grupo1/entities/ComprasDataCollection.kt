@@ -8,10 +8,10 @@ class ComprasDataCollection : ArrayList<ComprasDataCollectionItem>()
 data class  ComprasDataCollectionItem(
     val id:Long?,
     val cai:String,
-    val proveedores:String,
-    val numerotarjeta:String,
-    val formapago:String,
+    val proveedores:Long?,
+    val numerotarjeta:Long?,
+    val formapago:Long?,
     val fechaentrega:String,
     val fechacompra:String,
-    val insumos:String
+    val insumos:Long?
 )

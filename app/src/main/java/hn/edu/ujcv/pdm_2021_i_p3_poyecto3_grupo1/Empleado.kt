@@ -5,21 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-/*import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem*/
+
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_empleado.*
 import kotlinx.android.synthetic.main.activity_productos.*
-/*import retrofit2.Call
+import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Response*/
+import retrofit2.Response
 import com.getbase.floatingactionbutton.FloatingActionButton
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
+
 
 class Empleado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleado)
         val botonGetId = findViewById<Button>(R.id.btn_BuscarEmpleado)
-        /*botonGetId.setOnClickListener {v -> callServiceGetPerson()}*/
+        botonGetId.setOnClickListener {v -> callServiceGetPerson()}
         btn_regresarEmpleado.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Empleado).setOnClickListener {
             Mostrar() }
@@ -61,22 +64,22 @@ class Empleado : AppCompatActivity() {
         startActivity(intent)
     }
 
-    /*private fun callServiceGetPerson() {
+    private fun callServiceGetPerson() {
         val personService:PersonService = RestEngine.buildService().create(PersonService::class.java)
-        var result: Call<ClienteDataCollectionItem> = personService.getPersonById(1)
+        var result: Call<EmpleadoDataCollectionItem> = personService.getPersonById(1)
 
-        result.enqueue(object : Callback<ClienteDataCollectionItem> {
-            override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
+        result.enqueue(object : Callback<EmpleadoDataCollectionItem> {
+            override fun onFailure(call: Call<EmpleadoDataCollectionItem>, t: Throwable) {
                 Toast.makeText(this@Empleado,"Error",Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(
-                call: Call<ClienteDataCollectionItem>,
-                response: Response<ClienteDataCollectionItem>
+                call: Call<EmpleadoDataCollectionItem>,
+                response: Response<EmpleadoDataCollectionItem>
             ) {
                 Toast.makeText(this@Empleado,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
             }
         })
-    }*/
+    }
 
 }

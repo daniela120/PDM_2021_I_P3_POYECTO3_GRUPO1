@@ -8,9 +8,9 @@ class ClienteDataCollection : ArrayList<ClienteDataCollectionItem>()
 data class ClienteDataCollectionItem(
     val id:Long?,
     val nombrecompleto:String,
-    val telefono: String,
+    val telefono: Long?,
     val correo: String,
     val direccion: String,
-    val dni:String,
+    val dni:Long?,
     val rtn: String
 )

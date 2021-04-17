@@ -1,22 +1,21 @@
 package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 
-/*
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
 interface PersonService {
-        @GET("clientes")
-        fun listPersons(): Call<List<ClienteDataCollectionItem>>
-        @GET("clientes/id/{id}")
-        fun getPersonById(@Path("id") id: Long): Call<ClienteDataCollectionItem>
+        @GET("empleados")
+        fun listPersons():Call<List<EmpleadoDataCollectionItem>>
+        @GET("empleados/id/{id}")
+        fun getPersonById(@Path("id") id: Long): Call<EmpleadoDataCollectionItem>
         @Headers("Content-Type: application/json")
-        @POST("clientes/addCliente")
-        fun addPerson(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>
+        @POST("empleados/addempleado")
+        fun addPerson(@Body personData: EmpleadoDataCollectionItem): Call<EmpleadoDataCollectionItem>
         @Headers("Content-Type: application/json")
-        @PUT("clientes")
-        fun updatePerson(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>
-        @DELETE("clientes/delete/{id}")
+        @PUT("empleados")
+        fun updatePerson(@Body personData:EmpleadoDataCollectionItem): Call<EmpleadoDataCollectionItem>
+        @DELETE("empleados/delete/{id}")
         fun deletePerson(@Path("id") id: Long): Call<ResponseBody>
-}*/
+}

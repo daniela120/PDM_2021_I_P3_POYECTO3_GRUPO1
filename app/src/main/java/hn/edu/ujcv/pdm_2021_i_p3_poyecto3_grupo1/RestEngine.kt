@@ -13,7 +13,7 @@ class RestEngine {
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.1.74:8080/api/v1/")
+                .baseUrl("http://192.168.1.129:8080/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
