@@ -15,7 +15,7 @@ class Compras : AppCompatActivity() {
         setContentView(R.layout.activity_compras)
         btn_regresarCompras.setOnClickListener { Regresar() }
 
-        findViewById<FloatingActionButton>(R.id.idFabListar_Cli).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
 
     }
