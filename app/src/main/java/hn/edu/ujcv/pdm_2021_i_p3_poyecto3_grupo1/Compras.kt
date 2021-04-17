@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProveedoresDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_compras.*
@@ -123,6 +124,37 @@ class Compras : AppCompatActivity() {
         return A
     }
 
+    private fun callServiceGetProveedores():List<String> {
+        var A:ArrayList<String> = ArrayList()
+        val proveedoresService:ProveedoresService = RestEngine.buildService().create(ProveedoresService::class.java)
+        var result: Call<List<ProveedoresDataCollectionItem>> = proveedoresService.listProveedores()
+
+        result.enqueue(object :  Callback<List<ProveedoresDataCollectionItem>> {
+            override fun onFailure(call: Call<List<ProveedoresDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<ProveedoresDataCollectionItem>>,
+                    response: Response<List<ProveedoresDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!){
+                        A.add(i.id.toString())
+
+                    }
+                    Toast.makeText(this@Compras,"OK"+response.body()!!.get(0).compañia,Toast.LENGTH_LONG).show()
+
+                }catch (e:Exception){
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+        return A
+    }
+
     fun initial(){
         var A = callServiceGetTipo()
         val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, A)
@@ -140,6 +172,25 @@ class Compras : AppCompatActivity() {
             }
 
         }
+
+
+        var B = callServiceGetProveedores()
+        val adaptador1 = ArrayAdapter(this,android.R.layout.simple_spinner_item, B)
+        spinnerIdProvedor.adapter =adaptador1
+        spinnerIdProvedor.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                    parent: AdapterView<*>?, view: View?, position: Int, id: Long){
+                println(B[position].toString())
+
+            }
+
+        }
+
     }
 
 
