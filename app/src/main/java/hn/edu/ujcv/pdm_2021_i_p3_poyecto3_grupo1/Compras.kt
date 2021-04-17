@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.activity_compras.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.Month
+import java.time.MonthDay
+import java.time.Year
 
 class Compras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +25,16 @@ class Compras : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
-
+        txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
     }
 
-
+    fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment{day, month, year -> onDateSelected( day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    fun onDateSelected(day: Int, month: Int, year: Int) {
+        txt_FechaCompra.setText("$day / $month / $year")
+    }
 
     private fun callServicePostCompra() {
 
