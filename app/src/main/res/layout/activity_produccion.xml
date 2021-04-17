@@ -7,6 +7,20 @@
     android:background="@drawable/fondo3"
     tools:context=".Produccion">
 
+    <Button
+        android:id="@+id/btn_regresarProduccion"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:background="@android:color/transparent"
+        android:foreground="@mipmap/ic_atras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@mipmap/ic_atras" />
+
     <TextView
         android:id="@+id/txv_Nom25"
         android:layout_width="wrap_content"
@@ -227,7 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_list_round"
+            app:fab_icon="@mipmap/ic_mostrar"
             app:fab_size="mini" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton

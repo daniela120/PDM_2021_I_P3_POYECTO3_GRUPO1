@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_insumos.*
 
@@ -11,7 +12,7 @@ class Insumos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insumos)
-
+        btn_regresarInsumos.setOnClickListener { Regresar() }
     }
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

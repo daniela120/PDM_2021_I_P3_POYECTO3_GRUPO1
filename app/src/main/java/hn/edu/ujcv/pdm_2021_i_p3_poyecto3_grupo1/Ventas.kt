@@ -12,7 +12,7 @@ class Ventas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ventas)
-        btn_RegresarVen.setOnClickListener { Regresar()}
+        btn_regresarVentas.setOnClickListener { Regresar()}
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_compras.*
 
@@ -11,6 +12,7 @@ class Compras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compras)
+        btn_regresarCompras.setOnClickListener { Regresar() }
 
     }
 
@@ -30,10 +32,10 @@ class Compras : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }*/
+    }
 }

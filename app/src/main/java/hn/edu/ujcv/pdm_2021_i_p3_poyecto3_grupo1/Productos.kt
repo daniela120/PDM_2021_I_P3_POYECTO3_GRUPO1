@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_cliente.*
+import kotlinx.android.synthetic.main.activity_produccion.*
 import kotlinx.android.synthetic.main.activity_productos.*
 
 
@@ -11,7 +13,7 @@ class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
-
+        btn_regresarProductos.setOnClickListener { Regresar() }
     }
 
     /*private  fun guardar() {
@@ -37,10 +39,10 @@ class Productos : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }*/
+    }
 }

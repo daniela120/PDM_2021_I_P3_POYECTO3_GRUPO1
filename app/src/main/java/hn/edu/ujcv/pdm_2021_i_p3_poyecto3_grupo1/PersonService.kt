@@ -1,6 +1,6 @@
 package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 
-
+/*
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -19,4 +19,4 @@ interface PersonService {
         fun updatePerson(@Body personData: ClienteDataCollectionItem): Call<ClienteDataCollectionItem>
         @DELETE("clientes/delete/{id}")
         fun deletePerson(@Path("id") id: Long): Call<ResponseBody>
-}
+}*/

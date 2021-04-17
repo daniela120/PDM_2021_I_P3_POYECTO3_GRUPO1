@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_insumos.*
 import kotlinx.android.synthetic.main.activity_proveedores.*
 
@@ -11,13 +12,14 @@ class Proveedores : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_proveedores)
-
+        btn_regresarProveedor.setOnClickListener { Regresar() }
 
     }
-    /*private fun Regresar() {
+    private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
     }
+    /*
     private  fun guardar() {
 
         if (txt_IdAlmacen_Inventario.text.toString().isEmpty()) {

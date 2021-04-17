@@ -4,12 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_cliente.*
 
 class Cliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cliente)
+        btn_regresarCliente.setOnClickListener { Regresar() }
+
+        findViewById<FloatingActionButton>(R.id.idFabActualizar_Cli).setOnClickListener {
+            Regresar() }
+        findViewById<FloatingActionButton>(R.id.idFabEliminar_Cli).setOnClickListener { view ->
+            Snackbar.make(view, "registro eliminado", Snackbar.LENGTH_LONG) }
 
     }
 
@@ -36,11 +44,11 @@ class Cliente : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }*/
+    }
 }

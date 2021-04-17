@@ -1,5 +1,5 @@
 package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
-
+/*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,4 +20,4 @@ class RestEngine {
             return retrofit
         }
     }
-}
+}*/

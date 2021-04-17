@@ -6,18 +6,20 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
+import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_empleado.*
 import kotlinx.android.synthetic.main.activity_productos.*
-import retrofit2.Call
+/*import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Response
+import retrofit2.Response*/
 
 class Empleado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleado)
         val botonGetId = findViewById<Button>(R.id.btn_BuscarEmpleado)
-        botonGetId.setOnClickListener {v -> callServiceGetPerson()}
+        /*botonGetId.setOnClickListener {v -> callServiceGetPerson()}*/
+        btn_regresarEmpleado.setOnClickListener { Regresar() }
 
     }
 
@@ -44,14 +46,14 @@ class Empleado : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
-    }*/
+    }
 
-    private fun callServiceGetPerson() {
+    /*private fun callServiceGetPerson() {
         val personService:PersonService = RestEngine.buildService().create(PersonService::class.java)
         var result: Call<ClienteDataCollectionItem> = personService.getPersonById(1)
 
@@ -67,6 +69,6 @@ class Empleado : AppCompatActivity() {
                 Toast.makeText(this@Empleado,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
             }
         })
-    }
+    }*/
 
 }
