@@ -10,6 +10,9 @@ import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollec
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_departamento.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MostrarDepartamento:  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +41,7 @@ class MostrarDepartamento:  AppCompatActivity() {
                     call: Call<DepartamentoDataCollectionItem>,
                     response: Response<DepartamentoDataCollectionItem>
             ) {
-                Toast.makeText(this@MostrarDepartamento,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MostrarDepartamento,"OK"+response.body()!!.descripcion,Toast.LENGTH_LONG).show()
             }
         })
     }

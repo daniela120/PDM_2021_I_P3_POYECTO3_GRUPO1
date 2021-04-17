@@ -9,6 +9,9 @@ import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_tipo_pago.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MostrarTipoPago:  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +39,7 @@ class MostrarTipoPago:  AppCompatActivity() {
                     call: Call<PagoDataCollectionItem>,
                     response: Response<PagoDataCollectionItem>
             ) {
-                Toast.makeText(this@MostrarTipoPago,"OK"+response.body()!!.nombrecompleto, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MostrarTipoPago,"OK"+response.body()!!.descripcion, Toast.LENGTH_LONG).show()
             }
         })
     }

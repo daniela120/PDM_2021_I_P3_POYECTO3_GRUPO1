@@ -20,9 +20,6 @@ class Produccion : AppCompatActivity() {
 
     private  fun guardar() {
 
-        if (txt_IdProduccion.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID produccion", Toast.LENGTH_SHORT).show()
-        } else {
             if (txt_ProductoId.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese ID de Producto", Toast.LENGTH_SHORT).show()
             } else {
@@ -41,7 +38,7 @@ class Produccion : AppCompatActivity() {
                 }
             }
         }
-        }
+
         private fun Regresar() {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)

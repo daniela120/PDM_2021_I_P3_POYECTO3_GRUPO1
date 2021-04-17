@@ -12,6 +12,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 
 class MostrarCLiente:  AppCompatActivity() {
@@ -23,13 +24,13 @@ class MostrarCLiente:  AppCompatActivity() {
         botonGetId.setOnClickListener {v -> callServiceGetPerson()}
         btn_regresarCliente2.setOnClickListener { Regresar() }
     }
-        private fun Regresar() {
+    private fun Regresar() {
             val intent = Intent(this, Cliente::class.java)
             startActivity(intent)
-        }
+    }
     private fun callServiceGetPerson() {
         val clienteService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
-        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById()ById(1)
+        var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(txt_IdCliente2.text.toString().toLong())
 
         result.enqueue(object : Callback<ClienteDataCollectionItem> {
             override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
@@ -40,8 +41,41 @@ class MostrarCLiente:  AppCompatActivity() {
                     call: Call<ClienteDataCollectionItem>,
                     response: Response<ClienteDataCollectionItem>
             ) {
-                Toast.makeText(this@MostrarCLiente,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
+                try {
+                    if(response.body()!!.id.toString().equals(txt_IdCliente2.text.toString())){
+                        Toast.makeText(this@MostrarCLiente,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
+                        var nombrecompleto = response.body()!!.nombrecompleto.toString()
+                        var telefono = response.body()!!.telefono.toString()
+                        var dni = response.body()!!.dni.toString()
+                        var rtn = response.body()!!.rtn.toString()
+                        var correo = response.body()!!.correo.toString()
+                        var direccion = response.body()!!.direccion.toString()
+
+                        txv_NombreCliente.text = nombrecompleto
+                        txv_TelefonoCliente.text = telefono
+                        txv_DniCliente4.text  = dni
+                        txv_RtnCliente.text = rtn
+                        txv_CorreoCliente.text = correo
+                        txv_DireccionCliente.text = direccion
+                    }else{
+                        Toast.makeText(this@MostrarCLiente,"NO EXISTE EL CLIENTE CON EL ID", Toast.LENGTH_SHORT).show()
+                    }
+                }catch (e:Exception){
+                    Toast.makeText(this@MostrarCLiente,"NO EXISTE EL CLIENTE CON EL ID" + e.message.toString(), Toast.LENGTH_SHORT).show()
+
+                }
+
+
+
+
+
             }
         })
     }
+
+    fun limpiar(){
+
+    }
+
+
 }
