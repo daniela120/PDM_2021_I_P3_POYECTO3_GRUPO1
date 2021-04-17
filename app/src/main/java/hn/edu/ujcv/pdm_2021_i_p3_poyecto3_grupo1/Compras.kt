@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_compras.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.sql.Date
 
 class Compras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,52 +24,58 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
 
+
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Compras).setOnClickListener {
+            callServicePostCompra() }
+
     }
 
 
 
     private fun callServicePostCompra() {
 
-        val compraInfo = ComprasDataCollectionItem(
+
+        val compraInfo = ComprasDataCollectionItem(id = null,
                 cai = txt_CaiCompra.text.toString(),
                 proveedores = txt_TelefonoCliente.text.toString().toLong(),
                 numerotarjeta = txt_dniCliente.text.toString().toLong(),
-                formapago = txt_dniCliente.text.toString(),
-                fechaentrega = txt_CorreoCliente.text.toString(),
-                fechacompra = txt_DireccionCliente.text.toString(),
-                insumos = txt_ins
+                formapago = txt_FormaPagoCompra.text.toString().toLong(),
+                fechaentrega = null,
+                fechacompra =null ,
+                insumos = 1
         )
 
-        addPerson(personInfo) {
+        addCompra(compraInfo) {
             if (it?.id != null) {
-                Toast.makeText(this@MainActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Compras,"COMPRA GUARDADA EXITOSAMENTE",Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
             }
         }
     }
 
 
-    fun addPerson(clienteData: ClienteDataCollectionItem, onResult: (ClienteDataCollectionItem?) -> Unit){
-        val retrofit = RestEngine.buildService().create(Cliente::class.java)
-        var result: Call<PersonDataCollectionItem> = retrofit.addPerson(personData)
+    fun addCompra(compraData: ComprasDataCollectionItem, onResult: (ComprasDataCollectionItem?) -> Unit){
+        val retrofit = RestEngine.buildService().create(ComprasService::class.java)
+        var result: Call<ComprasDataCollectionItem> = retrofit.addCompras(compraData)
 
-        result.enqueue(object : Callback<PersonDataCollectionItem> {
-            override fun onFailure(call: Call<PersonDataCollectionItem>, t: Throwable) {
+        result.enqueue(object : Callback<ComprasDataCollectionItem> {
+            override fun onFailure(call: Call<ComprasDataCollectionItem>, t: Throwable) {
                 onResult(null)
             }
 
-            override fun onResponse(call: Call<PersonDataCollectionItem>,
-                                    response: Response<PersonDataCollectionItem>) {
+            override fun onResponse(call: Call<ComprasDataCollectionItem>,
+                                    response: Response<ComprasDataCollectionItem>) {
                 if (response.isSuccessful) {
                     val addedPerson = response.body()!!
                     onResult(addedPerson)
+
                 }
                 else if (response.code() == 401){
-                    Toast.makeText(this@MainActivity,"Sesion expirada",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Compras,"Sesion expirada",Toast.LENGTH_LONG).show()
                 }
                 else{
-                    Toast.makeText(this@MainActivity,"Fallo al traer el item",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Compras,"Fallo al traer el item",Toast.LENGTH_LONG).show()
                 }
             }
 
