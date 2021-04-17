@@ -43,7 +43,7 @@
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <Button
-        android:id="@+id/btn_BuscarrCompra"
+        android:id="@+id/btn_BuscarProduccion"
         android:layout_width="41dp"
         android:layout_height="37dp"
         android:layout_marginStart="8dp"

@@ -131,7 +131,7 @@
         app:srcCompat="@mipmap/ic_atras" />
 
     <Button
-        android:id="@+id/btn_GuardarT2"
+        android:id="@+id/btn_BuscarInsumos"
         android:layout_width="41dp"
         android:layout_height="37dp"
         android:layout_marginStart="8dp"
