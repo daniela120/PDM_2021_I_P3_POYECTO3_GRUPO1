@@ -5,17 +5,17 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 interface PagoService {
-    @GET("pagos")
+    @GET("formaspago")
     fun listPagos(): Call<List<PagoDataCollectionItem>>
-    @GET("pagos/id/{id}")
+    @GET("formaspago/id/{id}")
     fun getPagoById(@Path("id") id: Long): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("pagos/addPago")
+    @POST("formaspago/addPago")
     fun addPago(@Body personData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @PUT("pagos")
+    @PUT("formaspago")
     fun updatePago(@Body personData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
-    @DELETE("pagos/delete/{id}")
+    @DELETE("formaspago/delete/{id}")
     fun deletePago(@Path("id") id: Long): Call<ResponseBody>
 }
 
