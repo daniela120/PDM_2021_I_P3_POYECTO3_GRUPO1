@@ -9,6 +9,9 @@ import kotlinx.android.synthetic.main.activity_compras.*
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.activity_ventas.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Ventas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

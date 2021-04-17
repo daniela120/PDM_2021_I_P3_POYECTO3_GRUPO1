@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.activity_cliente.*
 
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_proveedores.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Departamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +21,7 @@ class Departamento : AppCompatActivity() {
         btn_regresarDepartamento.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
             Mostrar() }
-        findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Departamento).setOnClickListener {
             guardar() }
 
     }
