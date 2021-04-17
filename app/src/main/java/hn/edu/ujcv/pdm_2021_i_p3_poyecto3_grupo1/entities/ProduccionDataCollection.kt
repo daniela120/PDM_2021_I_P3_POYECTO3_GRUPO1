@@ -7,9 +7,9 @@ class ProduccionDataCollection : ArrayList<ProduccionDataCollection>()
 
 data class  ProduccionDataCollectionItem(
     val id:Long?,
-    val idproducto:String,
-    val idempleado:String,
-    val iddepto:String,
+    val idproducto:Long?,
+    val idempleado:Long?,
+    val iddepto:Long?,
     val descripcion:String,
     val tiempo:String
 )
