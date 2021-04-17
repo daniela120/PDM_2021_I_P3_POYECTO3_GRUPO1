@@ -42,7 +42,6 @@ class MostrarCLiente:  AppCompatActivity() {
                     response: Response<ClienteDataCollectionItem>
             ) {
                 try {
-                    if(response.body()!!.id.toString().equals(txt_IdCliente2.text.toString())){
                         Toast.makeText(this@MostrarCLiente,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
                         var nombrecompleto = response.body()!!.nombrecompleto.toString()
                         var telefono = response.body()!!.telefono.toString()
@@ -57,9 +56,8 @@ class MostrarCLiente:  AppCompatActivity() {
                         txv_RtnCliente.text = rtn
                         txv_CorreoCliente.text = correo
                         txv_DireccionCliente.text = direccion
-                    }else{
-                        Toast.makeText(this@MostrarCLiente,"NO EXISTE EL CLIENTE CON EL ID", Toast.LENGTH_SHORT).show()
-                    }
+
+
                 }catch (e:Exception){
                     Toast.makeText(this@MostrarCLiente,"NO EXISTE EL CLIENTE CON EL ID" + e.message.toString(), Toast.LENGTH_SHORT).show()
 
