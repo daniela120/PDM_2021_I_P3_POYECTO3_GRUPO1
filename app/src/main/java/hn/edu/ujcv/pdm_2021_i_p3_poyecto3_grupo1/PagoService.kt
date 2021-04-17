@@ -11,10 +11,10 @@ interface PagoService {
     fun getPagoById(@Path("id") id: Long): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("formaspago/addPago")
-    fun addPago(@Body personData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
+    fun addPago(@Body pagoData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("formaspago")
-    fun updatePago(@Body personData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
+    fun updatePago(@Body pagoData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
     @DELETE("formaspago/delete/{id}")
     fun deletePago(@Path("id") id: Long): Call<ResponseBody>
 }
