@@ -17,10 +17,7 @@
         <activity android:name=".MostrarInsumos" />
         <activity android:name=".MostrarCompras" />
         <activity android:name=".MostrarProduccion" />
-        <activity
-            android:name=".entities.MostrarProduccion"
-            android:label="@string/title_activity_mostrar_produccion"
-            android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar" />
+
         <activity android:name=".MainActivity">
             android:label="@string/app_name"
             android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1.NoActionBar">
