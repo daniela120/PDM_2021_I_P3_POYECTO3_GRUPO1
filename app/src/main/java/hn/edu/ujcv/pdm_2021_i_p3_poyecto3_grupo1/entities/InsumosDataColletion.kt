@@ -9,7 +9,7 @@ data class  InsumosDataCollectionItem(
     val id:Long?,
     val nombre:String,
     val tipo:String,
-    val cantidad:String,
-    val preciocompra:String,
-    val precioventa:String,
+    val cantidad:Long?,
+    val preciocompra:Long?,
+    val precioventa:Long?
 )
