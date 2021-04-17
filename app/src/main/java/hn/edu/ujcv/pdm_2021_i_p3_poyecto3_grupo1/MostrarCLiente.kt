@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
@@ -21,6 +22,8 @@ class MostrarCLiente:  AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_cliente)
         btn_regresarCliente2.setOnClickListener { Regresar()}
         val botonGetId = findViewById<Button>(R.id.btn_BuscarrCliente)
+        findViewById<FloatingActionButton>(R.id.idFabEliminar_Cli).setOnClickListener {
+            callServiceDeleteCliente() }
         botonGetId.setOnClickListener {v -> callServiceGetPerson()}
         btn_regresarCliente2.setOnClickListener { Regresar() }
     }
@@ -74,6 +77,34 @@ class MostrarCLiente:  AppCompatActivity() {
     fun limpiar(){
 
     }
+
+
+    private fun callServiceDeleteCliente() {
+        val personService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
+        var result: Call<ResponseBody> = personService.deleteCliente(txt_IdCliente2.text.toString().toLong())
+
+        result.enqueue(object :  Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(this@MostrarCLiente,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+            ) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@MostrarCLiente,"DELETE",Toast.LENGTH_LONG).show()
+                }
+                else if (response.code() == 401){
+                    Toast.makeText(this@MostrarCLiente,"Sesion expirada",Toast.LENGTH_LONG).show()
+                }
+                else{
+                    Toast.makeText(this@MostrarCLiente,"Fallo al traer el item",Toast.LENGTH_LONG).show()
+                }
+            }
+        })
+    }
+
 
 
 }
