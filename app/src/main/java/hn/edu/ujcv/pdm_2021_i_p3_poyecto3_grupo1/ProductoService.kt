@@ -13,10 +13,10 @@ interface ProductoService {
     fun getProductoById(@Path("id") id: Long): Call<ProductoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("productos/addProducto")
-    fun addProducto(@Body personData: ProductoDataCollectionItem): Call<ProductoDataCollectionItem>
+    fun addProducto(@Body productoData: ProductoDataCollectionItem): Call<ProductoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("productos")
-    fun updateProducto(@Body personData: ProductoDataCollectionItem): Call<ProductoDataCollectionItem>
+    fun updateProducto(@Body productoData: ProductoDataCollectionItem): Call<ProductoDataCollectionItem>
     @DELETE("productos/delete/{id}")
     fun deleteProducto(@Path("id") id: Long): Call<ResponseBody>
 }
