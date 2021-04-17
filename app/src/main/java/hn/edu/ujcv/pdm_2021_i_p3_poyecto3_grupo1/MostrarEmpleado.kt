@@ -4,12 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
 
 class MostrarEmpleado:  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_empleado)
-
+        btn_regresarEmpleado2.setOnClickListener { Regresar()}
+    }
+    private fun Regresar() {
+        val intent = Intent(this, Empleado::class.java)
+        startActivity(intent)
     }
 }
