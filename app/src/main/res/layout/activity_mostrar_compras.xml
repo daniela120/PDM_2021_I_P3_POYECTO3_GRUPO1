@@ -319,36 +319,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.224" />
 
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFabConfirmar_Compras2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/black"
-        app:fab_icon="@mipmap/ic_confirm"
-        app:fab_size="mini" />
-
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFabListar_Compras2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/black"
-        app:fab_icon="@mipmap/ic_mostrar"
-        app:fab_size="mini" />
-
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFabActualizar_Compras2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/black"
-        app:fab_icon="@mipmap/ic_update"
-        app:fab_size="mini" />
-
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFabEliminar_Compras2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/black"
-        app:fab_icon="@mipmap/ic_delete"
-        app:fab_size="mini" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

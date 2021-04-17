@@ -65,4 +65,9 @@ class Ventas : AppCompatActivity() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
     }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarVentas::class.java)
+        startActivity(intent)
+    }
 }

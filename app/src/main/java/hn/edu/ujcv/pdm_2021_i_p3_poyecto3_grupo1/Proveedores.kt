@@ -19,6 +19,12 @@ class Proveedores : AppCompatActivity() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
     }
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarProveedores::class.java)
+        startActivity(intent)
+    }
+
     /*
     private  fun guardar() {
 

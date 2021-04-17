@@ -43,5 +43,9 @@ class Produccion : AppCompatActivity() {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarProduccion::class.java)
+        startActivity(intent)
+    }
 
     }
