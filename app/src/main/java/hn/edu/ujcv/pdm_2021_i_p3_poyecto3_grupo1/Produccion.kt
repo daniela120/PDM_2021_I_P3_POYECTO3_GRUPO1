@@ -40,23 +40,29 @@ class Produccion : AppCompatActivity() {
 
 
     private fun callServicePostProduccion() {
-
-        val Info = ProduccionDataCollectionItem(id = null,
-                idproducto =spinnerIdProducto.selectedItemId.toString().toLong(),
-                idempleado = spinnerIdEmpleado.selectedItemId.toString().toLong(),
-                iddepto = spinnerdepto.selectedItemId.toString().toLong(),
-                descripcion = txt_DescripcionDepartamento.text.toString(),
-                tiempo = txt_TiempoProduccion.text.toString()
-        )
+        try {
 
 
+            val Info = ProduccionDataCollectionItem(id = null,
+                    idproducto = spinnerIdProducto.selectedItem.toString().toLong(),
+                    idempleado = spinnerIdEmpleado.selectedItem.toString().toLong(),
+                    iddepto = spinnerdepto.selectedItem.toString().toLong(),
+                    descripcion = txt_DescripcionProduccion.text.toString(),
+                    tiempo = txt_TiempoProduccion.text.toString()
+            )
 
-        addProduccion(Info) {
-            if (it?.id != null) {
-                android.widget.Toast.makeText(this@Produccion, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
-            } else {
-                android.widget.Toast.makeText(this@Produccion, "Error", android.widget.Toast.LENGTH_LONG).show()
+
+
+            addProduccion(Info) {
+                if (it?.id != null) {
+                    android.widget.Toast.makeText(this@Produccion, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                } else {
+                    android.widget.Toast.makeText(this@Produccion, "Error", android.widget.Toast.LENGTH_LONG).show()
+                }
             }
+        }catch (e:Exception){
+            Toast.makeText(this, e.message+" ERROR,POR FAVOR VERIFICAR LOS DATOS", Toast.LENGTH_SHORT).show()
+
         }
     }
 
