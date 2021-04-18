@@ -11,7 +11,7 @@ interface ProveedoresService {
     @GET("proveedores/id/{id}")
     fun getProveedoresById(@Path("id") id: Long): Call<ProveedoresDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("proveedores/addProveedores")
+    @POST("proveedores/addProveedor")
     fun addProveedores(@Body proveedoresData: ProveedoresDataCollectionItem): Call<ProveedoresDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("proveedores")

@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProveedoresDataCollectionItem
 import kotlinx.android.synthetic.main.activity_insumos.*
+import kotlinx.android.synthetic.main.activity_productos.*
 import kotlinx.android.synthetic.main.activity_proveedores.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,22 +37,27 @@ class Proveedores : AppCompatActivity() {
     }
 
     private fun callServicePostProveedores() {
-
-        val proveedoresInfo = ProveedoresDataCollectionItem(id = null,
-                nombre = txt_NombreProveedor.text.toString(),
-                compañia = txt_CompaProveedor.text.toString(),
-                rtn = txt_RtnProveedor.text.toString(),
-                direccion = txt_DireccionProveedor.text.toString()
-        )
+        try {
 
 
+            val proveedoresInfo = ProveedoresDataCollectionItem(id = null,
+                    nombre = txt_NombreProveedor.text.toString(),
+                    compañia = txt_CompaProveedor.text.toString(),
+                    rtn = txt_RtnProveedor.text.toString(),
+                    direccion = txt_DireccionProveedor.text.toString()
+            )
 
-        addProveedores(proveedoresInfo) {
-            if (it?.id != null) {
-                android.widget.Toast.makeText(this@Proveedores, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
-            } else {
-                android.widget.Toast.makeText(this@Proveedores, "Error", android.widget.Toast.LENGTH_LONG).show()
+
+
+            addProveedores(proveedoresInfo) {
+                if (it?.id != null) {
+                    android.widget.Toast.makeText(this@Proveedores, "PROVEEDOR AGREGADO EXITOSAMENTE", android.widget.Toast.LENGTH_LONG).show()
+                } else {
+                    android.widget.Toast.makeText(this@Proveedores, "Error", android.widget.Toast.LENGTH_LONG).show()
+                }
             }
+        }catch (e:Exception){
+            Toast.makeText(this, e.message+" POR FAVOR VERIFIQUE LOS DATOS", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -95,11 +101,19 @@ class Proveedores : AppCompatActivity() {
                         Toast.makeText(this, "Ingrese la direccion", Toast.LENGTH_SHORT).show()
                     } else {
                         callServicePostProveedores()
-                        Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+                        reset()
                     }
                 }
             }
         }
+    }
+
+
+    fun reset(){
+        txt_NombreProveedor.setText("")
+        txt_CompaProveedor.setText("")
+        txt_RtnProveedor.setText("")
+        txt_DireccionProveedor.setText("")
     }
 }
 
