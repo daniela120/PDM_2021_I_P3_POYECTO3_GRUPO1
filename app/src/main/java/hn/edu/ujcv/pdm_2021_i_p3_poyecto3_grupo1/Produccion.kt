@@ -28,9 +28,9 @@ class Produccion : AppCompatActivity() {
         btn_regresarProduccion.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Produccion).setOnClickListener {
             Mostrar() }
-       /* findViewById<FloatingActionButton>(R.id.idFabConfirmar_).setOnClickListener {
-           guardar()
-        }*/
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Produccion).setOnClickListener {
+            validacion()
+        }
 
        callServiceGetDepartamentos()
         callServiceGetProductos()
@@ -337,22 +337,46 @@ class Produccion : AppCompatActivity() {
     }
 
 
-    private  fun guardar() {
+    private  fun guardar():Boolean {
+        var a = true
 
 
-
-                    if (txt_DescripcionProduccion.text.toString().isEmpty()) {
-                        Toast.makeText(this, "Ingrese la Descripcion", Toast.LENGTH_SHORT).show()
+        if (txt_DescripcionProduccion.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese la Descripcion", Toast.LENGTH_SHORT).show()
+            a = false
+        } else {
+            if (txt_TiempoProduccion.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese el Tiempo", Toast.LENGTH_SHORT).show()
+                a = false
+                if (spinnerIdEmpleado.isSelected.toString().isEmpty()) {
+                    a = false
+                    Toast.makeText(this, "Ingrese ID de Empleado que realizo la venta", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (spinnerIdProducto2.isSelected.toString().isEmpty()) {
+                        a = false
+                        Toast.makeText(this, "Seleccione el producto", Toast.LENGTH_SHORT).show()
                     } else {
-                        if (txt_TiempoProduccion.text.toString().isEmpty()) {
-                            Toast.makeText(this, "Ingrese el Tiempo", Toast.LENGTH_SHORT).show()
+                        if (spinnerdepto.isSelected.toString().isEmpty()) {
+                            a = false
+                            Toast.makeText(this, "Seleccione el departamento", Toast.LENGTH_SHORT).show()
                         } else {
-                            callServicePostProduccion()
-                            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+                            a = true
                         }
                     }
                 }
 
+            }
+        }
+        return a
+    }
+
+    fun validacion(){
+        if(guardar().equals(true)){
+            callServicePostProduccion()
+            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+        }
+
+    }
 
 
     private fun Regresar() {
