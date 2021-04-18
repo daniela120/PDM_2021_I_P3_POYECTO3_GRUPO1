@@ -133,9 +133,9 @@ class MostrarProduccion : AppCompatActivity() {
     private fun callServicePutProduccion() {
         try {
             val Info = ProduccionDataCollectionItem(id = txt_IdProduccion2.text.toString().toLong(),
-                    idproducto = spinnerIdProducto.selectedItemId.toString().toLong(),
-                    idempleado = spinnerIdEmpleado.selectedItemId.toString().toLong(),
-                    iddepto = spinnerdepto.selectedItemId.toString().toLong(),
+                    idproducto = spinnerIdProducto.selectedItem.toString().toLong(),
+                    idempleado = spinnerIdEmpleado.selectedItem.toString().toLong(),
+                    iddepto = spinnerdepto.selectedItem.toString().toLong(),
                     descripcion = txt_DescripcionProduccion.text.toString(),
                     tiempo = txt_TiempoProduccion.text.toString()
             )
