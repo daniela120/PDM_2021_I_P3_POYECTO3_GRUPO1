@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
@@ -20,8 +19,10 @@ import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.StringBuilder
 
 class Compras : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compras)
@@ -30,39 +31,8 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
         txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
-        var A = callServiceGetTipo()
-        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, A)
-        spinnerFormaPago.adapter =adaptador
-        spinnerFormaPago.onItemSelectedListener = object:
-                AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("NADA SE SELECCIONO NIJO")
-
-            }
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?, view: View?, position: Int, id: Long){
-                txv_selecionP.text = A[position].toString()
-
-
-            }
-
-        }
-        var sp:Spinner=findViewById<Spinner>(R.id.spinnerIdProvedor)
-
-
-        var B = callServiceGetProveedores()
-        val adaptador1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, B)
-        sp.adapter =adaptador1
-        sp.onItemSelectedListener = object:
-                AdapterView.OnItemSelectedListener{ override fun onNothingSelected(parent: AdapterView<*>?) {
-        }
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long){
-
-            }
-
-        }
+        callServiceGetProveedores()
+        callServiceGetTipo()
     }
 
     fun showDatePickerDialog() {
@@ -123,10 +93,11 @@ class Compras : AppCompatActivity() {
 
 
 
-    private fun callServiceGetTipo():List<String> {
-        var A:ArrayList<String> = ArrayList()
-        val pagoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
-        var result: Call<List<PagoDataCollectionItem>> = pagoService.listPagos()
+    private fun callServiceGetTipo() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
+        var result: Call<List<PagoDataCollectionItem>> = tipoService.listPagos()
 
         result.enqueue(object : Callback<List<PagoDataCollectionItem>> {
             override fun onFailure(call: Call<List<PagoDataCollectionItem>>, t: Throwable) {
@@ -139,24 +110,24 @@ class Compras : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        A.add(i.id.toString())
-
+                        lista.add(i.id.toString())
                     }
-                    Toast.makeText(this@Compras, "OK" + response.body()!!.get(0).descripcion, Toast.LENGTH_LONG).show()
+
+                    iniciar2(lista)
 
                 } catch (e: Exception) {
-
                     println("No hay datos de tipo de pago")
 
                 }
 
             }
         })
-        return A
+
     }
 
-    private fun callServiceGetProveedores():List<String> {
-        var A:ArrayList<String> = ArrayList()
+    private fun callServiceGetProveedores() {
+        var lista: HashSet<String> = hashSetOf()
+
         val proveedoresService:ProveedoresService = RestEngine.buildService().create(ProveedoresService::class.java)
         var result: Call<List<ProveedoresDataCollectionItem>> = proveedoresService.listProveedores()
 
@@ -170,10 +141,18 @@ class Compras : AppCompatActivity() {
                     response: Response<List<ProveedoresDataCollectionItem>>
             ) {
                 try {
+                    val parametro = StringBuilder()
+                    var num =0
                     for (i in response.body()!!) {
-                        A.add(i.id.toString())
-
+                        lista.add(i.id.toString())
                     }
+
+
+
+
+
+                    println("LA LISTA ES:"+lista.toString())
+                    initial(lista)
                     Toast.makeText(this@Compras, "OK" + response.body()!!.get(0).compañia, Toast.LENGTH_LONG).show()
 
                 } catch (e: Exception) {
@@ -183,11 +162,67 @@ class Compras : AppCompatActivity() {
 
             }
         })
-        return A
+
     }
 
-    fun initial(){
+    fun initial(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdProvedor)
+        var valor:String
+        println("THIS IS"+a.toString())
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
 
+        }
+
+        println("ESTO ES LO QUE SE VA A GUARDAR" + A.toString())
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+
+                txv_selecionP.setText(A[position].toString())
+            }
+        }
+
+
+    }
+
+    fun iniciar2(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerFormaPago)
+        var valor:String
+        println("THIS IS"+a.toString())
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+        println("ESTO ES LO QUE SE VA A GUARDAR" + A.toString())
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+
+                txv_selecionF.setText(A[position].toString())
+            }
+        }
 
     }
 
@@ -204,27 +239,6 @@ class Compras : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun callServiceGetTipoPAGO(a: Long) {
-        val pagoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
-        var result: Call<PagoDataCollectionItem> = pagoService.getPagoById(a)
-
-        result.enqueue(object : Callback<PagoDataCollectionItem> {
-            override fun onFailure(call: Call<PagoDataCollectionItem>, t: Throwable) {
-                Toast.makeText(this@Compras, "Error", Toast.LENGTH_LONG).show()
-            }
-
-            override fun onResponse(
-                    call: Call<PagoDataCollectionItem>,
-                    response: Response<PagoDataCollectionItem>
-            ) {
-                Toast.makeText(this@Compras, "OK" + response.body()!!.descripcion, Toast.LENGTH_LONG).show()
-                val descripcion = response.body()!!.descripcion
-                /*txt_BaseparaSpinner1.text = descripcion*/
-            }
-        })
-
-
-    }
 
 
 
