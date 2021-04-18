@@ -163,49 +163,53 @@ class Ventas : AppCompatActivity() {
             } else {
                 if (txt_DescripcionVenta.text.toString().isEmpty()) {
                     Toast.makeText(this, "Ingrese una descripcion", Toast.LENGTH_SHORT).show()
-                    a=false
+                    a = false
                 } else {
                     if (spinnerIdEmpleado2.isSelected.toString().isEmpty()) {
-                        a=false
+
+
+                        a = false
                         Toast.makeText(this, "Ingrese ID de Empleado que realizo la venta", Toast.LENGTH_SHORT).show()
                         if (spinnerIdProducto2.isSelected.toString().isEmpty()) {
-                            a=false
+                            a = false
                             Toast.makeText(this, "Seleccione el producto", Toast.LENGTH_SHORT).show()
                         } else {
                             if (spinnerFormaPago2.isSelected.toString().isEmpty()) {
-                                a=false
-                                Toast.makeText(this, "Seleccione la forma de pago",Toast.LENGTH_SHORT).show()
+                                a = false
+                                Toast.makeText(this, "Seleccione la forma de pago", Toast.LENGTH_SHORT).show()
                             } else {
                                 if (spinnercCL.isSelected.toString().isEmpty()) {
-                                    a=false
+                                    a = false
                                     Toast.makeText(this, "Seleccion el cliente", Toast.LENGTH_SHORT).show()
-                                }else{
-                                    if(txt_NoTarjetaVenta.text.isEmpty()){
-                                        a=false
+                                } else {
+                                    if (txt_NoTarjetaVenta.text.isEmpty()) {
+                                        a = false
                                         Toast.makeText(this, "Ingrese el numero de la tarjeta", Toast.LENGTH_SHORT).show()
 
-                                    }else{
-                                        if (txt_FechaVenta.text.isEmpty()){
-                                            a=false
+                                    } else {
+                                        if (txt_FechaVenta.text.isEmpty()) {
+                                            a = false
                                             Toast.makeText(this, "Seleccione la fehca de venta", Toast.LENGTH_SHORT).show()
 
-                                        }else{
-                                            if(txt_FechaEntrga2.text.isEmpty()){
-                                                a=false
+                                        } else {
+                                            if (txt_FechaEntrga2.text.isEmpty()) {
+                                                a = false
                                                 Toast.makeText(this, "Seleccione la fehca de entrega", Toast.LENGTH_SHORT).show()
 
-                                            }else{
-                                                a =true
+                                            } else {
+                                                a = true
 
                                             }
+                                        }
                                     }
                                 }
                             }
                         }
+
+
                     }
                 }
             }
-        }
         return a
     }
 
