@@ -8,7 +8,7 @@
     tools:context=".DetalleVenta">
 
     <TextView
-        android:id="@+id/txv_SeleccionCompraId3"
+        android:id="@+id/txv_SeleccionVentaId1"
         android:layout_width="151dp"
         android:layout_height="33dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.466" />
 
     <Spinner
-        android:id="@+id/spinnerIdCompra"
+        android:id="@+id/spinnerIdVenta1"
         android:layout_width="139dp"
         android:layout_height="37dp"
         android:background="@drawable/boton_redondo"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.39" />
 
     <Spinner
-        android:id="@+id/spinnerIdproducto3"
+        android:id="@+id/spinnerIdproductoFac1"
         android:layout_width="139dp"
         android:layout_height="37dp"
         android:background="@drawable/boton_redondo"
