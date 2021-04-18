@@ -13,8 +13,8 @@ import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.VentasDataCollectionIt
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.VentaDetalleDataCollectionItem
 import kotlinx.android.synthetic.main.activity_detalle_ventas.*
-import kotlinx.android.synthetic.main.activity_empleado.*
 import kotlinx.android.synthetic.main.activity_produccion.*
+import kotlinx.android.synthetic.main.activity_ventas.*
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,10 +28,9 @@ class DetalleVenta : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_DetalleVenta).setOnClickListener {
             Mostrar()}
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_DetalleVenta).setOnClickListener {
-            callServicePostVentaDetalle() }
+            validacion()}
         callServiceGetVenta()
         callServiceGetProducto()
-
     }
 
 
@@ -252,7 +251,39 @@ class DetalleVenta : AppCompatActivity() {
 
             }
         })
+    }
 
+    private  fun guardar():Boolean {
+        var a = true
+        if (txt_PrecioFactura1.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese el Precio", Toast.LENGTH_SHORT).show()
+            a = false
+        } else {
+            if (txt_CantidadFactura1.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese la Cantidad", Toast.LENGTH_SHORT).show()
+                a = false
+                if (spinnerIdVenta1.isSelected.toString().isEmpty()) {
+                    a = false
+                    Toast.makeText(this, "Seleccione la venta", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (spinnerIdproductoFac1.isSelected.toString().isEmpty()) {
+                        a = false
+                        Toast.makeText(this, "Seleccione el producto", Toast.LENGTH_SHORT).show()
+                        } else {
+                            a = true
+                        }
+                    }
+                }
+
+            }
+        return a
+    }
+
+    fun validacion(){
+        if(guardar().equals(true)){
+            callServicePostVentaDetalle()
+            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
