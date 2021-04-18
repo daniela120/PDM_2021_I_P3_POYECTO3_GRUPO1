@@ -49,7 +49,7 @@ class MostrarCompras : AppCompatActivity() {
                 var g = response.body()!!.proveedores
                 ver()
                 txt_CaiCompra2.setText(a)
-                txt_TarjetaCompra2.setText(b).toString()
+                txt_TarjetaCompra2.setText(b.toString())
                 txt_FechaE2.setText(c)
                 txt_FechaCompra2.setText(d)
                 txv_selecionF2.setText(e.toString())
