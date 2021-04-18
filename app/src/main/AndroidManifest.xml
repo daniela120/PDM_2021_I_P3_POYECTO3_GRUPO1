@@ -6,13 +6,13 @@
 
     <application
 
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1"
+        android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1">
         <activity android:name=".MostrarDetalleCompra"></activity>
         <activity android:name=".MostrarDetalleVenta" />
         <activity android:name=".MostrarVentas" />
