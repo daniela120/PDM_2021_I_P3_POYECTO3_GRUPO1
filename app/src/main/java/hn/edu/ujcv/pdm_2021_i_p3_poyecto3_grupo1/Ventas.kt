@@ -8,18 +8,18 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import com.getbase.floatingactionbutton.FloatingActionButton
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.VentasDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES.ClienteService
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.*
 import kotlinx.android.synthetic.main.activity_compras.*
 import kotlinx.android.synthetic.main.activity_departamento.*
 import kotlinx.android.synthetic.main.activity_menu.*
+import kotlinx.android.synthetic.main.activity_mostrar_ventas.*
 import kotlinx.android.synthetic.main.activity_ventas.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.StringBuilder
 import java.util.*
 
 class Ventas : AppCompatActivity() {
@@ -30,7 +30,14 @@ class Ventas : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.idFabListar_Ventas).setOnClickListener {
             Mostrar() }
+
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Ventas).setOnClickListener {
+            guardar() }
         txt_FechaVenta.setOnClickListener{showDatePickerDialog()}
+        callServiceGetTipo()
+        callServiceGetEmpleados()
+        callServiceGetProductos()
+        callServiceClientes()
     }
 
     fun showDatePickerDialog() {
@@ -50,12 +57,12 @@ class Ventas : AppCompatActivity() {
                 idcliente = spinnercCL.selectedItem.toString().toLong(),
                 numerotarjeta = txt_NoTarjetaVenta.text.toString().toLong(),
                 formadepago = spinnerFormaPago2.selectedItem.toString().toLong(),
-                fechaventa = txt_FechaVenta.text.toString(),
-                fechaentrega  = txt_FechaVenta.text.toString()
+                fechaventa = null,
+                fechaentrega  = null
 
 
         )
-        addVentas(ventainfo) {
+        addVenta(ventainfo) {
             if (it?.id != null) {
                 Toast.makeText(this@Ventas, "OK" + it?.id, Toast.LENGTH_LONG).show()
             } else {
@@ -63,11 +70,8 @@ class Ventas : AppCompatActivity() {
             }
         }
     }
-    }
 
-
-
-    fun  addVentas(ventasData: VentasDataCollectionItem, onResult: (VentasDataCollectionItem?) -> Unit){
+    fun  addVenta(ventasData: VentasDataCollectionItem, onResult: (VentasDataCollectionItem?) -> Unit){
     val retrofit = RestEngine.buildService().create(VentasService::class.java)
     var result: Call<VentasDataCollectionItem> = retrofit.addVentas(ventasData)
 
@@ -92,131 +96,44 @@ class Ventas : AppCompatActivity() {
     }
     )
 }
-    private fun callServiceGetTipo() {
-    var lista: HashSet<String> = hashSetOf()
-
-    val tipoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
-    var result: Call<List<PagoDataCollectionItem>> = tipoService.listPagos()
-
-    result.enqueue(object : Callback<List<PagoDataCollectionItem>> {
-        override fun onFailure(call: Call<List<PagoDataCollectionItem>>, t: Throwable) {
-            Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
-        }
-
-        override fun onResponse(
-                call: Call<List<PagoDataCollectionItem>>,
-                response: Response<List<PagoDataCollectionItem>>
-        ) {
-            try {
-                for (i in response.body()!!) {
-                    lista.add(i.id.toString())
-                }
-
-                iniciar(lista)
-
-            } catch (e: Exception) {
-                println("No hay datos de tipo de pago")
-
-            }
-
-        }
-    })
-
-}
-
-fun iniciar(a:HashSet<String>){
-    val spinner_Puestos = findViewById<Spinner>(R.id.spinnerFormaPago)
-    var valor:String
-    println("THIS IS"+a.toString())
-    var A:ArrayList<String> = ArrayList()
-    for(i in a){
-        val data = i.toString().split("|")
-        valor=data[0].toString()
-        A.add(valor)
-
-    }
-
-    println("ESTO ES LO QUE SE VA A GUARDAR" + A.toString())
-
-    val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
-
-    spinner_Puestos.adapter =adaptador
-    spinner_Puestos.onItemSelectedListener = object:
-            AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
-    }
-
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
-        {
-            callServiceGetTipo()(A[position].toString().toLong())
 
 
-        }
-    }
+    private  fun guardar() {
 
-}
-private fun callServiceGetTipoById(a:Long) {
-    var nombrep=""
-    val pagoservice:PagoService = RestEngine.buildService().create(PagoService::class.java)
-    var result: Call<PagoDataCollectionItem> = pagoservice.getPagoById(a)
-
-    result.enqueue(object : Callback<PagoDataCollectionItem> {
-        override fun onFailure(call: Call<PagoDataCollectionItem>, t: Throwable) {
-            Toast.makeText(this@Ventas,"Error",Toast.LENGTH_LONG).show()
-        }
-
-        override fun onResponse(
-                call: Call<PagoDataCollectionItem>,
-                response: Response<PagoDataCollectionItem>
-        ) {
-            nombrep = response.body()!!.descripcion.toString()
-            txv_SeleccionT2.text.toString = nombrep
-
-        }
-    })
-
-
-}
-
-
-
-
-
-/* private  fun guardar() {
-
-        if (txt_VentaId.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese ID de Venta", Toast.LENGTH_SHORT).show()
-        } else {
-            if (txt_IDProductoV.text.toString().isEmpty()) {
-                Toast.makeText(this, "Ingrese ID de Producto", Toast.LENGTH_SHORT).show()
+            if (txt_CaiVenta.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese CAI de la venta", Toast.LENGTH_SHORT).show()
             } else {
-                if (txt_IDEmpleadoV.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese ID de Empleado", Toast.LENGTH_SHORT).show()
+                if (txt_DescripcionVenta.text.toString().isEmpty()) {
+                    Toast.makeText(this, "Ingrese una descripcion", Toast.LENGTH_SHORT).show()
                 } else {
-                    if (txt_CaiVenta.text.toString().isEmpty()) {
-                        Toast.makeText(this, "Ingrese ID de Cliente", Toast.LENGTH_SHORT).show()
-                        if (txt_DescripcionVenta.text.toString().isEmpty()) {
-                            Toast.makeText(this, "Ingrese Nombre de Cliente", Toast.LENGTH_SHORT).show()
+                    if (spinnerIdEmpleado2.isSelected.toString().isEmpty()) {
+                        Toast.makeText(this, "Ingrese ID de Empleado que realizo la venta", Toast.LENGTH_SHORT).show()
+                        if (spinnerIdProducto2.isSelected.toString().isEmpty()) {
+                            Toast.makeText(this, "Seleccione el producto", Toast.LENGTH_SHORT).show()
                         } else {
-                            if (txt_NoTarjetaVenta.text.toString().isEmpty()) {
-                                Toast.makeText(this, "Ingrese Una descripcion",Toast.LENGTH_SHORT).show()
+                            if (spinnerFormaPago2.isSelected.toString().isEmpty()) {
+                                Toast.makeText(this, "Seleccione la forma de pago",Toast.LENGTH_SHORT).show()
                             } else {
-                                if (txt_CantidadV.text.toString().isEmpty()) {
-                                    Toast.makeText(this, "Ingrese una Cantidad", Toast.LENGTH_SHORT).show()
-                                } else {
-                                    if (txt_PrecioV.text.toString().isEmpty()) {
-                                        Toast.makeText(this, "Ingrese un Precio", Toast.LENGTH_SHORT).show()
-                                    } else {
-                                        if (txt_SubtotalV.text.toString().isEmpty()) {
-                                            Toast.makeText(this, "Ingrese un Subtotal", Toast.LENGTH_SHORT).show()
-                                            if (txt_FormaPagoVenta.text.toString().isEmpty()) {
-                                                Toast.makeText(this, "Ingrese ISV", Toast.LENGTH_SHORT).show()
+                                if (spinnercCL.isSelected.toString().isEmpty()) {
+                                    Toast.makeText(this, "Seleccion el cliente", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    if(txt_NoTarjetaVenta.text.isEmpty()){
+                                        Toast.makeText(this, "Ingrese el numero de la tarjeta", Toast.LENGTH_SHORT).show()
+
+
+
+                                    }else{
+                                        if (txt_FechaVenta.text.isEmpty()){
+                                            Toast.makeText(this, "Seleccione la fehca de venta", Toast.LENGTH_SHORT).show()
+
+
+                                        }else{
+                                            if(txt_FechaE.text.isEmpty()){
+                                                Toast.makeText(this, "Seleccione la fehca de venta", Toast.LENGTH_SHORT).show()
+
                                             }else{
-                                                if(txt_TotaVenta.text.toString().isEmpty()){
-                                                    Toast.makeText(this, "Ingrese EL Total a Pagar", Toast.LENGTH_SHORT).show()
-                                                }
-                                            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+                                                callServicePostVenta()
                                             }
-                                        }
                                     }
                                 }
                             }
@@ -225,7 +142,8 @@ private fun callServiceGetTipoById(a:Long) {
                 }
             }
         }
-    }*/
+    }
+
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
@@ -235,5 +153,356 @@ private fun callServiceGetTipoById(a:Long) {
         val intent = Intent(this, MostrarVentas::class.java)
         startActivity(intent)
     }
-}
+
+
+/*FUNCIONES OBTENER DATOS EN SPINNERS*/
+    /*SPINNER TIPO DE PAGO*/
+
+    private fun callServiceGetTipo() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
+        var result: Call<List<PagoDataCollectionItem>> = tipoService.listPagos()
+
+        result.enqueue(object : Callback<List<PagoDataCollectionItem>> {
+            override fun onFailure(call: Call<List<PagoDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<PagoDataCollectionItem>>,
+                    response: Response<List<PagoDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!) {
+                        lista.add(i.id.toString())
+                    }
+
+                    iniciar2(lista)
+
+                } catch (e: Exception) {
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+
+    }
+
+
+    fun iniciar2(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerFormaPago2)
+        var valor:String
+
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetTipoById(A[position].toString().toLong())
+
+
+            }
+        }
+
+    }
+
+
+    private fun callServiceGetTipoById(a:Long) {
+        var nombrep=""
+        val pagoservice:PagoService = RestEngine.buildService().create(PagoService::class.java)
+        var result: Call<PagoDataCollectionItem> = pagoservice.getPagoById(a)
+
+        result.enqueue(object : Callback<PagoDataCollectionItem> {
+            override fun onFailure(call: Call<PagoDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Ventas,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<PagoDataCollectionItem>,
+                    response: Response<PagoDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.descripcion.toString()
+                txv_SeleccionT2.text = nombrep
+
+            }
+        })
+
+
+    }
+
+    /*SPINNER EMPLEADO*/
+
+    private fun callServiceGetEmpleados() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:EmpleadoService = RestEngine.buildService().create(EmpleadoService::class.java)
+        var result: Call<List<EmpleadoDataCollectionItem>> = tipoService.listEmpleados()
+
+        result.enqueue(object : Callback<List<EmpleadoDataCollectionItem>> {
+            override fun onFailure(call: Call<List<EmpleadoDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<EmpleadoDataCollectionItem>>,
+                    response: Response<List<EmpleadoDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!) {
+                        lista.add(i.id.toString())
+                    }
+
+                    iniciar3(lista)
+
+                } catch (e: Exception) {
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+
+    }
+
+    fun iniciar3(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdEmpleado2)
+        var valor:String
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetEmpleadoById(A[position].toString().toLong())
+
+
+            }
+        }
+
+    }
+
+    private fun callServiceGetEmpleadoById(a:Long) {
+        var nombrep=""
+        val pagoservice:EmpleadoService = RestEngine.buildService().create(EmpleadoService::class.java)
+        var result: Call<EmpleadoDataCollectionItem> = pagoservice.getEmpleadoById(a)
+
+        result.enqueue(object : Callback<EmpleadoDataCollectionItem> {
+            override fun onFailure(call: Call<EmpleadoDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Ventas,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<EmpleadoDataCollectionItem>,
+                    response: Response<EmpleadoDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.nombrecompleto.toString()
+                txv_SeleccionE.text = nombrep
+
+            }
+        })
+
+
+    }
+
+    /*SPINNER PRODUCTO*/
+
+    private fun callServiceGetProductos() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:ProductoService = RestEngine.buildService().create(ProductoService::class.java)
+        var result: Call<List<ProductoDataCollectionItem>> = tipoService.listProductos()
+
+        result.enqueue(object : Callback<List<ProductoDataCollectionItem>> {
+            override fun onFailure(call: Call<List<ProductoDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<ProductoDataCollectionItem>>,
+                    response: Response<List<ProductoDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!) {
+                        lista.add(i.id.toString())
+                    }
+
+                    iniciar4(lista)
+
+                } catch (e: Exception) {
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+
+    }
+
+    fun iniciar4(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdProducto2)
+        var valor:String
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetProductoById(A[position].toString().toLong())
+
+
+            }
+        }
+
+    }
+
+    private fun callServiceGetProductoById(a:Long) {
+        var nombrep=""
+        val pagoservice:ProductoService = RestEngine.buildService().create(ProductoService::class.java)
+        var result: Call<ProductoDataCollectionItem> = pagoservice.getProductoById(a)
+
+        result.enqueue(object : Callback<ProductoDataCollectionItem> {
+            override fun onFailure(call: Call<ProductoDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Ventas,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<ProductoDataCollectionItem>,
+                    response: Response<ProductoDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.nombre.toString()
+                txv_SeleccionP2.text = nombrep
+
+            }
+        })
+
+
+    }
+
+    /*SPINNER CLIENTEs*/
+
+    private fun callServiceClientes() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
+        var result: Call<List<ClienteDataCollectionItem>> = tipoService.listClientes()
+
+        result.enqueue(object : Callback<List<ClienteDataCollectionItem>> {
+            override fun onFailure(call: Call<List<ClienteDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<ClienteDataCollectionItem>>,
+                    response: Response<List<ClienteDataCollectionItem>>
+            ) {
+                try {
+                    for (i in response.body()!!) {
+                        lista.add(i.id.toString())
+                    }
+
+                    iniciar5(lista)
+
+                } catch (e: Exception) {
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+
+    }
+
+    fun iniciar5(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnercCL)
+        var valor:String
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetClienteById(A[position].toString().toLong())
+
+
+            }
+        }
+
+    }
+
+    private fun callServiceGetClienteById(a:Long) {
+        var nombrep=""
+        val pagoservice:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
+        var result: Call<ClienteDataCollectionItem> = pagoservice.getClienteById(a)
+
+        result.enqueue(object : Callback<ClienteDataCollectionItem> {
+            override fun onFailure(call: Call<ClienteDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Ventas,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<ClienteDataCollectionItem>,
+                    response: Response<ClienteDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.nombrecompleto.toString()
+                txv_SeleccionC.text = nombrep
+
+            }
+        })
+
+
+    }
+
+
+
+
+
 }
