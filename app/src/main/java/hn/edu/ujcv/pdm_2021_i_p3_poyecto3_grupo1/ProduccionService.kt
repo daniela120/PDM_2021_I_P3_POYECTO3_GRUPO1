@@ -12,10 +12,10 @@ interface ProduccionService {
     fun getProduccionById(@Path("id") id: Long): Call<ProduccionDataCollectionItem>
     @Headers("Content-Type: application/json")
     @POST("produccion/addProduccion")
-    fun addProduccion(@Body personData: ProduccionDataCollectionItem): Call<ProduccionDataCollectionItem>
+    fun addProduccion(@Body produccionData: ProduccionDataCollectionItem): Call<ProduccionDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("produccion")
-    fun updateProduccion(@Body personData: ProduccionDataCollectionItem): Call<ProduccionDataCollectionItem>
+    fun updateProduccion(@Body produccionData: ProduccionDataCollectionItem): Call<ProduccionDataCollectionItem>
     @DELETE("produccion/delete/{id}")
     fun deleteProduccion(@Path("id") id: Long): Call<ResponseBody>
 }

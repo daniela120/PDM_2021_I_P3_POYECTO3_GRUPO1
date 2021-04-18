@@ -50,12 +50,12 @@ class Ventas : AppCompatActivity() {
                 idcliente = spinnercCL.selectedItem.toString().toLong(),
                 numerotarjeta = txt_NoTarjetaVenta.text.toString().toLong(),
                 formadepago = spinnerFormaPago2.selectedItem.toString().toLong(),
-                fechaventa = null,
-                fechaentrega  = null
+                fechaventa = txt_FechaVenta.text.toString(),
+                fechaentrega  = txt_FechaVenta.text.toString()
 
 
         )
-        addVenta(ventainfo) {
+        addVentas(ventainfo) {
             if (it?.id != null) {
                 Toast.makeText(this@Ventas, "OK" + it?.id, Toast.LENGTH_LONG).show()
             } else {
@@ -67,7 +67,7 @@ class Ventas : AppCompatActivity() {
 
 
 
-    fun  addVenta(ventasData: VentasDataCollectionItem, onResult: (VentasDataCollectionItem?) -> Unit){
+    fun  addVentas(ventasData: VentasDataCollectionItem, onResult: (VentasDataCollectionItem?) -> Unit){
     val retrofit = RestEngine.buildService().create(VentasService::class.java)
     var result: Call<VentasDataCollectionItem> = retrofit.addVentas(ventasData)
 
@@ -92,7 +92,7 @@ class Ventas : AppCompatActivity() {
     }
     )
 }
-private fun callServiceGetTipo() {
+    private fun callServiceGetTipo() {
     var lista: HashSet<String> = hashSetOf()
 
     val tipoService:PagoService = RestEngine.buildService().create(PagoService::class.java)
