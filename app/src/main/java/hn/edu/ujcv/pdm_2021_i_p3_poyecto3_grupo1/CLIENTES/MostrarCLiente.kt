@@ -36,7 +36,7 @@ class MostrarCLiente:  AppCompatActivity() {
 
     }
         private fun Regresar() {
-            val intent = Intent(this, Cliente::class.java)
+            val intent = Intent(this,Cliente::class.java)
             startActivity(intent)
         }
     private fun callServiceGetPerson() {
