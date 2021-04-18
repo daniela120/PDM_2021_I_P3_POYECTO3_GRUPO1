@@ -18,7 +18,11 @@ class TipoPago : AppCompatActivity() {
         setContentView(R.layout.activity_tipo_pago)
         btn_regresarPago.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabConfirmarago).setOnClickListener {
-            guardar() }
+            callServicePostTipoPago() }
+
+        findViewById<FloatingActionButton>(R.id.idFabListarPago).setOnClickListener {
+            Mostrar()
+        }
     }
 
 
@@ -26,17 +30,17 @@ class TipoPago : AppCompatActivity() {
     private fun callServicePostTipoPago() {
 
         val tipopagoInfo = PagoDataCollectionItem(id = null,
-                descripcion = txt_DescripcionPago2.text.toString(),
-                estado = txt_EstadoPago2.text.toString()
+                descripcion = txt_DescripcionPago.text.toString(),
+                estado = txt_EstadoPago.text.toString()
         )
 
 
 
         addTipoPago(tipopagoInfo) {
             if (it?.id != null) {
-                android.widget.Toast.makeText(this@TipoPago, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                Toast.makeText(this@TipoPago, "TIPO DE PAGO AGREGADO", Toast.LENGTH_LONG).show()
             } else {
-                android.widget.Toast.makeText(this@TipoPago, "Error", android.widget.Toast.LENGTH_LONG).show()
+                Toast.makeText(this@TipoPago, "Error", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -65,19 +69,7 @@ class TipoPago : AppCompatActivity() {
         }
         )
     }
-    private  fun guardar() {
 
-        if (txt_DescripcionPago.text.toString().isEmpty()) {
-            Toast.makeText(this, "Ingrese Una descripcion del Pago", Toast.LENGTH_SHORT).show()
-        } else {
-            if (txt_EstadoPago.text.toString().isEmpty()) {
-                Toast.makeText(this, "Ingrese el Estado del Pago", Toast.LENGTH_SHORT).show()
-            }else{
-                callServicePostTipoPago()
-                Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

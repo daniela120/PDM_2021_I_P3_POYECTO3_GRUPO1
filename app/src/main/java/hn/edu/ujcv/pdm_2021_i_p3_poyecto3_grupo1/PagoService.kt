@@ -10,7 +10,7 @@ interface PagoService {
     @GET("formaspago/id/{id}")
     fun getPagoById(@Path("id") id: Long): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("formaspago/addPago")
+    @POST("formaspago/addForma")
     fun addPago(@Body pagoData: PagoDataCollectionItem): Call<PagoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("formaspago")
