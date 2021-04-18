@@ -139,7 +139,7 @@
 
 
     <EditText
-        android:id="@+id/txt_PrecioFactura1"
+        android:id="@+id/txt_PrecioFactura2"
         android:layout_width="145dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -174,7 +174,7 @@
         app:layout_constraintVertical_bias="0.281" />
 
     <EditText
-        android:id="@+id/txt_CantidadFactura1"
+        android:id="@+id/txt_CantidadFactura2"
         android:layout_width="145dp"
         android:layout_height="45dp"
         android:ems="10"
