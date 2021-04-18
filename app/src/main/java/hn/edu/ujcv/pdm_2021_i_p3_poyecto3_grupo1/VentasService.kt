@@ -11,11 +11,11 @@ interface VentasService {
     @GET("ventas/id/{id}")
     fun getVentasById(@Path("id") id: Long): Call<VentasDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("ventas/addVentas")
-    fun addVentas(@Body personData: VentasDataCollectionItem): Call<VentasDataCollectionItem>
+    @POST("ventas/addVenta")
+    fun addVentas(@Body ventasData: VentasDataCollectionItem): Call<VentasDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("ventas")
-    fun updateVentas(@Body personData: VentasDataCollectionItem): Call<VentasDataCollectionItem>
+    fun updateVentas(@Body ventasData: VentasDataCollectionItem): Call<VentasDataCollectionItem>
     @DELETE("ventas/delete/{id}")
     fun deleteVentas(@Path("id") id: Long): Call<ResponseBody>
 }
