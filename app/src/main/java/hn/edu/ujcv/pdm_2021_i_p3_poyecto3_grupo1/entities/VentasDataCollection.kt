@@ -13,6 +13,6 @@ data class  VentasDataCollectionItem(
     val idcliente:Long?,
     val numerotarjeta:Long?,
     val formadepago:Long?,
-    val fechaventa:Date?,
-    val fechaentrega:Date?
+    val fechaventa:String?,
+    val fechaentrega:String?
 )

@@ -32,8 +32,10 @@ class Ventas : AppCompatActivity() {
             Mostrar() }
 
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Ventas).setOnClickListener {
-            guardar() }
+            validacion() }
+
         txt_FechaVenta.setOnClickListener{showDatePickerDialog()}
+        txt_FechaEntrga2.setOnClickListener{showDatePickerDialog1()}
         callServiceGetTipo()
         callServiceGetEmpleados()
         callServiceGetProductos()
@@ -41,33 +43,86 @@ class Ventas : AppCompatActivity() {
     }
 
     fun showDatePickerDialog() {
-        val datePicker = DatePickerFragment{day, month, year -> onDateSelected( day, month, year) }
+        val datePicker = DatePickerFragment{ day, month, year -> onDateSelected(day, month, year) }
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
-        txt_FechaVenta.setText("$day / $month / $year")
-        txt_FechaEntrga2.setText("$day / $month / $year")
+        if(month<10 && day<10){
+            var a="$year-0$month-0$day"+"T06:00:00.000+00:00"
+            txt_FechaVenta.setText(a.toString())
+        }else{
+            if(month<10 && day>9){
+
+
+                var a="$year-0$month-$day"+"T06:00:00.000+00:00"
+                txt_FechaVenta.setText(a.toString())}else{
+                if(month>9 && day<10){
+
+                    var a="$year-$month-0$day"+"T06:00:00.000+00:00"
+                    txt_FechaVenta.setText(a.toString())
+                }else{
+                    var a="$year-$month-$day"+"T06:00:00.000+00:00"
+                    txt_FechaVenta.setText(a.toString())
+                }
+            }
+        }
+
+
+
+    }
+
+
+    fun showDatePickerDialog1() {
+        val datePicker = DatePickerFragment{ day, month, year -> onDateSelected1(day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    fun onDateSelected1(day: Int, month: Int, year: Int) {
+        if(month<10 && day<10){
+            var a="$year-0$month-0$day"+"T06:00:00.000+00:00"
+            txt_FechaEntrga2.setText(a.toString())
+        }else{
+            if(month<10 && day>9){
+
+
+                var a="$year-0$month-$day"+"T06:00:00.000+00:00"
+                txt_FechaEntrga2.setText(a.toString())}else{
+                if(month>9 && day<10){
+
+                    var a="$year-$month-0$day"+"T06:00:00.000+00:00"
+                    txt_FechaEntrga2.setText(a.toString())
+                }else{
+                    var a="$year-$month-$day"+"T06:00:00.000+00:00"
+                    txt_FechaEntrga2.setText(a.toString())
+                }
+            }
+        }
     }
 
     private fun callServicePostVenta() {
-        val ventainfo = VentasDataCollectionItem(id = null ,
-                descripcion = txt_DescripcionVenta.text.toString(),
-                idempleado = spinnerIdEmpleado2.selectedItem.toString().toLong(),
-                cai = txt_CaiVenta.text.toString().toLong(),
-                idcliente = spinnercCL.selectedItem.toString().toLong(),
-                numerotarjeta = txt_NoTarjetaVenta.text.toString().toLong(),
-                formadepago = spinnerFormaPago2.selectedItem.toString().toLong(),
-                fechaventa = null,
-                fechaentrega  = null
+        try {
 
 
-        )
-        addVenta(ventainfo) {
-            if (it?.id != null) {
-                Toast.makeText(this@Ventas, "OK" + it?.id, Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this@Ventas,  "Error", Toast.LENGTH_LONG).show()
+            val ventainfo = VentasDataCollectionItem(id = null,
+                    descripcion = txt_DescripcionVenta.text.toString(),
+                    idempleado = spinnerIdEmpleado2.selectedItem.toString().toLong(),
+                    cai = txt_CaiVenta.text.toString().toLong(),
+                    idcliente = spinnercCL.selectedItem.toString().toLong(),
+                    numerotarjeta = txt_NoTarjetaVenta.text.toString().toLong(),
+                    formadepago = spinnerFormaPago2.selectedItem.toString().toLong(),
+                    fechaventa = txt_FechaVenta.text.toString(),
+                    fechaentrega = txt_FechaEntrga2.text.toString()
+
+
+            )
+            addVenta(ventainfo) {
+                if (it?.id != null) {
+                    Toast.makeText(this@Ventas, "VENTA REGISTRADA", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@Ventas, "Error", Toast.LENGTH_LONG).show()
+                }
             }
+        }catch (e:Exception){
+            Toast.makeText(this@Ventas, "REVISAR LOS DATOS HA OCURRIDO UN ERROR", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -98,41 +153,50 @@ class Ventas : AppCompatActivity() {
 }
 
 
-    private  fun guardar() {
+    private  fun guardar():Boolean {
+        var a=true
+
 
             if (txt_CaiVenta.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese CAI de la venta", Toast.LENGTH_SHORT).show()
+                a=false
             } else {
                 if (txt_DescripcionVenta.text.toString().isEmpty()) {
                     Toast.makeText(this, "Ingrese una descripcion", Toast.LENGTH_SHORT).show()
+                    a=false
                 } else {
                     if (spinnerIdEmpleado2.isSelected.toString().isEmpty()) {
+                        a=false
                         Toast.makeText(this, "Ingrese ID de Empleado que realizo la venta", Toast.LENGTH_SHORT).show()
                         if (spinnerIdProducto2.isSelected.toString().isEmpty()) {
+                            a=false
                             Toast.makeText(this, "Seleccione el producto", Toast.LENGTH_SHORT).show()
                         } else {
                             if (spinnerFormaPago2.isSelected.toString().isEmpty()) {
+                                a=false
                                 Toast.makeText(this, "Seleccione la forma de pago",Toast.LENGTH_SHORT).show()
                             } else {
                                 if (spinnercCL.isSelected.toString().isEmpty()) {
+                                    a=false
                                     Toast.makeText(this, "Seleccion el cliente", Toast.LENGTH_SHORT).show()
                                 }else{
                                     if(txt_NoTarjetaVenta.text.isEmpty()){
+                                        a=false
                                         Toast.makeText(this, "Ingrese el numero de la tarjeta", Toast.LENGTH_SHORT).show()
-
-
 
                                     }else{
                                         if (txt_FechaVenta.text.isEmpty()){
+                                            a=false
                                             Toast.makeText(this, "Seleccione la fehca de venta", Toast.LENGTH_SHORT).show()
 
-
                                         }else{
-                                            if(txt_FechaE.text.isEmpty()){
-                                                Toast.makeText(this, "Seleccione la fehca de venta", Toast.LENGTH_SHORT).show()
+                                            if(txt_FechaEntrga2.text.isEmpty()){
+                                                a=false
+                                                Toast.makeText(this, "Seleccione la fehca de entrega", Toast.LENGTH_SHORT).show()
 
                                             }else{
-                                                callServicePostVenta()
+                                                a =true
+
                                             }
                                     }
                                 }
@@ -142,6 +206,14 @@ class Ventas : AppCompatActivity() {
                 }
             }
         }
+        return a
+    }
+
+    fun validacion(){
+        if(guardar().equals(true)){
+            callServicePostVenta()
+        }
+
     }
 
     private fun Regresar() {
