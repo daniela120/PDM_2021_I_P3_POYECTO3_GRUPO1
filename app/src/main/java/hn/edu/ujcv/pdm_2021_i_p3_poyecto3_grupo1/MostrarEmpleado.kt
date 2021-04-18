@@ -29,6 +29,9 @@ class MostrarEmpleado:  AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabEliminar_Empleado).setOnClickListener {
             callServiceDeleteDepto()
         }
+        findViewById<FloatingActionButton>(R.id.idFabLimpiar_Empleado).setOnClickListener {
+            reset()
+        }
         botonGetId.setOnClickListener {v -> callServiceGetEmpleado()}
     }
     private fun Regresar() {
@@ -163,6 +166,7 @@ class MostrarEmpleado:  AppCompatActivity() {
         txt_NombreEmpleado2.isEnabled = false
         txt_TelefonoEmpleado2.isEnabled = false
 
+        txt_IdEmpleado2.setText("")
         txt_CargoEmpleado2.setText("")
         txt_ClaveEmpleado2.setText("")
         txt_CorreoEmpleado2.setText("")
