@@ -55,7 +55,7 @@ class MostrarInsumos : AppCompatActivity() {
                     txt_MostrarInsNombre.isEnabled = true
                     txt_MostrarInsTipo.isEnabled = true
                     txt_MostrarInsCantidad.isEnabled = true
-                    txt_MostrarInsPCompra.isEnabled = true)
+                    txt_MostrarInsPCompra.isEnabled = true
                     txt_MostrarInsPVenta.isEnabled = true
 
                 }
@@ -76,7 +76,7 @@ class MostrarInsumos : AppCompatActivity() {
         txt_MostrarInsNombre.isEnabled = true
         txt_MostrarInsTipo.isEnabled = true
         txt_MostrarInsCantidad.isEnabled = true
-        txt_MostrarInsPCompra.isEnabled = true)
+        txt_MostrarInsPCompra.isEnabled = true
         txt_MostrarInsPVenta.isEnabled = true
     }
 
