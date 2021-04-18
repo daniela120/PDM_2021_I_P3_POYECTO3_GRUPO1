@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.468" />
 
     <TextView
-        android:id="@+id/txv_SeleccionCompraId2"
+        android:id="@+id/txv_SeleccionProductoId1"
         android:layout_width="151dp"
         android:layout_height="33dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
