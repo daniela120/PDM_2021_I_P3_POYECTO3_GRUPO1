@@ -91,8 +91,11 @@ class MostrarProduccion : AppCompatActivity() {
                 txt_MostrarPrdTiempo.setText(e)
 
             } catch (e: Exception) {
+
                 Toast.makeText(this@MostrarProduccion, "No existe la informacion con el id: " + txt_IdProduccion2.text.toString(), Toast.LENGTH_SHORT).show()
+           resetear()
             }
+
         })
         txt_MostrarDescripcion.isEnabled
         txt_MostrarPrdTiempo.isEnabled
