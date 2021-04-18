@@ -17,8 +17,8 @@ class MostrarCompras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_compras)
-        btn_regresarCompras2.setOnClickListener { Regresar()}
-        val botonGetId = findViewById<Button>(R.id.btn_BuscarrCompra2)
+        btn_regresarCompras.setOnClickListener { Regresar()}
+        val botonGetId = findViewById<Button>(R.id.btn_BuscarCompra)
         botonGetId.setOnClickListener {v -> callServiceGetPerson()}
     }
     private fun Regresar() {
@@ -27,7 +27,7 @@ class MostrarCompras : AppCompatActivity() {
     }
     private fun callServiceGetPerson() {
         val comprasService:ComprasService = RestEngine.buildService().create(ComprasService::class.java)
-        var result: Call<ComprasDataCollectionItem> = comprasService.getComprasById(txt_IdCompra2.text.toString().toLong())
+        var result: Call<ComprasDataCollectionItem> = comprasService.getComprasById(txt_CompraId.text.toString().toLong())
 
         result.enqueue(object : Callback<ComprasDataCollectionItem> {
             override fun onFailure(call: Call<ComprasDataCollectionItem>, t: Throwable) {
@@ -42,20 +42,22 @@ class MostrarCompras : AppCompatActivity() {
 
 
                     var a = response.body()!!.cai
-                    var b = response.body()!!.fechacompra
+                    var b = response.body()!!.numerotarjeta
                     var c = response.body()!!.fechaentrega
-                    var d = response.body()!!.formapago
-                    var e = response.body()!!.numerotarjeta
+                    var d = response.body()!!.fechacompra
+                    var e = response.body()!!.formapago
                     var f = response.body()!!.insumos
                     var g = response.body()!!.proveedores
                     ver()
-                    txt_MostrarCCai.setText(a)
-                    txt_MostrarCCantidad.setText(b)
-                    txt_MostrarCFecha.setText(c)
-                    txt_MostrarCProveedor.setText(g.toString())
-                    txt_MostrarCFormapago.setText(d.toString())
+                    txt_CaiCompra2.setText(a)
+                    txt_TarjetaCompra2.setText(b)
+                    txt_FechaE2.setText(c)
+                    txt_FechaCompra2.setText(d)
+                    txv_selecionF2.setText(e.toString())
+                    txv_selecionP4.setText(e.toString())
+                    txv_selecionP3.setText(g.toString())
                 }catch (e:Exception){
-                    Toast.makeText(this@MostrarCompras, "No existe la compra con el id: "+txt_IdCompra2.text.toString(), Toast.LENGTH_SHORT ).show()
+                    Toast.makeText(this@MostrarCompras, "No existe la compra con el id: "+txt_CompraId.text.toString(), Toast.LENGTH_SHORT ).show()
                 }
 
 
@@ -66,11 +68,15 @@ class MostrarCompras : AppCompatActivity() {
     }
 
     fun ver(){
-        txt_MostrarCCai.isEnabled =  true
-        txt_MostrarCCantidad.isEnabled = true
-        txt_MostrarCFecha.isEnabled = true
-        txt_MostrarCProveedor.isEnabled = true
-        txt_MostrarCFormapago.isEnabled = true
+
+        txt_CaiCompra2.isEnabled =  true
+        txt_TarjetaCompra2.isEnabled = true
+        txt_FechaE2.isEnabled =  true
+        txt_FechaCompra2.isEnabled =  true
+        txv_selecionF2.isEnabled =  true
+        txv_selecionP4.isEnabled =  true
+        txv_selecionP3.isEnabled =  true
+
 
     }
 
