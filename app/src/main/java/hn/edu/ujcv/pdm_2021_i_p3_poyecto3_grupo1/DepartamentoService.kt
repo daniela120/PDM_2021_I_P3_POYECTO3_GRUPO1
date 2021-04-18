@@ -11,7 +11,7 @@ interface DepartamentoService {
     @GET("departamentos/id/{id}")
     fun getDepartamentoById(@Path("id") id: Long): Call<DepartamentoDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("departamentos/addDepartamento")
+    @POST("departamentos/addDepto")
     fun addDepartamento(@Body departamentoData: DepartamentoDataCollectionItem): Call<DepartamentoDataCollectionItem>
     @Headers("Content-Type: application/json")
     @PUT("departamentos")

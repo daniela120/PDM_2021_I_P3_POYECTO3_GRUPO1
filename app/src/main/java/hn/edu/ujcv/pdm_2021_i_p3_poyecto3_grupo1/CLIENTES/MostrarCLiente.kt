@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.getbase.floatingactionbutton.FloatingActionButton
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES.Cliente
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES.ClienteService
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import okhttp3.ResponseBody
@@ -39,7 +40,7 @@ class MostrarCLiente:  AppCompatActivity() {
             startActivity(intent)
         }
     private fun callServiceGetPerson() {
-        val clienteService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
+        val clienteService: ClienteService = RestEngine.buildService().create(ClienteService::class.java)
         var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(txt_IdCliente2.text.toString().toLong())
 
         result.enqueue(object : Callback<ClienteDataCollectionItem> {

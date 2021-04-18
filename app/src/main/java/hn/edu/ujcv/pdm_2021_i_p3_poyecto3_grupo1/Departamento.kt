@@ -29,8 +29,8 @@ class Departamento : AppCompatActivity() {
     private fun callServicePostDepartamento() {
 
         val departamentosInfo = DepartamentoDataCollectionItem(id = null,
-                nombre = txt_NombreProveedor.text.toString(),
-                descripcion = txt_CompaProveedor.text.toString()
+                nombre = txt_NombreDepartamento.text.toString(),
+                descripcion = txt_DescripcionDepartamento.text.toString()
         )
 
 
