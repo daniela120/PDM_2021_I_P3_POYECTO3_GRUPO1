@@ -221,7 +221,7 @@
         tools:ignore="MissingConstraints">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabConfirmar_Insumos"
+            android:id="@+id/idFabConfirmar_Produccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
