@@ -27,22 +27,29 @@ class Productos : AppCompatActivity() {
     }
 
     private fun callServicePostProductos() {
-
-        val productosInfo = ProductoDataCollectionItem(id = null,
-                nombre = txt_NombreProveedor.text.toString(),
-                descripcion = txt_DescripcionProducto.text.toString(),
-                preciocompra =  txt_PrecioComProducto.text.toString().toLong(),
-                precioventa = txt_PrecioVenProducto.text.toString().toLong()
-        )
+        try {
 
 
+            val productosInfo = ProductoDataCollectionItem(id = null,
+                    nombre = txt_NombreProductos.text.toString(),
+                    descripcion = txt_DescripcionProducto.text.toString(),
+                    preciocompra = txt_PrecioComProducto.text.toString().toLong(),
+                    precioventa = txt_PrecioVenProducto.text.toString().toLong()
+            )
 
-        addProducto(productosInfo) {
-            if (it?.id != null) {
-                android.widget.Toast.makeText(this@Productos, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
-            } else {
-                android.widget.Toast.makeText(this@Productos, "Error", android.widget.Toast.LENGTH_LONG).show()
+
+
+            addProducto(productosInfo) {
+                if (it?.id != null) {
+                    android.widget.Toast.makeText(this@Productos, "PRODUCTO AGREGADO", android.widget.Toast.LENGTH_LONG).show()
+                } else {
+                    android.widget.Toast.makeText(this@Productos, "Error", android.widget.Toast.LENGTH_LONG).show()
+                }
             }
+
+        }catch (e:Exception){
+            Toast.makeText(this, e.message+" ERROR, POR FAVOR VERIFIQUE LOS DATOS", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -69,6 +76,7 @@ class Productos : AppCompatActivity() {
 
         }
         )
+
     }
 
     private  fun guardar() {
@@ -86,7 +94,7 @@ class Productos : AppCompatActivity() {
                         Toast.makeText(this, "Ingrese el precio de venta del Producto", Toast.LENGTH_SHORT).show()
                         }else{
                             callServicePostProductos()
-                            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+                            reset()
                         }
                     }
                 }
@@ -102,5 +110,12 @@ class Productos : AppCompatActivity() {
     private fun Mostrar() {
         val intent = Intent(this, MostrarProductos::class.java)
         startActivity(intent)
+    }
+
+    fun reset(){
+        txt_NombreProductos.setText("")
+        txt_DescripcionProducto.setText("")
+        txt_PrecioComProducto.setText("")
+        txt_PrecioVenProducto.setText("")
     }
 }
