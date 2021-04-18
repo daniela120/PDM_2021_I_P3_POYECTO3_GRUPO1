@@ -83,8 +83,6 @@ class MostrarProduccion : AppCompatActivity() {
                 var c = response.body()!!.iddepto
                 var d = response.body()!!.descripcion
                 var e = response.body()!!.tiempo
-                var f =response.body()!!.iddepto
-                spinnerdepto.setSelection(f)
 
                 txv_selectProd1.setText(a.toString())
                 txv_selectProd2.setText(b.toString())
@@ -212,7 +210,7 @@ class MostrarProduccion : AppCompatActivity() {
     }
 
     fun iniciar5(a: java.util.HashSet<String>){
-        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdEmpleado)
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdEmpleado3)
         var valor:String
         var A: java.util.ArrayList<String> = java.util.ArrayList()
         for(i in a){
@@ -295,7 +293,7 @@ class MostrarProduccion : AppCompatActivity() {
     }
 
     fun iniciar4(a: java.util.HashSet<String>){
-        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdProducto)
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdProducto3)
         var valor:String
         var A: java.util.ArrayList<String> = java.util.ArrayList()
         for(i in a){
@@ -376,7 +374,7 @@ class MostrarProduccion : AppCompatActivity() {
 
     }
     fun iniciar2(a:HashSet<String>){
-        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerdepto)
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerMostrardepto)
         var valor:String
         println("THIS IS"+a.toString())
         var A:ArrayList<String> = ArrayList()
