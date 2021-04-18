@@ -17,10 +17,15 @@ class DetalleVenta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_ventas)
         btn_regresarFactura.setOnClickListener { Regresar() }
-
-
+        findViewById<FloatingActionButton>(R.id.idFabListar_DetalleVenta).setOnClickListener {
+            Mostrar()}
     }
 
+
+    private fun Mostrar() {
+        val intent = Intent(this, MostrarDetalleVenta::class.java)
+        startActivity(intent)
+    }
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
