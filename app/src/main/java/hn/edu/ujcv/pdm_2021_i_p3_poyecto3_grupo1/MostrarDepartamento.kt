@@ -40,7 +40,7 @@ class MostrarDepartamento:  AppCompatActivity() {
 
     private fun callServiceGetPerson() {
         val departamentoService:DepartamentoService = RestEngine.buildService().create(DepartamentoService::class.java)
-        var result: Call<DepartamentoDataCollectionItem> = departamentoService.getDepartamentoById(txt_DepartamentoID2.text.toString().toLong())
+        var result: Call<DepartamentoDataCollectionItem> = departamentoService.getDepartamentoById(txt_IdFactura.text.toString().toLong())
 
         result.enqueue(object : Callback<DepartamentoDataCollectionItem> {
             override fun onFailure(call: Call<DepartamentoDataCollectionItem>, t: Throwable) {
@@ -62,7 +62,7 @@ class MostrarDepartamento:  AppCompatActivity() {
                     txt_DescripcionDepartamento2.isEnabled =  true
                     txt_NombreDepartamento2.isEnabled = true
                 }catch (e:Exception){
-                    Toast.makeText(this@MostrarDepartamento, "No se ha encontrado el departamento con ID: "+ txt_DepartamentoID2.text.toString(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MostrarDepartamento, "No se ha encontrado el departamento con ID: "+ txt_IdFactura.text.toString(), Toast.LENGTH_SHORT).show()
                 }
 
 
@@ -86,7 +86,7 @@ class MostrarDepartamento:  AppCompatActivity() {
 
 
             val deptoService: DepartamentoService = RestEngine.buildService().create(DepartamentoService::class.java)
-            var result: Call<ResponseBody> = deptoService.deleteDepartamento(txt_DepartamentoID2.text.toString().toLong())
+            var result: Call<ResponseBody> = deptoService.deleteDepartamento(txt_IdFactura.text.toString().toLong())
 
             result.enqueue(object :  Callback<ResponseBody> {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -116,7 +116,7 @@ class MostrarDepartamento:  AppCompatActivity() {
 
     private fun callServicePutDepto() {
 
-        val deptoInfo = DepartamentoDataCollectionItem(  id = txt_DepartamentoID2.text.toString().toLong(),
+        val deptoInfo = DepartamentoDataCollectionItem(  id =txt_IdFactura.text.toString().toLong(),
                 nombre = txt_NombreDepartamento2.text.toString(),
                 descripcion = txt_DescripcionDepartamento2.text.toString()
 
