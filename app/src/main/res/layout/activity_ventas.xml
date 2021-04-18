@@ -396,7 +396,7 @@
         app:layout_constraintVertical_bias="0.834" />
 
     <EditText
-        android:id="@+id/txt_FechaVenta2"
+        android:id="@+id/txt_FechaEntrga2"
         android:layout_width="124dp"
         android:layout_height="32dp"
         android:autoText="true"

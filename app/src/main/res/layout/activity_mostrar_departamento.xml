@@ -9,6 +9,7 @@
 
     z
 
+
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/grupoFab_Departamento2"
         android:layout_width="39dp"
@@ -20,10 +21,10 @@
         app:fab_addButtonColorPressed="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922"
+        app:layout_constraintVertical_bias="0.869"
         tools:ignore="MissingConstraints">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -42,8 +43,15 @@
             app:fab_icon="@mipmap/ic_delete"
             app:fab_size="mini" />
 
-    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idFabLimpiar_departamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/black"
+            app:fab_icon="@mipmap/ic_limpiar"
+            app:fab_size="mini" />
 
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <Button
         android:id="@+id/btn_regresarDepartamento2"
@@ -79,7 +87,7 @@
         app:layout_constraintVertical_bias="0.339" />
 
     <EditText
-        android:id="@+id/txt_DepartamentoID2"
+        android:id="@+id/txt_IdFactura"
         android:layout_width="290dp"
         android:layout_height="45dp"
         android:ems="10"
