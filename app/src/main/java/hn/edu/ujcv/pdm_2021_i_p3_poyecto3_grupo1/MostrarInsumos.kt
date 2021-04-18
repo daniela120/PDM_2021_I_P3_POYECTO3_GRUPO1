@@ -33,7 +33,7 @@ class MostrarInsumos : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabActualizar_Insumos).setOnClickListener {
             callServicePutInsumos()
         }
-        findViewById<FloatingActionButton>(R.id.idFabEliminar_Departamento).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.idFabEliminar_Insumos).setOnClickListener {
             callServiceDeleteInsumos()
         }
     }
@@ -50,35 +50,43 @@ class MostrarInsumos : AppCompatActivity() {
 
             result.enqueue(object : Callback<InsumosDataCollectionItem> {
                 override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
-                    Toast.makeText(this@MostrarInsumos,"Error", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MostrarInsumos, "Error", Toast.LENGTH_LONG).show()
                 }
 
                 override fun onResponse(
                         call: Call<InsumosDataCollectionItem>,
                         response: Response<InsumosDataCollectionItem>
                 ) {
-                    var a = response.body()!!.nombre
-                    var b = response.body()!!.tipo
-                    var c = response.body()!!.cantidad
-                    var e = response.body()!!.preciocompra
-                    var f = response.body()!!.precioventa
+                    try {
 
-                    txt_MostrarInsNombre.setText(a)
-                    txt_MostrarInsTipo.setText(b)
-                    txt_MostrarInsCantidad.setText(c.toString())
-                    txt_MostrarInsPCompra.setText(e.toString())
-                    txt_MostrarInsPVenta.setText(f.toString())
 
-                    txt_MostrarInsNombre.isEnabled = true
-                    txt_MostrarInsTipo.isEnabled = true
-                    txt_MostrarInsCantidad.isEnabled = true
-                    txt_MostrarInsPCompra.isEnabled = true
-                    txt_MostrarInsPVenta.isEnabled = true
+                        var a = response.body()!!.nombre
+                        var b = response.body()!!.tipo
+                        var c = response.body()!!.cantidad
+                        var e = response.body()!!.preciocompra
+                        var f = response.body()!!.precioventa
+
+                        txt_MostrarInsNombre.setText(a)
+                        txt_MostrarInsTipo.setText(b)
+                        txt_MostrarInsCantidad.setText(c.toString())
+                        txt_MostrarInsPCompra.setText(e.toString())
+                        txt_MostrarInsPVenta.setText(f.toString())
+
+                        txt_MostrarInsNombre.isEnabled = true
+                        txt_MostrarInsTipo.isEnabled = true
+                        txt_MostrarInsCantidad.isEnabled = true
+                        txt_MostrarInsPCompra.isEnabled = true
+                        txt_MostrarInsPVenta.isEnabled = true
+                    } catch (e: Exception) {
+
+                        Toast.makeText(this@MostrarInsumos, "NO SE ENCONTRO EL INSUMO CON ID: "+txt_IdInsumo2.text.toString(), Toast.LENGTH_SHORT).show()
+                        nosearch()
+                    }
 
                 }
             })
         }catch (e:Exception){
-            Toast.makeText(this@MostrarInsumos, "EL ID NO ES VALIDO", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@MostrarInsumos, "ERROR VERIFIQUE LOS DATOS INGRESADOS", Toast.LENGTH_SHORT).show()
         }
         }
 
@@ -90,49 +98,51 @@ class MostrarInsumos : AppCompatActivity() {
         txt_MostrarInsPCompra.setText("")
         txt_MostrarInsPVenta.setText("")
 
-        txt_MostrarInsNombre.isEnabled = true
-        txt_MostrarInsTipo.isEnabled = true
-        txt_MostrarInsCantidad.isEnabled = true
-        txt_MostrarInsPCompra.isEnabled = true
-        txt_MostrarInsPVenta.isEnabled = true
+        txt_MostrarInsNombre.isEnabled = false
+        txt_MostrarInsTipo.isEnabled = false
+        txt_MostrarInsCantidad.isEnabled = false
+        txt_MostrarInsPCompra.isEnabled = false
+        txt_MostrarInsPVenta.isEnabled = false
     }
 //Actualizar
 private fun callServicePutInsumos() {
-
-    val insumosinfo = InsumosDataCollectionItem(  id =txt_IdInsumo2.text.toString().toLong(),
-            nombre = txt_NombreInsumo.text.toString(),
-            tipo = txt_Tipo.text.toString(),
-            cantidad = txt_TipoCantidad.text.toString().toLong() ,
-            preciocompra = txt_PrecioCon.text.toString().toLong() ,
-            precioventa = txt_PrecioVenta.text.toString().toLong()
-    )
+    try {
 
 
+        val insumosinfo = InsumosDataCollectionItem(id = txt_IdInsumo2.text.toString().toLong(),
+                nombre = txt_MostrarInsNombre.text.toString(),
+                tipo = txt_MostrarInsTipo.text.toString(),
+                cantidad = txt_MostrarInsCantidad.text.toString().toLong(),
+                preciocompra = txt_MostrarInsPCompra.text.toString().toLong(),
+                precioventa = txt_MostrarInsPVenta.text.toString().toLong()
+        )
 
-    val retrofit = RestEngine.buildService().create(InsumosService::class.java)
-    var result: Call<InsumosDataCollectionItem> = retrofit.updateInsumos(insumosinfo)
+
+        val retrofit = RestEngine.buildService().create(InsumosService::class.java)
+        var result: Call<InsumosDataCollectionItem> = retrofit.updateInsumos(insumosinfo)
 
 
-    result.enqueue(object : Callback<InsumosDataCollectionItem>{
-        override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
-            Toast.makeText(this@MostrarInsumos,"Error",Toast.LENGTH_LONG).show()
-        }
-
-        override fun onResponse(call: Call<InsumosDataCollectionItem>,
-                                response: Response<InsumosDataCollectionItem>) {
-            if (response.isSuccessful) {
-                val updatedPerson = response.body()!!
-                Toast.makeText(this@MostrarInsumos," ACTUALIZADO",Toast.LENGTH_LONG).show()
+        result.enqueue(object : Callback<InsumosDataCollectionItem> {
+            override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@MostrarInsumos, "Error", Toast.LENGTH_LONG).show()
             }
-            else if (response.code() == 401){
-                Toast.makeText(this@MostrarInsumos,"Sesion expirada",Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(this@MostrarInsumos,"Fallo al traer el item",Toast.LENGTH_LONG).show()
-            }
-        }
 
-    })
+            override fun onResponse(call: Call<InsumosDataCollectionItem>,
+                                    response: Response<InsumosDataCollectionItem>) {
+                if (response.isSuccessful) {
+                    val updatedPerson = response.body()!!
+                    Toast.makeText(this@MostrarInsumos, " INSUMO ACTUALIZADO", Toast.LENGTH_LONG).show()
+                } else if (response.code() == 401) {
+                    Toast.makeText(this@MostrarInsumos, "Sesion expirada", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MostrarInsumos, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+                }
+            }
+
+        })
+    }catch (e:Exception){
+        Toast.makeText(this@MostrarInsumos, "ERROR, POR FAVOR VERIFIQUE LOS DATOS", Toast.LENGTH_SHORT).show()
+    }
 
 }
     //Metodo Delete
@@ -153,7 +163,8 @@ private fun callServicePutInsumos() {
                         response: Response<ResponseBody>
                 ) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@MostrarInsumos,"DEPTO. ELIMINADO",Toast.LENGTH_LONG).show()
+                        reset()
+                        Toast.makeText(this@MostrarInsumos,"INSUMO ELIMINADO",Toast.LENGTH_LONG).show()
                     }
                     else if (response.code() == 401){
                         Toast.makeText(this@MostrarInsumos,"Sesion expirada",Toast.LENGTH_LONG).show()
@@ -165,6 +176,21 @@ private fun callServicePutInsumos() {
             })
         }catch (e: java.lang.Exception){
             Toast.makeText(this@MostrarInsumos,"NO SE PUEDO ELIMINAR EL CLIENTE CON EL ID: "+ txt_IdInsumo2.text.toString(),Toast.LENGTH_LONG).show()
-
+            reset()
         }    }
+
+
+
+     fun nosearch(){
+         txt_MostrarInsNombre.setText("")
+         txt_MostrarInsTipo.setText("")
+         txt_MostrarInsCantidad.setText("")
+         txt_MostrarInsPCompra.setText("")
+         txt_MostrarInsPVenta.setText("")
+         txt_MostrarInsNombre.isEnabled = false
+         txt_MostrarInsTipo.isEnabled = false
+         txt_MostrarInsCantidad.isEnabled = false
+         txt_MostrarInsPCompra.isEnabled = false
+         txt_MostrarInsPVenta.isEnabled = false
+     }
 }
