@@ -252,7 +252,7 @@ class MostrarProduccion : AppCompatActivity() {
                     response: Response<EmpleadoDataCollectionItem>
             ) {
                 nombrep = response.body()!!.nombrecompleto.toString()
-                txv_select3.text = nombrep
+                txv_selectProd2.text = nombrep
 
             }
         })
@@ -335,7 +335,7 @@ class MostrarProduccion : AppCompatActivity() {
                     response: Response<ProductoDataCollectionItem>
             ) {
                 nombrep = response.body()!!.nombre.toString()
-                txv_select.text = nombrep
+                txv_selectProd1.text = nombrep
 
             }
         })
@@ -417,7 +417,7 @@ class MostrarProduccion : AppCompatActivity() {
                     response: Response<DepartamentoDataCollectionItem>
             ) {
                 nombrep = response.body()!!.nombre
-                txv_select4.text = nombrep.toString()
+                txv_selectProd3.text = nombrep.toString()
 
             }
         })
