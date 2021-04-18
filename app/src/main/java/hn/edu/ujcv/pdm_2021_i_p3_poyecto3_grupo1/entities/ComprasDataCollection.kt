@@ -11,7 +11,7 @@ data class  ComprasDataCollectionItem(
     val proveedores:Long?,
     val numerotarjeta:Long?,
     val formapago:Long?,
-    val fechaentrega:Date?,
-    val fechacompra:Date?,
+    val fechaentrega:String?,
+    val fechacompra:String?,
     val insumos:Long?
 )

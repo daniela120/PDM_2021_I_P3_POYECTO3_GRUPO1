@@ -32,6 +32,8 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
         txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
+        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Compras).setOnClickListener {
+            callServicePostCompra() }
         callServiceGetProveedores()
         callServiceGetTipo()
     }
@@ -48,12 +50,12 @@ class Compras : AppCompatActivity() {
 
         val compraInfo = ComprasDataCollectionItem(id = null,
                 cai = txt_CaiCompra.text.toString(),
-                proveedores = txt_TelefonoCliente.text.toString().toLong(),
-                numerotarjeta = txt_dniCliente.text.toString().toLong(),
+                proveedores = spinnerIdProvedor.selectedItem.toString().toLong(),
+                numerotarjeta = txt_TarjetaCompra.text.toString().toLong(),
                 formapago = spinnerFormaPago.selectedItem.toString().toLong(),
-                fechaentrega = null,
-                fechacompra = null,
-                insumos = null
+                fechaentrega = "2021-03-20T06:00:00.000+00:00",
+                fechacompra = "2021-03-20T06:00:00.000+00:00",
+                insumos = 1
         )
 
             addCompra(compraInfo) {
