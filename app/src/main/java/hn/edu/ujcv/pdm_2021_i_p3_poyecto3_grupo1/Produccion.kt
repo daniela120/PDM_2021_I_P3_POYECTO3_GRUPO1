@@ -26,6 +26,10 @@ class Produccion : AppCompatActivity() {
         btn_regresarProduccion.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Produccion).setOnClickListener {
             Mostrar() }
+        callServicePostProduccion()
+       callServiceGetDepartamento()
+        callServiceGetEmpleado()
+        callServiceGetProducto()
     }
 
 
