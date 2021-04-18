@@ -1,4 +1,4 @@
-package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
+package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES
 
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import okhttp3.ResponseBody

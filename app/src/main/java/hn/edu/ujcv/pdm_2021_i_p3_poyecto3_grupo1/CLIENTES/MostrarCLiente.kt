@@ -1,14 +1,15 @@
-package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
+package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.R
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.RestEngine
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +29,7 @@ class MostrarCLiente:  AppCompatActivity() {
             startActivity(intent)
         }
     private fun callServiceGetPerson() {
-        val clienteService:ClienteService = RestEngine.buildService().create(ClienteService::class.java)
+        val clienteService: ClienteService = RestEngine.buildService().create(ClienteService::class.java)
         var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(txt_IdCliente2.text.toString().toLong())
 
         result.enqueue(object : Callback<ClienteDataCollectionItem> {

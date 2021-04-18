@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cliente" />
+        <activity android:name=".CLIENTES.Cliente" />
         <activity android:name=".Insumos" />
         <activity android:name=".TipoPago" />
         <activity android:name=".Compras" />
@@ -37,7 +37,7 @@
         <activity android:name=".Ventas" />
         <activity android:name=".Departamento" />
         <activity android:name=".Empleado" />
-        <activity android:name=".MostrarCLiente" />
+        <activity android:name=".CLIENTES.MostrarCLiente" />
         <activity android:name=".MostrarEmpleado" />
         <activity android:name=".MostrarDepartamento" />
         <activity android:name=".MostrarProductos" />
