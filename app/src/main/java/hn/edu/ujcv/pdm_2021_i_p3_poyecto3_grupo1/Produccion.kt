@@ -42,9 +42,9 @@ class Produccion : AppCompatActivity() {
     private fun callServicePostProduccion() {
 
         val Info = ProduccionDataCollectionItem(id = null,
-                idproducto =spinnerIdProducto.selectedItemId.toString().toLong(),
-                idempleado = spinnerIdEmpleado.selectedItemId.toString().toLong(),
-                iddepto = spinnerdepto.selectedItemId.toString().toLong(),
+                idproducto =spinnerIdProducto.selectedItem.toString().toLong(),
+                idempleado = spinnerIdEmpleado.selectedItem.toString().toLong(),
+                iddepto = spinnerdepto.selectedItem.toString().toLong(),
                 descripcion = txt_DescripcionDepartamento.text.toString(),
                 tiempo = txt_TiempoProduccion.text.toString()
         )

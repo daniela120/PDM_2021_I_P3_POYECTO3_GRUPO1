@@ -136,7 +136,7 @@ class MostrarProduccion : AppCompatActivity() {
                     idproducto = spinnerIdProducto.selectedItemId.toString().toLong(),
                     idempleado = spinnerIdEmpleado.selectedItemId.toString().toLong(),
                     iddepto = spinnerdepto.selectedItemId.toString().toLong(),
-                    descripcion = txt_DescripcionDepartamento.text.toString(),
+                    descripcion = txt_DescripcionProduccion.text.toString(),
                     tiempo = txt_TiempoProduccion.text.toString()
             )
 
@@ -163,7 +163,7 @@ class MostrarProduccion : AppCompatActivity() {
 
             })
         } catch (e: Exception) {
-            Toast.makeText(this@MostrarProduccion, "NO SE PUEDO ELIMINAR LA INFORMACION CON EL ID: " + txt_IdProduccion2.text.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MostrarProduccion, "NO SE PUEDO ACTUALIZAR LA INFORMACION CON EL ID: " + txt_IdProduccion2.text.toString(), Toast.LENGTH_LONG).show()
 
         }
     }
