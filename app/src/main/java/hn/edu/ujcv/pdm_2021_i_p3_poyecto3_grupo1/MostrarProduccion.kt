@@ -58,6 +58,22 @@ class MostrarProduccion : AppCompatActivity() {
 
     }
 
+    private fun resetearall() {
+        txt_IdProduccion2.setText("")
+        txt_MostrarDescripcion.setText("")
+        txt_MostrarPrdTiempo.setText("")
+        txt_IdProduccion2.setText("")
+        txv_selectProd1.setText("")
+        txv_selectProd2.setText("")
+        txv_selectProd3.setText("")
+        txt_MostrarDescripcion.isEnabled = false
+        txt_MostrarPrdTiempo.isEnabled = false
+        txv_selectProd1.isEnabled = false
+        txv_selectProd2.isEnabled = false
+        txv_selectProd3.isEnabled = false
+
+    }
+
     private fun Regresar() {
         val intent = Intent(this, Produccion::class.java)
         startActivity(intent)
@@ -127,6 +143,7 @@ class MostrarProduccion : AppCompatActivity() {
                         response: Response<ResponseBody>
                 ) {
                     if (response.isSuccessful) {
+                        resetearall()
                         Toast.makeText(this@MostrarProduccion, "ELIMINADO CON EXITO", Toast.LENGTH_LONG).show()
                     } else if (response.code() == 401) {
                         Toast.makeText(this@MostrarProduccion, "Sesion expirada", Toast.LENGTH_LONG).show()
