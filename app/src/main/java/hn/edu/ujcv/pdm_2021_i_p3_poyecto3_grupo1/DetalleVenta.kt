@@ -247,7 +247,7 @@ class DetalleVenta : AppCompatActivity() {
                     response: Response<ProductoDataCollectionItem>
             ) {
                 idpro = response.body()!!.id.toString()
-                txv_select3.text = idpro
+                txv_SeleccionProductoId1.text = idpro
 
             }
         })

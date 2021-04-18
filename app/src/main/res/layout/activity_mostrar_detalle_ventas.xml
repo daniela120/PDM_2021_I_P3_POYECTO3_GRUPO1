@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.275" />
 
     <TextView
-        android:id="@+id/txv_SeleccionCompraId3"
+        android:id="@+id/txv_SeleccionProductoId2"
         android:layout_width="151dp"
         android:layout_height="33dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.58" />
 
     <TextView
-        android:id="@+id/txv_SeleccionCompraId"
+        android:id="@+id/txv_SeleccionVentaID2"
         android:layout_width="151dp"
         android:layout_height="33dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
