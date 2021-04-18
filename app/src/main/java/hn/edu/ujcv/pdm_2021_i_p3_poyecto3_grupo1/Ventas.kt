@@ -30,6 +30,7 @@ class Ventas : AppCompatActivity() {
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
         txt_FechaCompra.setText("$day / $month / $year")
+        txt_FechaVenta2.setText("$day / $month / $year")
     }
 
 

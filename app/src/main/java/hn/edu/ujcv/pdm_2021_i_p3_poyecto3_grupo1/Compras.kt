@@ -9,10 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.getbase.floatingactionbutton.FloatingActionButton
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
-import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProveedoresDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.*
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_compras.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
@@ -36,6 +33,7 @@ class Compras : AppCompatActivity() {
             callServicePostCompra() }
         callServiceGetProveedores()
         callServiceGetTipo()
+        callServiceGetInsumo()
     }
 
     fun showDatePickerDialog() {
@@ -44,6 +42,7 @@ class Compras : AppCompatActivity() {
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
         txt_FechaCompra.setText("$day / $month / $year")
+        txt_FechaE.setText("$day / $month / $year")
     }
 
     private fun callServicePostCompra() {
@@ -55,7 +54,7 @@ class Compras : AppCompatActivity() {
                 formapago = spinnerFormaPago.selectedItem.toString().toLong(),
                 fechaentrega = "2021-03-20T06:00:00.000+00:00",
                 fechacompra = "2021-03-20T06:00:00.000+00:00",
-                insumos = 1
+                insumos = spinnerInsumo.selectedItem.toString().toLong(),
         )
 
             addCompra(compraInfo) {
@@ -166,6 +165,44 @@ class Compras : AppCompatActivity() {
         })
 
     }
+    private fun callServiceGetInsumo() {
+        var lista: HashSet<String> = hashSetOf()
+
+        val tipoService:InsumosService= RestEngine.buildService().create(InsumosService::class.java)
+        var result: Call<List<InsumosDataCollectionItem>> = tipoService.listInsumos()
+
+        result.enqueue(object : Callback<List<InsumosDataCollectionItem>> {
+            override fun onFailure(call: Call<List<InsumosDataCollectionItem>>, t: Throwable) {
+                Toast.makeText(this@Compras, "Error", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<List<InsumosDataCollectionItem>>,
+                    response: Response<List<InsumosDataCollectionItem>>
+            ) {
+                try {
+                    val parametro = StringBuilder()
+                    var num =0
+                    for (i in response.body()!!) {
+                        lista.add(i.id.toString())
+                    }
+
+
+
+
+
+                    println("LA LISTA ES:"+lista.toString())
+                    initial3(lista)
+
+                } catch (e: Exception) {
+                    println("No hay datos de tipo de pago")
+
+                }
+
+            }
+        })
+
+    }
 
     fun initial(a:HashSet<String>){
         val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdProvedor)
@@ -228,7 +265,35 @@ class Compras : AppCompatActivity() {
 
     }
 
+    fun initial3(a:HashSet<String>){
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerInsumo)
+        var valor:String
+        println("THIS IS"+a.toString())
+        var A:ArrayList<String> = ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
 
+        }
+
+        println("ESTO ES LO QUE SE VA A GUARDAR" + A.toString())
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Puestos.adapter =adaptador
+        spinner_Puestos.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetInsumobyId(A[position].toString().toLong())
+            }
+        }
+
+
+    }
 
 
 
@@ -263,6 +328,26 @@ class Compras : AppCompatActivity() {
         })
 
 
+    }
+    private fun callServiceGetInsumobyId(a: Long){
+        var nombrep=""
+        val insumoServices:InsumosService = RestEngine.buildService().create(InsumosService::class.java)
+        var result: Call<InsumosDataCollectionItem> = insumoServices.getInsumosById(a)
+
+        result.enqueue(object : Callback<InsumosDataCollectionItem> {
+            override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<InsumosDataCollectionItem>,
+                    response: Response<InsumosDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.nombre.toString()
+                txv_selecionP2.text = nombrep
+
+            }
+        })
     }
 
 

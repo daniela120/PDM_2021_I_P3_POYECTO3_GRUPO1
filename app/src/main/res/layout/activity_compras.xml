@@ -28,7 +28,7 @@
         android:id="@+id/txv_selecionP2"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:text="ID"
+        android:text="Insumo"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.456" />
 
     <Spinner
-        android:id="@+id/spinnerIdProvedor2"
+        android:id="@+id/spinnerInsumo"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
