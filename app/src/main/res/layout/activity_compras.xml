@@ -10,9 +10,10 @@
 
     <TextView
         android:id="@+id/txv_Nom3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
         android:text="INSUMO"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -173,7 +174,7 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <TextView
         android:id="@+id/txv_selecionF"
