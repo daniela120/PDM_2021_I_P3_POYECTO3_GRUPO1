@@ -30,25 +30,29 @@ class MainActivity : AppCompatActivity() {
 
                 result.enqueue(object : Callback<EmpleadoDataCollectionItem> {
                     override fun onFailure(call: Call<EmpleadoDataCollectionItem>, t: Throwable) {
-                        Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
                     }
 
                     override fun onResponse(
                             call: Call<EmpleadoDataCollectionItem>,
                             response: Response<EmpleadoDataCollectionItem>
                     ) {
+                        try {
+                            var contrasena: String = txt_Password.text.toString()
 
+                            if (response.body()!!.id!!.equals(usuario.toLong()) && response.body()!!.clave.equals(contrasena)) {
+                                Toast.makeText(this@MainActivity, "BIENVENIDO " + response.body()!!.nombrecompleto, Toast.LENGTH_LONG).show()
+                                goahead()
 
-                        var contrasena:String = txt_Password.text.toString()
-
-                        if(response.body()!!.id!!.equals(usuario.toLong()) && response.body()!!.clave.equals(contrasena)){
-                            Toast.makeText(this@MainActivity,"BIENVENIDO "+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
-                            goahead()
-
-                        }else{
-                            println("CONTRA O USUARIO MALOS")
-                            Toast.makeText(this@MainActivity, "El usuario o la contrasena esta incorrecta",Toast.LENGTH_SHORT).show()
+                            } else {
+                                println("CONTRA O USUARIO MALOS")
+                                Toast.makeText(this@MainActivity, "El usuario o la contrasena esta incorrecta", Toast.LENGTH_SHORT).show()
+                            }
+                        } catch (e: Exception) {
+                            Toast.makeText(this@MainActivity, "El usuario o la contrasena es invalido", Toast.LENGTH_SHORT).show()
                         }
+
+
                     }
                 })
 

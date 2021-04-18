@@ -12,7 +12,9 @@ import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.*
 import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_compras.*
+import kotlinx.android.synthetic.main.activity_compras.btn_regresarCompras
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
+import kotlinx.android.synthetic.main.activity_mostrar_compras.*
 import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
 import kotlinx.android.synthetic.main.activity_ventas.*
 import retrofit2.Call
@@ -30,7 +32,7 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
         txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
-        txt_FechaVenta.setOnClickListener{showDatePickerDialog()}
+        txt_FechaE.setOnClickListener{showDatePickerDialog1()}
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Compras).setOnClickListener {
             callServicePostCompra() }
         callServiceGetProveedores()
@@ -44,6 +46,15 @@ class Compras : AppCompatActivity() {
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
         txt_FechaCompra.setText("$day / $month / $year")
+
+    }
+
+
+    fun showDatePickerDialog1() {
+        val datePicker = DatePickerFragment{ day, month, year -> onDateSelected1(day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    fun onDateSelected1(day: Int, month: Int, year: Int) {
         txt_FechaE.setText("$day / $month / $year")
     }
 
