@@ -9,47 +9,48 @@
 
     <Spinner
         android:id="@+id/spinnerIdEmpleado"
-        android:layout_width="99dp"
-        android:layout_height="46dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="PUESTO"
         android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.381" />
 
     <Spinner
         android:id="@+id/spinnerdepto"
-        android:layout_width="99dp"
-        android:layout_height="46dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="PUESTO"
         android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <Spinner
         android:id="@+id/spinnerIdProducto"
-        android:layout_width="101dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="PUESTO"
         android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.234" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <Button
         android:id="@+id/btn_regresarProduccion"
@@ -218,7 +219,6 @@
         android:layout_width="248dp"
         android:layout_height="36dp"
         android:ems="10"
-        android:enabled="false"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -239,7 +239,6 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"

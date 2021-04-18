@@ -41,5 +41,9 @@ class MostrarProveedores : AppCompatActivity() {
                 Toast.makeText(this@MostrarProveedores,"OK"+response.body()!!.compañia, Toast.LENGTH_LONG).show()
             }
         })
+        txt_MotrarPrvNombre.isEnabled
+        txt_MotrarPrvCompañia.isEnabled
+        txt_MotrarPrvDireccion.isEnabled
+        txt_MotrarPrvRTN.isEnabled
     }
 }

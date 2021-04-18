@@ -29,7 +29,7 @@ class Produccion : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Produccion).setOnClickListener {
             Mostrar() }
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Insumos).setOnClickListener {
-            callServicePostProduccion()
+           guardar()
         }
 
        callServiceGetDepartamentos()
@@ -347,6 +347,7 @@ class Produccion : AppCompatActivity() {
                         if (txt_TiempoProduccion.text.toString().isEmpty()) {
                             Toast.makeText(this, "Ingrese el Tiempo", Toast.LENGTH_SHORT).show()
                         } else {
+                            callServicePostProduccion()
                             Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
                         }
                     }

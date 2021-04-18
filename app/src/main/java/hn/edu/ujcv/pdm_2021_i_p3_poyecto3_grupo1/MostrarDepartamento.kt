@@ -26,7 +26,9 @@ class MostrarDepartamento:  AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabEliminar_Departamento).setOnClickListener {
             callServiceDeleteDepto()
         }
-
+        findViewById<FloatingActionButton>(R.id.idFabLimpiar_departamento).setOnClickListener {
+         resetear()
+        }
         findViewById<FloatingActionButton>(R.id.idFabActualizar_Departamento).setOnClickListener {
             callServicePutDepto()
         }
