@@ -5,74 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
-    tools:context=".MostrarProveedores">
+    tools:context=".DetalleVenta">
 
-    <EditText
-        android:id="@+id/txt_MotrarPrvCompañia"
-        android:layout_width="201dp"
-        android:layout_height="35dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
+    <TextView
+        android:id="@+id/txv_SeleccionCompraId3"
+        android:layout_width="151dp"
+        android:layout_height="33dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:enabled="false"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintVertical_bias="0.468" />
 
-    <EditText
-        android:id="@+id/txt_MotrarPrvRTN"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
+    <TextView
+        android:id="@+id/txv_SeleccionCompraId2"
+        android:layout_width="151dp"
+        android:layout_height="33dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:enabled="false"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.466" />
 
-    <EditText
-        android:id="@+id/txt_MotrarPrvDireccion"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:enabled="false"
+    <Spinner
+        android:id="@+id/spinnerIdCompra"
+        android:layout_width="139dp"
+        android:layout_height="37dp"
+        android:background="@drawable/boton_redondo"
+        android:backgroundTint="@color/blue0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintVertical_bias="0.39" />
 
-    <EditText
-        android:id="@+id/txt_MotrarPrvNombre"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:enabled="false"
+    <Spinner
+        android:id="@+id/spinnerIdproducto3"
+        android:layout_width="139dp"
+        android:layout_height="37dp"
+        android:background="@drawable/boton_redondo"
+        android:backgroundTint="@color/blue0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/grupoFab_Proveedores2"
+        android:id="@+id/grupoFab_DetalleVenta"
         android:layout_width="39dp"
         android:layout_height="223dp"
         android:layout_alignParentEnd="true"
@@ -82,58 +72,32 @@
         app:fab_addButtonColorPressed="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822"
+        app:layout_constraintVertical_bias="0.869"
         tools:ignore="MissingConstraints">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabActualizar_Proveedores"
+            android:id="@+id/idFabListar_DetalleVenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_update"
+            app:fab_icon="@mipmap/ic_mostrar"
             app:fab_size="mini" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabEliminar_Proveedores"
+            android:id="@+id/idFabConfirmar_DetalleVenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_delete"
-            app:fab_size="mini" />
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabLimpiar_Proveedores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_limpiar"
+            app:fab_icon="@mipmap/ic_confirm"
             app:fab_size="mini" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <Button
-        android:id="@+id/btn_BuscarProveedor"
-        android:layout_width="41dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:drawable/ic_menu_search"
-        android:backgroundTint="@color/white"
-        android:fadingEdge="vertical"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
-
-    <Button
-        android:id="@+id/btn_regresarProveedor2"
+        android:id="@+id/btn_regresarFactura"
         android:layout_width="37dp"
         android:layout_height="34dp"
         android:background="@android:color/transparent"
@@ -146,111 +110,126 @@
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@mipmap/ic_atras" />
 
+
     <EditText
-        android:id="@+id/txt_IdProveedor2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="291dp"
-        android:layout_height="40dp"
+        android:id="@+id/txt_PrecioFactura1"
+        android:layout_width="145dp"
+        android:layout_height="45dp"
         android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
+        android:enabled="false"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.713" />
+
+    <EditText
+        android:id="@+id/txt_CantidadFactura1"
+        android:layout_width="145dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
 
     <TextView
-        android:id="@+id/txv_Nom79"
+        android:id="@+id/txvNombre4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:text="VENTA ID"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.326" />
 
     <TextView
-        android:id="@+id/txv_Nom80"
+        android:id="@+id/txvDescripcionD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOMBRE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:text="PRECIO"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.626" />
 
     <TextView
-        android:id="@+id/txv_Nom81"
+        android:id="@+id/txvDescripcionD2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="COMPAÑIA"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:text="CANTIDAD"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851" />
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
-        android:id="@+id/txv_Nom82"
+        android:id="@+id/txvDescripcionD3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DIRECCION"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:text="PRODUCTO ID"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.324" />
 
     <TextView
-        android:id="@+id/txv_Nom83"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RTN"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694" />
-
-    <TextView
-        android:id="@+id/txvTITULO13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PROVEEDOR"
+        android:id="@+id/txvTITULO7"
+        android:layout_width="241dp"
+        android:layout_height="43dp"
+        android:text="FACTURA"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/yellow3"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.16" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
