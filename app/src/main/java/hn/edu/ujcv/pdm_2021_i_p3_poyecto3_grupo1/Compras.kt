@@ -45,7 +45,7 @@ class Compras : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
-        txt_FechaCompra.setText("$day / $month / $year")
+        txt_FechaCompra.setText("$year-$month-$day"+"T06:00:00.000+00:00")
 
     }
 
@@ -55,7 +55,7 @@ class Compras : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected1(day: Int, month: Int, year: Int) {
-        txt_FechaE.setText("$day / $month / $year")
+        txt_FechaE.setText("$year-$month-$day"+"T06:00:00.000+00:00")
     }
 
     private fun callServicePostCompra() {
