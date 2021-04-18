@@ -76,6 +76,7 @@ class MostrarDepartamento:  AppCompatActivity() {
 
 
     fun resetear(){
+        txt_IdFactura.setText("")
         txt_NombreDepartamento2.setText("")
         txt_DescripcionDepartamento2.setText("")
         txt_DescripcionDepartamento2.isEnabled = false
