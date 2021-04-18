@@ -45,7 +45,27 @@ class Compras : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected(day: Int, month: Int, year: Int) {
-        txt_FechaCompra.setText("$year-$month-$day"+"T06:00:00.000+00:00")
+        if(month<10 && day<10){
+            var a="$year-0$month-0$day"+"T06:00:00.000+00:00"
+            txt_FechaCompra.setText(a.toString())
+        }else{
+            if(month<10 && day>9){
+
+
+                var a="$year-0$month-$day"+"T06:00:00.000+00:00"
+                txt_FechaCompra.setText(a.toString())}else{
+                if(month>9 && day<10){
+
+                    var a="$year-$month-0$day"+"T06:00:00.000+00:00"
+                    txt_FechaCompra.setText(a.toString())
+                }else{
+                    var a="$year-$month-$day"+"T06:00:00.000+00:00"
+                    txt_FechaCompra.setText(a.toString())
+                }
+            }
+        }
+
+
 
     }
 
@@ -55,7 +75,25 @@ class Compras : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected1(day: Int, month: Int, year: Int) {
-        txt_FechaE.setText("$year-$month-$day"+"T06:00:00.000+00:00")
+        if(month<10 && day<10){
+            var a="$year-0$month-0$day"+"T06:00:00.000+00:00"
+            txt_FechaE.setText(a.toString())
+        }else{
+            if(month<10 && day>9){
+
+
+            var a="$year-0$month-$day"+"T06:00:00.000+00:00"
+            txt_FechaE.setText(a.toString())}else{
+                if(month>9 && day<10){
+
+                    var a="$year-$month-0$day"+"T06:00:00.000+00:00"
+                    txt_FechaE.setText(a.toString())
+                }else{
+                    var a="$year-$month-$day"+"T06:00:00.000+00:00"
+                    txt_FechaE.setText(a.toString())
+                }
+            }
+        }
     }
 
     private fun callServicePostCompra() {
