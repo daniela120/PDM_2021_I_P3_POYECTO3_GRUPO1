@@ -65,8 +65,8 @@ class Compras : AppCompatActivity() {
                 proveedores = spinnerIdProvedor.selectedItem.toString().toLong(),
                 numerotarjeta = txt_TarjetaCompra.text.toString().toLong(),
                 formapago = spinnerFormaPago.selectedItem.toString().toLong(),
-                fechaentrega = "2021-03-20T06:00:00.000+00:00",
-                fechacompra = "2021-03-20T06:00:00.000+00:00",
+                fechaentrega = txt_FechaE.text.toString(),
+                fechacompra = txt_FechaCompra.text.toString(),
                 insumos = spinnerInsumo.selectedItem.toString().toLong(),
         )
 
