@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.getbase.floatingactionbutton.FloatingActionButton
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionItem
+import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.EmpleadoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProveedoresDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
@@ -153,7 +154,6 @@ class Compras : AppCompatActivity() {
 
                     println("LA LISTA ES:"+lista.toString())
                     initial(lista)
-                    Toast.makeText(this@Compras, "OK" + response.body()!!.get(0).compañia, Toast.LENGTH_LONG).show()
 
                 } catch (e: Exception) {
                     println("No hay datos de tipo de pago")
@@ -188,8 +188,7 @@ class Compras : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
-
-                txv_selecionP.setText(A[position].toString())
+                callServiceGetProveedorById(A[position].toString().toLong())
             }
         }
 
@@ -219,8 +218,9 @@ class Compras : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
+                callServiceGetTipoById(A[position].toString().toLong())
 
-                txv_selecionF.setText(A[position].toString())
+
             }
         }
 
@@ -240,6 +240,52 @@ class Compras : AppCompatActivity() {
     }
 
 
+    private fun callServiceGetProveedorById(a:Long) {
+        var nombrep=""
+        val provedorService:ProveedoresService = RestEngine.buildService().create(ProveedoresService::class.java)
+        var result: Call<ProveedoresDataCollectionItem> = provedorService.getProveedoresById(a)
+
+        result.enqueue(object : Callback<ProveedoresDataCollectionItem> {
+            override fun onFailure(call: Call<ProveedoresDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<ProveedoresDataCollectionItem>,
+                    response: Response<ProveedoresDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.compañia.toString()
+                txv_selecionP.text = nombrep
+
+            }
+        })
+
+
+    }
+
+
+    private fun callServiceGetTipoById(a:Long) {
+        var nombrep=""
+        val pagoservice:PagoService = RestEngine.buildService().create(PagoService::class.java)
+        var result: Call<PagoDataCollectionItem> = pagoservice.getPagoById(a)
+
+        result.enqueue(object : Callback<PagoDataCollectionItem> {
+            override fun onFailure(call: Call<PagoDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@Compras,"Error",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                    call: Call<PagoDataCollectionItem>,
+                    response: Response<PagoDataCollectionItem>
+            ) {
+                nombrep = response.body()!!.descripcion.toString()
+                txv_selecionF.text = nombrep
+
+            }
+        })
+
+
+    }
 
 
 }
