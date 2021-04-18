@@ -139,13 +139,14 @@ class MostrarProduccion : AppCompatActivity() {
     }
 
     private fun callServicePutProduccion() {
-        try {
+        try{
+
             val Info = ProduccionDataCollectionItem(id = txt_IdProduccion2.text.toString().toLong(),
-                    idproducto = spinnerIdProducto.selectedItem.toString().toLong(),
-                    idempleado = spinnerIdEmpleado.selectedItem.toString().toLong(),
-                    iddepto =   txv_select4.text.toString().toLong(),
-                    descripcion = txt_DescripcionProduccion.text.toString(),
-                    tiempo = txt_TiempoProduccion.text.toString()
+                    idproducto = spinnerIdProducto3.selectedItem.toString().toLong(),
+                    idempleado = spinnerIdEmpleado3.selectedItem.toString().toLong(),
+                    iddepto =   spinnerMostrardepto.selectedItem.toString().toLong(),
+                    descripcion = txt_MostrarDescripcion.text.toString(),
+                    tiempo = txt_MostrarPrdTiempo.text.toString()
             )
 
 
@@ -171,7 +172,7 @@ class MostrarProduccion : AppCompatActivity() {
 
             })
         } catch (e: Exception) {
-            Toast.makeText(this@MostrarProduccion, "NO SE PUEDO ACTUALIZAR LA INFORMACION CON EL ID: " + txt_IdProduccion2.text.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MostrarProduccion, e.message+" NO SE PUEDO ACTUALIZAR LA INFORMACION CON EL ID: " + txt_IdProduccion2.text.toString(), Toast.LENGTH_LONG).show()
 
         }
     }
