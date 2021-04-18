@@ -13,18 +13,18 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     private val titles = arrayOf("EMPLEADO", "CLIENTE",
                 "DEPARTAMENTO", "INSUMOS",
                 "PRODUCCION", "PRODUCTOS",
-                "PROVEEDORES", "VENTA", "COMPRA", "FORMA PAGO")
+                "PROVEEDORES", "VENTA","FACTURA VENTA", "COMPRA", "FACTURA COMPRA","FORMA PAGO")
 
     private val details = arrayOf("EMPLEADOS", "CLIENTES",
             "DEPARTAMENTO", "INSUMOS",
             "PRODUCCION", "PRODUCTOS",
-            "PROVEEDORES", "VENTAS", "COMPRAS", "FORMAS DE PAGO")
+            "PROVEEDORES", "VENTAS","FACTURA VENTAS","COMPRAS", "FACTURAS COMPRAS","FORMAS DE PAGO")
 
     private val images = intArrayOf(R.drawable.empleado,R.drawable.cliente,
             R.drawable.departamento, R.drawable.insumos,
             R.drawable.produccion, R.drawable.producto,
-            R.drawable.proveedor, R.drawable.venta,
-            R.drawable.compra,R.drawable.tipopago)
+            R.drawable.proveedor, R.drawable.venta,R.drawable.detalleventa,
+            R.drawable.compra,R.drawable.detallecompra,R.drawable.tipopago)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
@@ -58,7 +58,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     5 -> irProductos(itemView)
                     6 -> irProveedores(itemView)
                     7 -> irVentas(itemView)
+                    6 -> irFacturaVenta(itemView)
                     8 -> irCompras(itemView)
+                    6 -> irFacturaCompra(itemView)
+                    6 -> irProveedores(itemView)
                     9 -> irTipoPago(itemView)
                     else->regresarMain(itemView)
 
@@ -106,6 +109,16 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val intent = Intent(itemView.context, Compras::class.java)
         itemView.context.startActivity(intent)
     }
+    private fun irFacturaCompra(itemView: View) {
+        val intent = Intent(itemView.context, DetalleCompra::class.java)
+        itemView.context.startActivity(intent)
+    }
+
+    private fun irFacturaVenta(itemView: View) {
+        val intent = Intent(itemView.context, DetalleVenta::class.java)
+        itemView.context.startActivity(intent)
+    }
+
     private fun irCliente(itemView: View) {
         val intent = Intent(itemView.context, Cliente::class.java)
         itemView.context.startActivity(intent)
