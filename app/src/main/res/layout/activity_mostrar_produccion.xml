@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.301" />
 
     <TextView
-        android:id="@+id/txv_select2"
+        android:id="@+id/txv_selectProd3"
         android:layout_width="119dp"
         android:layout_height="48dp"
         android:gravity="center"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.292" />
 
     <TextView
-        android:id="@+id/txv_select5"
+        android:id="@+id/txv_selectProd1"
         android:layout_width="126dp"
         android:layout_height="46dp"
         android:gravity="center"
@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.294" />
 
     <TextView
-        android:id="@+id/txv_select6"
+        android:id="@+id/txv_selectProd2"
         android:layout_width="119dp"
         android:layout_height="48dp"
         android:gravity="center"
@@ -173,7 +173,7 @@
     <EditText
         android:id="@+id/txt_MostrarDescripcion"
         android:layout_width="230dp"
-        android:layout_height="37dp"
+        android:layout_height="41dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"

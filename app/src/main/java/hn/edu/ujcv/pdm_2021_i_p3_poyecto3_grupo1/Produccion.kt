@@ -28,9 +28,9 @@ class Produccion : AppCompatActivity() {
         btn_regresarProduccion.setOnClickListener { Regresar() }
         findViewById<FloatingActionButton>(R.id.idFabListar_Produccion).setOnClickListener {
             Mostrar() }
-        findViewById<FloatingActionButton>(R.id.idFabConfirmar_Insumos).setOnClickListener {
+       /* findViewById<FloatingActionButton>(R.id.idFabConfirmar_).setOnClickListener {
            guardar()
-        }
+        }*/
 
        callServiceGetDepartamentos()
         callServiceGetProductos()
