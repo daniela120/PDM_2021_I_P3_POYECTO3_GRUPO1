@@ -139,22 +139,6 @@
             app:fab_icon="@mipmap/ic_mostrar"
             app:fab_size="mini" />
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabActualizar_Departamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_update"
-            app:fab_size="mini" />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFabEliminar_Departamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/black"
-            app:fab_icon="@mipmap/ic_delete"
-            app:fab_size="mini" />
-
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
