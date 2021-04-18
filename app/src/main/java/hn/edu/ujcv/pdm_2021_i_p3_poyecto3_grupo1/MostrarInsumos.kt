@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.getbase.floatingactionbutton.FloatingActionButton
+
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.InsumosDataCollectionItem
 import kotlinx.android.synthetic.main.activity_cliente.*
+import kotlinx.android.synthetic.main.activity_insumos.*
+import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
+import kotlinx.android.synthetic.main.activity_mostrar_departamento.*
 import kotlinx.android.synthetic.main.activity_mostrar_insumos.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,7 +26,18 @@ class MostrarInsumos : AppCompatActivity() {
         btn_regresarInsumos2.setOnClickListener { Regresar()}
         val botonGetId = findViewById<Button>(R.id.btn_BuscarInsumos)
         botonGetId.setOnClickListener {v -> callServiceGetPerson()}
+        findViewById<FloatingActionButton>(R.id.idFabLimpiar_Insumo).setOnClickListener {
+            reset()
+
+        }
+        findViewById<FloatingActionButton>(R.id.idFabActualizar_Insumos).setOnClickListener {
+            callServicePutInsumos()
+        }
+        findViewById<FloatingActionButton>(R.id.idFabEliminar_Departamento).setOnClickListener {
+            callServiceDeleteInsumos()
+        }
     }
+
     private fun Regresar() {
         val intent = Intent(this, Insumos::class.java)
         startActivity(intent)
@@ -79,6 +96,75 @@ class MostrarInsumos : AppCompatActivity() {
         txt_MostrarInsPCompra.isEnabled = true
         txt_MostrarInsPVenta.isEnabled = true
     }
+//Actualizar
+private fun callServicePutInsumos() {
+
+    val insumosinfo = InsumosDataCollectionItem(  id =txt_IdInsumo2.text.toString().toLong(),
+            nombre = txt_NombreInsumo.text.toString(),
+            tipo = txt_Tipo.text.toString(),
+            cantidad = txt_TipoCantidad.text.toString().toLong() ,
+            preciocompra = txt_PrecioCon.text.toString().toLong() ,
+            precioventa = txt_PrecioVenta.text.toString().toLong()
+    )
 
 
+
+    val retrofit = RestEngine.buildService().create(InsumosService::class.java)
+    var result: Call<InsumosDataCollectionItem> = retrofit.updateInsumos(insumosinfo)
+
+
+    result.enqueue(object : Callback<InsumosDataCollectionItem>{
+        override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
+            Toast.makeText(this@MostrarInsumos,"Error",Toast.LENGTH_LONG).show()
+        }
+
+        override fun onResponse(call: Call<InsumosDataCollectionItem>,
+                                response: Response<InsumosDataCollectionItem>) {
+            if (response.isSuccessful) {
+                val updatedPerson = response.body()!!
+                Toast.makeText(this@MostrarInsumos," ACTUALIZADO",Toast.LENGTH_LONG).show()
+            }
+            else if (response.code() == 401){
+                Toast.makeText(this@MostrarInsumos,"Sesion expirada",Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this@MostrarInsumos,"Fallo al traer el item",Toast.LENGTH_LONG).show()
+            }
+        }
+
+    })
+
+}
+    //Metodo Delete
+    private fun callServiceDeleteInsumos() {
+        try {
+
+
+            val insumosService: InsumosService = RestEngine.buildService().create(InsumosService::class.java)
+            var result: Call<ResponseBody> = insumosService.deleteInsumos(txt_IdInsumo2.text.toString().toLong())
+
+            result.enqueue(object :  Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Toast.makeText(this@MostrarInsumos,"Error",Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(
+                        call: Call<ResponseBody>,
+                        response: Response<ResponseBody>
+                ) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(this@MostrarInsumos,"DEPTO. ELIMINADO",Toast.LENGTH_LONG).show()
+                    }
+                    else if (response.code() == 401){
+                        Toast.makeText(this@MostrarInsumos,"Sesion expirada",Toast.LENGTH_LONG).show()
+                    }
+                    else{
+                        Toast.makeText(this@MostrarInsumos,"Fallo al traer el item",Toast.LENGTH_LONG).show()
+                    }
+                }
+            })
+        }catch (e: java.lang.Exception){
+            Toast.makeText(this@MostrarInsumos,"NO SE PUEDO ELIMINAR EL CLIENTE CON EL ID: "+ txt_IdInsumo2.text.toString(),Toast.LENGTH_LONG).show()
+
+        }    }
 }
