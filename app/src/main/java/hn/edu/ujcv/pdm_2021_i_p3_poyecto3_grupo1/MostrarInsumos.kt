@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_mostrar_insumos.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.Exception
 
 class MostrarInsumos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,20 +27,58 @@ class MostrarInsumos : AppCompatActivity() {
     }
 
     private fun callServiceGetPerson() {
-        val insumosService:InsumosService = RestEngine.buildService().create(InsumosService::class.java)
-        var result: Call<InsumosDataCollectionItem> = insumosService.getInsumosById(1)
+        try {
+            val insumosService:InsumosService = RestEngine.buildService().create(InsumosService::class.java)
+            var result: Call<InsumosDataCollectionItem> = insumosService.getInsumosById(txt_IdInsumo2.text.toString().toLong())
 
-        result.enqueue(object : Callback<InsumosDataCollectionItem> {
-            override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
-                Toast.makeText(this@MostrarInsumos,"Error", Toast.LENGTH_LONG).show()
-            }
+            result.enqueue(object : Callback<InsumosDataCollectionItem> {
+                override fun onFailure(call: Call<InsumosDataCollectionItem>, t: Throwable) {
+                    Toast.makeText(this@MostrarInsumos,"Error", Toast.LENGTH_LONG).show()
+                }
 
-            override fun onResponse(
-                    call: Call<InsumosDataCollectionItem>,
-                    response: Response<InsumosDataCollectionItem>
-            ) {
-                Toast.makeText(this@MostrarInsumos,"OK"+response.body()!!.cantidad, Toast.LENGTH_LONG).show()
-            }
-        })
+                override fun onResponse(
+                        call: Call<InsumosDataCollectionItem>,
+                        response: Response<InsumosDataCollectionItem>
+                ) {
+                    var a = response.body()!!.nombre
+                    var b = response.body()!!.tipo
+                    var c = response.body()!!.cantidad
+                    var e = response.body()!!.preciocompra
+                    var f = response.body()!!.precioventa
+
+                    txt_MostrarInsNombre.setText(a)
+                    txt_MostrarInsTipo.setText(b)
+                    txt_MostrarInsCantidad.setText(c.toString())
+                    txt_MostrarInsPCompra.setText(e.toString())
+                    txt_MostrarInsPVenta.setText(f.toString())
+
+                    txt_MostrarInsNombre.isEnabled = true
+                    txt_MostrarInsTipo.isEnabled = true
+                    txt_MostrarInsCantidad.isEnabled = true
+                    txt_MostrarInsPCompra.isEnabled = true
+                    txt_MostrarInsPVenta.isEnabled = true
+
+                }
+            })
+        }catch (e:Exception){
+            Toast.makeText(this@MostrarInsumos, "EL ID NO ES VALIDO", Toast.LENGTH_SHORT).show()
+        }
+        }
+
+    fun reset(){
+        txt_IdInsumo2.setText("")
+        txt_MostrarInsNombre.setText("")
+        txt_MostrarInsTipo.setText("")
+        txt_MostrarInsCantidad.setText("")
+        txt_MostrarInsPCompra.setText("")
+        txt_MostrarInsPVenta.setText("")
+
+        txt_MostrarInsNombre.isEnabled = true
+        txt_MostrarInsTipo.isEnabled = true
+        txt_MostrarInsCantidad.isEnabled = true
+        txt_MostrarInsPCompra.isEnabled = true
+        txt_MostrarInsPVenta.isEnabled = true
     }
+
+
 }

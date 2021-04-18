@@ -19,6 +19,10 @@ class Insumos : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Insumos).setOnClickListener {
             guardar() }
 
+        findViewById<FloatingActionButton>(R.id.idFabListar_Insumos).setOnClickListener {
+            Mostrar()
+        }
+
 
     }
     private fun Regresar() {
@@ -40,7 +44,7 @@ class Insumos : AppCompatActivity() {
 
         addInsumos(insumosinf) {
             if (it?.id != null) {
-                android.widget.Toast.makeText(this@Insumos,"OK"+it?.id, android.widget.Toast.LENGTH_LONG).show()
+                android.widget.Toast.makeText(this@Insumos,"INSUMO AGREGADO", android.widget.Toast.LENGTH_LONG).show()
             } else {
                 android.widget.Toast.makeText(this@Insumos,"Error", android.widget.Toast.LENGTH_LONG).show()
             }
@@ -88,7 +92,6 @@ class Insumos : AppCompatActivity() {
                     Toast.makeText(this, "Ingrese una Tipo de Compra", Toast.LENGTH_SHORT).show()
                         } else{
                             callServicePostInsumo()
-                            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

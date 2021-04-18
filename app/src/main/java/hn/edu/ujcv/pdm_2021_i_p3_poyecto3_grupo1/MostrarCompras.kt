@@ -37,32 +37,26 @@ class MostrarCompras : AppCompatActivity() {
             override fun onResponse(
                     call: Call<ComprasDataCollectionItem>,
                     response: Response<ComprasDataCollectionItem>
-            ) {
-                try {
+            ) = try {
 
 
-                    var a = response.body()!!.cai
-                    var b = response.body()!!.numerotarjeta
-                    var c = response.body()!!.fechaentrega
-                    var d = response.body()!!.fechacompra
-                    var e = response.body()!!.formapago
-                    var f = response.body()!!.insumos
-                    var g = response.body()!!.proveedores
-                    ver()
-                    txt_CaiCompra2.setText(a)
-                    txt_TarjetaCompra2.setText(b)
-                    txt_FechaE2.setText(c)
-                    txt_FechaCompra2.setText(d)
-                    txv_selecionF2.setText(e.toString())
-                    txv_selecionP4.setText(e.toString())
-                    txv_selecionP3.setText(g.toString())
-                }catch (e:Exception){
-                    Toast.makeText(this@MostrarCompras, "No existe la compra con el id: "+txt_CompraId.text.toString(), Toast.LENGTH_SHORT ).show()
-                }
-
-
-
-
+                var a = response.body()!!.cai
+                var b = response.body()!!.numerotarjeta
+                var c = response.body()!!.fechaentrega
+                var d = response.body()!!.fechacompra
+                var e = response.body()!!.formapago
+                var f = response.body()!!.insumos
+                var g = response.body()!!.proveedores
+                ver()
+                txt_CaiCompra2.setText(a)
+                txt_TarjetaCompra2.setText(b.toString())
+                txt_FechaE2.setText(c)
+                txt_FechaCompra2.setText(d)
+                txv_selecionF2.setText(e.toString())
+                txv_selecionP4.setText(f.toString())
+                txv_selecionP3.setText(g.toString())
+            }catch (e:Exception){
+                Toast.makeText(this@MostrarCompras, "No existe la compra con el id: "+txt_CompraId.text.toString(), Toast.LENGTH_SHORT ).show()
             }
         })
     }
