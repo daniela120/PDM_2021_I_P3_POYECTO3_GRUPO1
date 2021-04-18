@@ -178,44 +178,44 @@ class Compras : AppCompatActivity() {
 
     }
 
-    private fun callServiceGetProveedores() {
-        var lista: HashSet<String> = hashSetOf()
+        private fun callServiceGetProveedores() {
+            var lista: HashSet<String> = hashSetOf()
 
-        val proveedoresService:ProveedoresService = RestEngine.buildService().create(ProveedoresService::class.java)
-        var result: Call<List<ProveedoresDataCollectionItem>> = proveedoresService.listProveedores()
+            val proveedoresService:ProveedoresService = RestEngine.buildService().create(ProveedoresService::class.java)
+            var result: Call<List<ProveedoresDataCollectionItem>> = proveedoresService.listProveedores()
 
-        result.enqueue(object : Callback<List<ProveedoresDataCollectionItem>> {
-            override fun onFailure(call: Call<List<ProveedoresDataCollectionItem>>, t: Throwable) {
-                Toast.makeText(this@Compras, "Error", Toast.LENGTH_LONG).show()
-            }
-
-            override fun onResponse(
-                    call: Call<List<ProveedoresDataCollectionItem>>,
-                    response: Response<List<ProveedoresDataCollectionItem>>
-            ) {
-                try {
-                    val parametro = StringBuilder()
-                    var num =0
-                    for (i in response.body()!!) {
-                        lista.add(i.id.toString())
-                    }
-
-
-
-
-
-                    println("LA LISTA ES:"+lista.toString())
-                    initial(lista)
-
-                } catch (e: Exception) {
-                    println("No hay datos de tipo de pago")
-
+            result.enqueue(object : Callback<List<ProveedoresDataCollectionItem>> {
+                override fun onFailure(call: Call<List<ProveedoresDataCollectionItem>>, t: Throwable) {
+                    Toast.makeText(this@Compras, "Error", Toast.LENGTH_LONG).show()
                 }
 
-            }
-        })
+                override fun onResponse(
+                        call: Call<List<ProveedoresDataCollectionItem>>,
+                        response: Response<List<ProveedoresDataCollectionItem>>
+                ) {
+                    try {
+                        val parametro = StringBuilder()
+                        var num =0
+                        for (i in response.body()!!) {
+                            lista.add(i.id.toString())
+                        }
 
-    }
+
+
+
+
+                        println("LA LISTA ES:"+lista.toString())
+                        initial(lista)
+
+                    } catch (e: Exception) {
+                        println("No hay datos de tipo de pago")
+
+                    }
+
+                }
+            })
+
+        }
     private fun callServiceGetInsumo() {
         var lista: HashSet<String> = hashSetOf()
 
