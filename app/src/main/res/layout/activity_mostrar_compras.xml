@@ -9,163 +9,28 @@
 
 
     <Button
-        android:id="@+id/btn_regresarCompras"
-        android:layout_width="37dp"
-        android:layout_height="34dp"
-        android:background="@android:color/transparent"
-        android:foreground="@mipmap/ic_atras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
-        app:srcCompat="@mipmap/ic_atras" />
-
-    <TextView
-        android:id="@+id/txvTITULO4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="COMPRA"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/yellow3"
-        android:textSize="28dp"
+        android:id="@+id/btn_BuscarCompra"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/ic_menu_search"
+        android:backgroundTint="@color/white"
+        android:fadingEdge="vertical"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.137" />
 
-    <EditText
-        android:id="@+id/txt_CaiCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="164dp"
+    <TextView
+        android:id="@+id/txv_Nom45"
+        android:layout_width="41dp"
         android:layout_height="29dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="number|text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28" />
-
-    <EditText
-        android:id="@+id/txt_FechaCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="178dp"
-        android:layout_height="32dp"
-        android:clickable="false"
-        android:ems="10"
-        android:focusable="false"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
-
-    <EditText
-        android:id="@+id/txt_TarjetaCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="221dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <EditText
-        android:id="@+id/txt_CantidadCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779" />
-
-    <EditText
-        android:id="@+id/txt_TotalCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="213dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.389"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
-
-    <EditText
-        android:id="@+id/txt_PrecioCompra2"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <TextView
-        android:id="@+id/txv_Nom2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FORMA PAGO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
-
-    <TextView
-        android:id="@+id/txv_selecionP"
-        android:layout_width="142dp"
-        android:layout_height="25dp"
         android:text="ID"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -173,15 +38,140 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629" />
+        app:layout_constraintVertical_bias="0.137" />
+
+    <EditText
+        android:id="@+id/txt_CompraId"
+        android:layout_width="82dp"
+        android:layout_height="31dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <EditText
+        android:id="@+id/txt_CaiCompra2"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="173dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number|text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <EditText
+        android:id="@+id/txt_FechaCompra2"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <EditText
+        android:id="@+id/txt_FechaE2"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="233dp"
+        android:layout_height="45dp"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
+
+    <EditText
+        android:id="@+id/txt_TarjetaCompra2"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564" />
+
+    <Spinner
+        android:id="@+id/spinnerFormaPagoC"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="PUESTO"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
 
     <TextView
-        android:id="@+id/txv_selecionF"
-        android:layout_width="142dp"
-        android:layout_height="25dp"
+        android:id="@+id/txv_Nom38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FORMA PAGO"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <TextView
+        android:id="@+id/txv_selecionF2"
+        android:layout_width="150dp"
+        android:layout_height="32dp"
+        android:gravity="center"
         android:text="Forma"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -189,120 +179,205 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.274" />
 
     <TextView
-        android:id="@+id/txv_Nom38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FECHA"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
-
-    <TextView
-        android:id="@+id/txv_Nom35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txv_Nom39"
+        android:layout_width="149dp"
+        android:layout_height="26dp"
         android:text="NO. TARJETA"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.577" />
 
     <TextView
-        android:id="@+id/txv_Nom36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txv_Nom40"
+        android:layout_width="77dp"
+        android:layout_height="32dp"
         android:text="CAI"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <TextView
-        android:id="@+id/txv_Nom37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txv_Nom41"
+        android:layout_width="117dp"
+        android:layout_height="37dp"
+        android:gravity="center"
         android:text="PROVEEDOR"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.355" />
+
+    <Spinner
+        android:id="@+id/spinnerIdProvedorC"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="PUESTO"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358" />
 
     <TextView
-        android:id="@+id/txv_Nom3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CANTIDAD"
+        android:id="@+id/txv_selecionP3"
+        android:layout_width="154dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="ID"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
-        android:id="@+id/txv_Nom33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PRECIO"
+        android:id="@+id/txv_FECHA3"
+        android:layout_width="263dp"
+        android:layout_height="34dp"
+        android:text="FECHADECOMPRA"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintVertical_bias="0.853" />
 
     <TextView
-        android:id="@+id/txv_Nom34"
-        android:layout_width="wrap_content"
+        android:id="@+id/txv_FECHA4"
+        android:layout_width="279dp"
+        android:layout_height="32dp"
+        android:text="FECHA ENTREGA"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <Spinner
+        android:id="@+id/spinnerInsumo2"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="TOTAL"
+        android:layout_gravity="center"
+        android:hint="PUESTO"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/txv_selecionP4"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Insumo"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/txv_Nom42"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
+        android:text="INSUMO"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.467" />
+
+    <Button
+        android:id="@+id/btn_regresarCompras"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:background="@android:color/transparent"
+        android:foreground="@mipmap/ic_atras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@mipmap/ic_atras" />
+
+    <TextView
+        android:id="@+id/txvTITULO4"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
+        android:text="COMPRA"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/yellow3"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/grupoFab_Compras2"
-        android:layout_width="39dp"
-        android:layout_height="223dp"
+        android:layout_width="74dp"
+        android:layout_height="204dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -331,6 +406,7 @@
             app:fab_colorNormal="@color/black"
             app:fab_icon="@mipmap/ic_update"
             app:fab_size="mini" />
+
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/idFabLimpiar_Compra"
             android:layout_width="wrap_content"
@@ -340,37 +416,6 @@
             app:fab_size="mini" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
-
-    <Spinner
-        android:id="@+id/spinnerIdProvedor2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="PUESTO"
-        android:padding="20dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
-
-    <Spinner
-        android:id="@+id/spinnerFormaPago4"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="PUESTO"
-        android:padding="20dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
