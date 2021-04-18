@@ -58,11 +58,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     5 -> irProductos(itemView)
                     6 -> irProveedores(itemView)
                     7 -> irVentas(itemView)
-                    6 -> irFacturaVenta(itemView)
-                    8 -> irCompras(itemView)
-                    6 -> irFacturaCompra(itemView)
-                    6 -> irProveedores(itemView)
-                    9 -> irTipoPago(itemView)
+                    8 -> irFacturaVenta(itemView)
+                    9 -> irCompras(itemView)
+                    10 -> irFacturaCompra(itemView)
+                    11 -> irTipoPago(itemView)
                     else->regresarMain(itemView)
 
                 }
