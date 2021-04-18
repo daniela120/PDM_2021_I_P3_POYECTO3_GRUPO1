@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_compras.*
 import kotlinx.android.synthetic.main.activity_mostrar_cliente.*
 import kotlinx.android.synthetic.main.activity_mostrar_empleado.*
+import kotlinx.android.synthetic.main.activity_ventas.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,6 +30,7 @@ class Compras : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Compras).setOnClickListener {
             Mostrar() }
         txt_FechaCompra.setOnClickListener{showDatePickerDialog()}
+        txt_FechaVenta.setOnClickListener{showDatePickerDialog()}
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Compras).setOnClickListener {
             callServicePostCompra() }
         callServiceGetProveedores()
