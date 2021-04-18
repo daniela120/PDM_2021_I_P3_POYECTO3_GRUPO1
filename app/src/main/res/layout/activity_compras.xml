@@ -19,10 +19,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/txv_selecionP2"
@@ -88,8 +88,8 @@
     <EditText
         android:id="@+id/txt_CaiCompra"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="178dp"
-        android:layout_height="37dp"
+        android:layout_width="173dp"
+        android:layout_height="47dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="number|text"
@@ -165,6 +165,7 @@
         android:id="@+id/txv_Nom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="FORMA PAGO"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
@@ -180,6 +181,7 @@
         android:id="@+id/txv_selecionF"
         android:layout_width="150dp"
         android:layout_height="32dp"
+        android:gravity="center"
         android:text="Forma"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -223,21 +225,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.173" />
 
+
     <TextView
         android:id="@+id/txv_Nom37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="117dp"
+        android:layout_height="37dp"
+        android:gravity="center"
         android:text="PROVEEDOR"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371" />
-
+        app:layout_constraintVertical_bias="0.355" />
 
     <Spinner
         android:id="@+id/spinnerIdProvedor"
@@ -256,19 +260,20 @@
 
     <TextView
         android:id="@+id/txv_selecionP"
-        android:layout_width="143dp"
-        android:layout_height="37dp"
+        android:layout_width="154dp"
+        android:layout_height="45dp"
+        android:gravity="center"
         android:text="ID"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
         android:id="@+id/txv_FECHA"
