@@ -129,7 +129,7 @@
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -143,7 +143,7 @@
         android:layout_height="34dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
@@ -157,7 +157,7 @@
         android:layout_height="34dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"
@@ -178,21 +178,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@mipmap/ic_atras" />
-
-    <TextView
-        android:id="@+id/txvTITULO10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EMPLEADO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/yellow3"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/grupoFab_DetalleCompra"
