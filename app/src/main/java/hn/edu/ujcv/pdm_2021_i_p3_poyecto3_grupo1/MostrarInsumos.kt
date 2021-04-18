@@ -78,8 +78,9 @@ class MostrarInsumos : AppCompatActivity() {
                         txt_MostrarInsPCompra.isEnabled = true
                         txt_MostrarInsPVenta.isEnabled = true
                     } catch (e: Exception) {
-                        Toast.makeText(this@MostrarInsumos, "NO SE ENCONTRO EL INSUMO CON ID: "+txt_IdInsumo2.text.toString(), Toast.LENGTH_SHORT).show()
 
+                        Toast.makeText(this@MostrarInsumos, "NO SE ENCONTRO EL INSUMO CON ID: "+txt_IdInsumo2.text.toString(), Toast.LENGTH_SHORT).show()
+                        nosearch()
                     }
 
                 }
@@ -97,11 +98,11 @@ class MostrarInsumos : AppCompatActivity() {
         txt_MostrarInsPCompra.setText("")
         txt_MostrarInsPVenta.setText("")
 
-        txt_MostrarInsNombre.isEnabled = true
-        txt_MostrarInsTipo.isEnabled = true
-        txt_MostrarInsCantidad.isEnabled = true
-        txt_MostrarInsPCompra.isEnabled = true
-        txt_MostrarInsPVenta.isEnabled = true
+        txt_MostrarInsNombre.isEnabled = false
+        txt_MostrarInsTipo.isEnabled = false
+        txt_MostrarInsCantidad.isEnabled = false
+        txt_MostrarInsPCompra.isEnabled = false
+        txt_MostrarInsPVenta.isEnabled = false
     }
 //Actualizar
 private fun callServicePutInsumos() {
@@ -162,7 +163,8 @@ private fun callServicePutInsumos() {
                         response: Response<ResponseBody>
                 ) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@MostrarInsumos,"DEPTO. ELIMINADO",Toast.LENGTH_LONG).show()
+                        reset()
+                        Toast.makeText(this@MostrarInsumos,"INSUMO ELIMINADO",Toast.LENGTH_LONG).show()
                     }
                     else if (response.code() == 401){
                         Toast.makeText(this@MostrarInsumos,"Sesion expirada",Toast.LENGTH_LONG).show()
@@ -174,6 +176,21 @@ private fun callServicePutInsumos() {
             })
         }catch (e: java.lang.Exception){
             Toast.makeText(this@MostrarInsumos,"NO SE PUEDO ELIMINAR EL CLIENTE CON EL ID: "+ txt_IdInsumo2.text.toString(),Toast.LENGTH_LONG).show()
-
+            reset()
         }    }
+
+
+
+     fun nosearch(){
+         txt_MostrarInsNombre.setText("")
+         txt_MostrarInsTipo.setText("")
+         txt_MostrarInsCantidad.setText("")
+         txt_MostrarInsPCompra.setText("")
+         txt_MostrarInsPVenta.setText("")
+         txt_MostrarInsNombre.isEnabled = false
+         txt_MostrarInsTipo.isEnabled = false
+         txt_MostrarInsCantidad.isEnabled = false
+         txt_MostrarInsPCompra.isEnabled = false
+         txt_MostrarInsPVenta.isEnabled = false
+     }
 }
