@@ -54,7 +54,7 @@ class ListarCliente : AppCompatActivity() {
                     }
 
                     for (i in response.body()!!) {
-                        lista1.add(i.nombrecompleto.toString())
+                        lista1.add(i.nombrecompleto)
                     }
 
                     iniciar2(lista,lista1)
@@ -71,7 +71,7 @@ class ListarCliente : AppCompatActivity() {
 
     fun iniciar2(a: java.util.HashSet<String>, b:HashSet<String>){
         val list = findViewById<ListView>(R.id.list_cliente1)
-        var list1 = findViewById<ListView>(R.id.list_cliente2)
+        var list_s = findViewById<ListView>(R.id.list_cliente2)
         var valor:String
         var valor1:String
         var A: java.util.ArrayList<String> = java.util.ArrayList()
@@ -110,8 +110,8 @@ class ListarCliente : AppCompatActivity() {
 
         val adaptador1 = ArrayAdapter(this,android.R.layout.simple_list_item_1,B)
 
-        list1.adapter =adaptador1
-        list1.onItemSelectedListener = object:
+        list_s.adapter =adaptador1
+        list_s.onItemSelectedListener = object:
                 AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
         }
 
