@@ -12,8 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_P3_POYECTO3_GRUPO1"
         android:usesCleartextTraffic="true" >
-        <activity android:name=".ListarInsumos" >
+        <activity android:name=".ListarVentas" >
         </activity>
+        <activity android:name=".ListarTipoPago" />
+        <activity android:name=".ListarEmpleado" />
+        <activity android:name=".ListarProveedores" />
+        <activity android:name=".ListarProductos" />
+        <activity android:name=".ListarProduccion" />
+        <activity android:name=".ListarInsumos" />
         <activity
             android:name=".ListarDetalleVenta"
             android:label="@string/title_activity_listar_detalle_venta"
