@@ -35,8 +35,9 @@ class DetalleVenta : AppCompatActivity() {
             ir()
         }
 
-        callServiceGetVenta()
+
         callServiceGetProducto()
+        callServiceGetVenta1()
     }
 
     private fun ir() {
@@ -57,11 +58,10 @@ class DetalleVenta : AppCompatActivity() {
     private fun callServicePostVentaDetalle() {
         try {
 
-
             val VentaDetalleInfo = VentaDetalleDataCollectionItem(id = null,
                     precio = txt_PrecioFactura1.text.toString().toLong(),
                     cantidad = txt_CantidadFactura1.text.toString().toLong(),
-                    idventa = spinnerIdVenta1.selectedItem.toString().toLong(),
+                    idventa = spinnerIdVenta.selectedItem.toString().toLong(),
                     idproducto = spinnerIdproductoFac1.selectedItem.toString().toLong()
 
 
@@ -104,7 +104,7 @@ class DetalleVenta : AppCompatActivity() {
     }
 
     /*SPINNER VENTA*/
-    private fun callServiceGetVenta() {
+    private fun callServiceGetVenta1() {
         var lista: java.util.HashSet<String> = hashSetOf()
 
         val tipoService: VentasService= RestEngine.buildService().create(VentasService::class.java)
@@ -124,7 +124,7 @@ class DetalleVenta : AppCompatActivity() {
                       lista.add(i.id.toString())
                     }
 
-                    iniciar1(lista)
+                    iniciar3(lista)
 
                 } catch (e: Exception) {
                     println("No hay datos de la venta")
@@ -136,33 +136,7 @@ class DetalleVenta : AppCompatActivity() {
 
     }
 
-    fun iniciar1(a: java.util.HashSet<String>){
-        val spinnerventa = findViewById<Spinner>(R.id.spinnerIdVenta1)
-        var valor:String
-        var A: java.util.ArrayList<String> = java.util.ArrayList()
-        for(i in a){
-            val data = i.toString().split("|")
-            valor=data[2].toString()
-            A.add(valor)
 
-        }
-
-        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
-
-        spinnerventa.adapter =adaptador
-        spinnerventa.onItemSelectedListener = object:
-                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
-        }
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
-            {
-                callServiceGetVentaById(A[position].toString().toLong())
-
-
-            }
-        }
-
-    }
 
     private fun callServiceGetVentaById(a:Long) {
         var idven=""
@@ -178,14 +152,17 @@ class DetalleVenta : AppCompatActivity() {
                     call: Call<VentasDataCollectionItem>,
                     response: Response<VentasDataCollectionItem>
             ) {
-                idven = response.body()!!.descripcion.toString()
+                idven = response.body()!!.cai.toString()
                 txv_SeleccionVentaId1.text = idven
 
             }
         })
 
 
-    }/*SPINER PRODUCTO*/
+    }
+
+
+    /*SPINER PRODUCTO*/
 
     private fun callServiceGetProducto() {
         var lista: java.util.HashSet<String> = hashSetOf()
@@ -247,6 +224,37 @@ class DetalleVenta : AppCompatActivity() {
 
     }
 
+    fun iniciar3(a: java.util.HashSet<String>){
+        val spinner_Producto = findViewById<Spinner>(R.id.spinnerIdVenta)
+        var valor:String
+        var A: java.util.ArrayList<String> = java.util.ArrayList()
+        for(i in a){
+            val data = i.toString().split("|")
+            valor=data[0].toString()
+            A.add(valor)
+
+        }
+
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,A)
+
+        spinner_Producto.adapter =adaptador
+        spinner_Producto.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                callServiceGetVentaById(A[position].toString().toLong())
+
+
+            }
+        }
+
+    }
+
+
+
+
     private fun callServiceGetProductoById(a:Long) {
         var idpro=""
         val productoservice: ProductoService = RestEngine.buildService().create(ProductoService::class.java)
@@ -254,15 +262,20 @@ class DetalleVenta : AppCompatActivity() {
 
         result.enqueue(object : Callback<ProductoDataCollectionItem> {
             override fun onFailure(call: Call<ProductoDataCollectionItem>, t: Throwable) {
-                Toast.makeText(this@DetalleVenta,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@DetalleVenta, "Error", Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(
                     call: Call<ProductoDataCollectionItem>,
                     response: Response<ProductoDataCollectionItem>
             ) {
-                idpro = response.body()!!.id.toString()
-                txv_SeleccionProductoId1.text = idpro
+                try {
+                    idpro = response.body()!!.nombre.toString()
+                    txv_SeleccionProductoId1.text = idpro
+                } catch (e: Exception) {
+                    Toast.makeText(this@DetalleVenta, e.message+" ERROR", Toast.LENGTH_SHORT).show()
+                }
+
 
             }
         })
@@ -277,7 +290,7 @@ class DetalleVenta : AppCompatActivity() {
             if (txt_CantidadFactura1.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese la Cantidad", Toast.LENGTH_SHORT).show()
                 a = false
-                if (spinnerIdVenta1.isSelected.toString().isEmpty()) {
+                if (spinnerIdVenta.isSelected.toString().isEmpty()) {
                     a = false
                     Toast.makeText(this, "Seleccione la venta", Toast.LENGTH_SHORT).show()
                 } else {
