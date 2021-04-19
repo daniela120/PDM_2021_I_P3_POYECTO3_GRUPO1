@@ -25,6 +25,10 @@ class Departamento : AppCompatActivity() {
             guardar() }
 
     }
+    private fun ir() {
+        val intent = Intent(this,ListarDepartamento::class.java)
+        startActivity(intent)
+    }
 
     private fun callServicePostDepartamento() {
 
