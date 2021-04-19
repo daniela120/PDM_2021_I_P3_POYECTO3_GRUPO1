@@ -31,10 +31,17 @@ class Produccion : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Produccion).setOnClickListener {
             validacion()
         }
+        findViewById<FloatingActionButton>(R.id.idListarPRODUCI).setOnClickListener {
+            ir()
+        }
 
        callServiceGetDepartamentos()
         callServiceGetProductos()
         callServiceEmpleados()
+    }
+    private fun ir() {
+        val intent = Intent(this, ListarProduccion::class.java)
+        startActivity(intent)
     }
 
 

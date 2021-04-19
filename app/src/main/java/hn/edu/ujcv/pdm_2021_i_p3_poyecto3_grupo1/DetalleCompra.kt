@@ -38,6 +38,9 @@ class DetalleCompra : AppCompatActivity() {
             calcular()
 
         }
+        findViewById<FloatingActionButton>(R.id.idListardc).setOnClickListener{
+            ir()
+        }
 
 
 
@@ -47,7 +50,10 @@ class DetalleCompra : AppCompatActivity() {
     }
 
 
-
+    private fun ir() {
+        val intent = Intent(this, ListarDetalleCompra::class.java)
+        startActivity(intent)
+    }
 
 private fun calcular(){
     var a = txt_DCCantidad.text.toString().toLong()

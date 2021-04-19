@@ -22,9 +22,18 @@ class Insumos : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Insumos).setOnClickListener {
             Mostrar()
         }
+        findViewById<FloatingActionButton>(R.id.idListarIN).setOnClickListener {
+            ir()
+        }
 
 
     }
+
+    private fun ir() {
+        val intent = Intent(this, ListarInsumos::class.java)
+        startActivity(intent)
+    }
+
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)

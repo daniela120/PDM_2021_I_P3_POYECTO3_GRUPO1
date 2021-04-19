@@ -23,9 +23,15 @@ class TipoPago : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListarPago).setOnClickListener {
             Mostrar()
         }
+        findViewById<FloatingActionButton>(R.id.idListarTP).setOnClickListener {
+            ir()
+        }
     }
 
-
+    private fun ir() {
+        val intent = Intent(this, ListarTipoPago::class.java)
+        startActivity(intent)
+    }
 
     private fun callServicePostTipoPago() {
 

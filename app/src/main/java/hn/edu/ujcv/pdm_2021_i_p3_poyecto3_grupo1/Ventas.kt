@@ -33,6 +33,9 @@ class Ventas : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Ventas).setOnClickListener {
             validacion() }
+        findViewById<FloatingActionButton>(R.id.idListarVEN).setOnClickListener {
+            ir()
+        }
 
         txt_FechaVenta.setOnClickListener{showDatePickerDialog()}
         txt_FechaEntrga2.setOnClickListener{showDatePickerDialog1()}
@@ -40,6 +43,11 @@ class Ventas : AppCompatActivity() {
         callServiceGetEmpleados()
         callServiceGetProductos()
         callServiceClientes()
+    }
+
+    private fun ir() {
+        val intent = Intent(this, ListarVentas::class.java)
+        startActivity(intent)
     }
 
     fun showDatePickerDialog() {
