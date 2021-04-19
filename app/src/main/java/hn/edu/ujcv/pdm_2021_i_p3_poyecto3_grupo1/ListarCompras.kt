@@ -20,7 +20,7 @@ class ListarCompras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_compras)
-        btn_regresarListarCompra.setOnClickListener { regresar() }
+        btn_regresarListarC.setOnClickListener { regresar() }
         callServiceGetProducto1()
        
     }
@@ -61,7 +61,7 @@ class ListarCompras : AppCompatActivity() {
     }
 
     fun iniciar2(a: java.util.HashSet<String>){
-        val list = findViewById<ListView>(R.id.list_compras)
+        val list = findViewById<ListView>(R.id.list_INSUMOS)
         var valor:String
 
         var A: java.util.ArrayList<String> = java.util.ArrayList()

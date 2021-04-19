@@ -51,7 +51,7 @@ class ListarCliente : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add("|"+i.id.toString()+"                  " + i.nombrecompleto)
+                        lista.add("    "+i.id.toString()+"                  " + i.nombrecompleto)
                     }
 
 
@@ -75,7 +75,7 @@ class ListarCliente : AppCompatActivity() {
         var A: java.util.ArrayList<String> = java.util.ArrayList()
 
         for(i in a){
-            val data = i.toString().split("|")
+            val data = i.toString().split(" | ")
             valor=data[0].toString()
             A.add(valor)
 

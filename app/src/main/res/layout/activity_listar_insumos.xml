@@ -23,31 +23,73 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.152" />
-
   <Button
-      android:id="@+id/btn_regresarListarInsumos"
+      android:id="@+id/btn_RlistarInsumo"
       android:layout_width="37dp"
       android:layout_height="34dp"
       android:background="@android:color/transparent"
       android:foreground="@mipmap/ic_atras"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.066"
+      app:layout_constraintHorizontal_bias="0.018"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.05"
+      app:layout_constraintVertical_bias="0.028"
       app:srcCompat="@mipmap/ic_atras" />
 
-  <ListView
-      android:id="@+id/list_compras"
-      android:layout_width="312dp"
-      android:layout_height="264dp"
+  <TableLayout
+      android:layout_width="356dp"
+      android:layout_height="307dp"
+      android:stretchColumns="2"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.494"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.528" />
+      app:layout_constraintTop_toTopOf="parent">
+
+
+  <TableRow
+      android:layout_width="255dp"
+      android:layout_height="14dp">
+
+    <TextView
+        android:layout_width="68dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="3dip"
+        android:text="     ID   "
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:layout_width="156dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="3dip"
+        android:text="NOMBRE"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="128dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="3dip"
+        android:text="TIPO"
+        android:textAlignment="center" />
+
+  </TableRow>
+
+    <ListView
+        android:id="@+id/list_INSUMOS"
+        android:layout_width="312dp"
+        android:layout_height="264dp"
+        android:entries="@array/valoresPuesto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
+  </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

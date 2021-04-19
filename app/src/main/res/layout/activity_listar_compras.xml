@@ -24,9 +24,9 @@
         app:layout_constraintVertical_bias="0.152" />
 
     <Button
-        android:id="@+id/btn_regresarListarCompra"
-        android:layout_width="37dp"
-        android:layout_height="34dp"
+        android:id="@+id/btn_regresarListarC"
+        android:layout_width="24dp"
+        android:layout_height="21dp"
         android:background="@android:color/transparent"
         android:foreground="@mipmap/ic_atras"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,7 +70,7 @@
     </TableRow>
 
         <ListView
-            android:id="@+id/list_compras"
+            android:id="@+id/list_INSUMOS"
             android:layout_width="312dp"
             android:layout_height="264dp"
             android:entries="@array/valoresPuesto"
