@@ -9,63 +9,76 @@
 
     <EditText
         android:id="@+id/txt_NoTarjetaVentaM"
-        android:layout_width="150dp"
-        android:layout_height="28dp"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
         android:ems="10"
+        android:enabled="false"
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.767" />
 
     <EditText
         android:id="@+id/txt_FechaVentaM"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:autoText="true"
+        android:layout_width="177dp"
+        android:layout_height="38dp"
         android:clickable="false"
         android:ems="10"
+        android:enabled="false"
         android:focusable="false"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintVertical_bias="0.849" />
 
     <EditText
         android:id="@+id/txt_FechaEntre"
-        android:layout_width="124dp"
-        android:layout_height="32dp"
-        android:autoText="true"
+        android:layout_width="160dp"
+        android:layout_height="42dp"
         android:clickable="false"
         android:ems="10"
+        android:enabled="false"
         android:focusable="false"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.939" />
+
+    <TextView
+        android:id="@+id/txv_fe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FECHAENTREGA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943" />
 
     <TextView
         android:id="@+id/txv_Nom10"
@@ -218,21 +231,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
-
-    <TextView
-        android:id="@+id/txv_fe2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FECHAENTREGA"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.924" />
 
     <TextView
         android:id="@+id/txv_Nom34"

@@ -19,7 +19,7 @@ class Menu : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
             collapsing_toolbar.title = "CONFEX"
-            collapsing_toolbar.setContentScrimColor(Color.GRAY)
+            collapsing_toolbar.setContentScrimColor(Color.parseColor("#1E213D"));
 
             layoutManager = LinearLayoutManager(this)
             recyclerView.layoutManager = layoutManager
