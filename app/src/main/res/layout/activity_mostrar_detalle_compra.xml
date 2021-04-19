@@ -51,10 +51,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.412" />
 
     <TextView
         android:id="@+id/txv_Nom59"
@@ -73,17 +73,19 @@
 
     <TextView
         android:id="@+id/txv_Nom55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="102dp"
+        android:layout_height="33dp"
         android:text="Total"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.763" />
 
     <TextView
         android:id="@+id/txv_Nom56"
@@ -148,31 +150,31 @@
 
     <EditText
         android:id="@+id/txt_DCTotal2"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
         android:ems="10"
-        android:inputType="number"
         android:enabled="false"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.86" />
 
     <EditText
         android:id="@+id/txt_DCCantidad2"
-        android:layout_width="145dp"
-        android:layout_height="34dp"
+        android:layout_width="147dp"
+        android:layout_height="53dp"
         android:ems="10"
-        android:inputType="number"
         android:enabled="false"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.622" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <EditText
         android:id="@+id/txt_DCID"
@@ -192,17 +194,17 @@
 
     <EditText
         android:id="@+id/txt_DCPrecio2"
-        android:layout_width="145dp"
-        android:layout_height="34dp"
+        android:layout_width="147dp"
+        android:layout_height="53dp"
         android:ems="10"
-        android:inputType="number"
         android:enabled="false"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.622" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <Button
         android:id="@+id/btn_regresarMDetalleCompra"

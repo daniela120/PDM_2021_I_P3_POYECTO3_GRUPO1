@@ -174,7 +174,7 @@ class MostrarCLiente:  AppCompatActivity() {
                                     response: Response<ClienteDataCollectionItem>) {
                 if (response.isSuccessful) {
                     val updatedPerson = response.body()!!
-                    Toast.makeText(this@MostrarCLiente,"OK"+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MostrarCLiente,"Bienvenida"+" "+response.body()!!.nombrecompleto,Toast.LENGTH_LONG).show()
                 }
                 else if (response.code() == 401){
                     Toast.makeText(this@MostrarCLiente,"Sesion expirada",Toast.LENGTH_LONG).show()

@@ -9,31 +9,34 @@
 
     <Spinner
         android:id="@+id/spinnerIdCompra3"
-        android:layout_width="162dp"
-        android:layout_height="40dp"
-        android:background="@drawable/boton_redondo"
-        android:backgroundTint="@color/blue0"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="PUESTO"
+        android:padding="20dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.412" />
 
     <TextView
         android:id="@+id/txv_Nom5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ID Compra"
+        android:layout_width="354dp"
+        android:layout_height="43dp"
+        android:text="    ID Compra"
+        android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.235" />
 
     <TextView
         android:id="@+id/txv_Nom33"
@@ -163,11 +166,12 @@
         app:fab_addButtonColorPressed="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.926"
         tools:ignore="MissingConstraints">
+
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/idListardc"
             android:layout_width="wrap_content"
@@ -204,14 +208,14 @@
 
     <TextView
         android:id="@+id/txv_selectIdCompra1"
-        android:layout_width="101dp"
-        android:layout_height="35dp"
+        android:layout_width="189dp"
+        android:layout_height="44dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintVertical_bias="0.327" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

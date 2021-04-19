@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@mipmap/ic_atras" />
     <TableLayout
-        android:layout_width="356dp"
+        android:layout_width="match_parent"
         android:layout_height="307dp"
         android:stretchColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +57,7 @@
                 android:gravity="center"
                 android:padding="3dip"
                 android:text="     ID   "
-                android:textAlignment="textStart" />
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="88dp"
@@ -65,15 +65,15 @@
                 android:gravity="center"
                 android:padding="3dip"
                 android:text="IDCOMPRA"
-                android:textAlignment="textStart" />
+                android:textAlignment="center" />
 
             <TextView
-                android:layout_width="84dp"
+                android:layout_width="157dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="3dip"
                 android:text="PRECIO"
-                android:textAlignment="textStartr" />
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="76dp"
@@ -81,7 +81,7 @@
                 android:gravity="center"
                 android:padding="3dip"
                 android:text="TOTAL"
-                android:textAlignment="textStart" />
+                android:textAlignment="center" />
 
         </TableRow>
 

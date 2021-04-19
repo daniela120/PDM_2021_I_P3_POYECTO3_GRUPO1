@@ -47,7 +47,7 @@ class ListarDetalleCompra : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add("  "+i.id.toString()+"               "+i.idcompra+"       " +i.precio +"     " +i.total)
+                        lista.add("  "+i.id.toString()+ "                     "+ i.idcompra+  "                       "+ i.precio+ "                   "+i.total)
                     }
 
 

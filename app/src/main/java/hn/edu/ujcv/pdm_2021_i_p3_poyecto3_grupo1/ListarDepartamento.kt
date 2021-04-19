@@ -52,7 +52,7 @@ class ListarDepartamento : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add("   "+i.id.toString()+"                  " + i.nombre.toString())
+                        lista.add("   "+i.id.toString()+"                                      " + i.nombre.toString())
                     }
 
 
