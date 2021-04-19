@@ -45,24 +45,29 @@ class DetalleVenta : AppCompatActivity() {
     }
 
     private fun callServicePostVentaDetalle() {
+        try {
 
-        val VentaDetalleInfo = VentaDetalleDataCollectionItem(id = null,
-                precio = txt_PrecioFactura1.text.toString().toLong(),
-                cantidad = txt_CantidadFactura1.text.toString().toLong(),
-                idventa = spinnerIdVenta1.selectedItemId.toString().toLong(),
-                idproducto = spinnerIdproductoFac1.selectedItemId.toString().toLong()
 
-        )
+            val VentaDetalleInfo = VentaDetalleDataCollectionItem(id = null,
+                    precio = txt_PrecioFactura1.text.toString().toLong(),
+                    cantidad = txt_CantidadFactura1.text.toString().toLong(),
+                    idventa = spinnerIdVenta1.selectedItem.toString().toLong(),
+                    idproducto = spinnerIdproductoFac1.selectedItem.toString().toLong()
 
-        addVentaDetalle(VentaDetalleInfo) {
-            if (it?.id != null) {
-                Toast.makeText(this@DetalleVenta, "EMPLEADO AGREGADO", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this@DetalleVenta, "Error", Toast.LENGTH_LONG).show()
+
+            )
+            addVentaDetalle(VentaDetalleInfo) {
+                if (it?.id != null) {
+                    android.widget.Toast.makeText(this@DetalleVenta, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                } else {
+                    android.widget.Toast.makeText(this@DetalleVenta, "Error", android.widget.Toast.LENGTH_LONG).show()
+                }
             }
+        } catch (e: Exception) {
+            Toast.makeText(this, e.message + " ERROR,POR FAVOR VERIFICAR LOS DATOS", Toast.LENGTH_SHORT).show()
+
         }
     }
-
 
     fun addVentaDetalle(VentaDetalleData: VentaDetalleDataCollectionItem, onResult: (VentaDetalleDataCollectionItem?) -> Unit){
         val retrofit = RestEngine.buildService().create(DetalleVentaService::class.java)

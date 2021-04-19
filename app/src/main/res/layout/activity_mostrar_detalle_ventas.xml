@@ -28,27 +28,27 @@
 
     <TextView
         android:id="@+id/txv_SeleccionProductoId2"
-        android:layout_width="151dp"
-        android:layout_height="33dp"
+        android:layout_width="155dp"
+        android:layout_height="45dp"
+        android:enabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <TextView
         android:id="@+id/txv_SeleccionVentaID2"
-        android:layout_width="151dp"
-        android:layout_height="33dp"
+        android:layout_width="149dp"
+        android:layout_height="44dp"
+        android:enabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
@@ -58,27 +58,44 @@
 
     <Spinner
         android:id="@+id/spinnerIdVenta2"
-        android:layout_width="139dp"
-        android:layout_height="37dp"
-        android:background="@drawable/boton_redondo"
-        android:backgroundTint="@color/blue0"
+        android:layout_width="177dp"
+        android:layout_height="38dp"
+        android:hint="PUESTO"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:focusable="false"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <Spinner
         android:id="@+id/spinnerIdProducto1"
-        android:layout_width="139dp"
-        android:layout_height="37dp"
-        android:background="@drawable/boton_redondo"
-        android:backgroundTint="@color/blue0"
+        android:layout_width="177dp"
+        android:layout_height="38dp"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:focusable="false"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/grupoFab_DetalleVenta2"
@@ -241,7 +258,7 @@
         app:layout_constraintVertical_bias="0.683" />
 
     <TextView
-        android:id="@+id/txvDescripcionD2"
+        android:id="@+id/txvCantidadDV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -290,7 +307,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.16" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
