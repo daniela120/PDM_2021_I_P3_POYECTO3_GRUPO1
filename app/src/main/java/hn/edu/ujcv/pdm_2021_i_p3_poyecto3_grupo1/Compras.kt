@@ -97,24 +97,30 @@ class Compras : AppCompatActivity() {
     }
 
     private fun callServicePostCompra() {
+        try {
 
-        val compraInfo = ComprasDataCollectionItem(id = null,
-                cai = txt_CaiCompra.text.toString(),
-                proveedores = spinnerIdProvedor.selectedItem.toString().toLong(),
-                numerotarjeta = txt_TarjetaCompra.text.toString().toLong(),
-                formapago = spinnerFormaPago.selectedItem.toString().toLong(),
-                fechaentrega = txt_FechaE.text.toString(),
-                fechacompra = txt_FechaCompra.text.toString(),
-                insumos = spinnerInsumo.selectedItem.toString().toLong(),
-        )
+
+            val compraInfo = ComprasDataCollectionItem(
+                    id = null,
+                    cai = txt_CaiCompra.text.toString(),
+                    proveedores = spinnerIdProvedor.selectedItem.toString().toLong(),
+                    numerotarjeta = txt_TarjetaCompra.text.toString().toLong(),
+                    formapago = spinnerFormaPago.selectedItem.toString().toLong(),
+                    fechaentrega = txt_FechaE.text.toString(),
+                    fechacompra = txt_FechaCompra.text.toString(),
+                    insumos = spinnerInsumo.selectedItem.toString().toLong(),
+            )
 
             addCompra(compraInfo) {
                 if (it?.id != null) {
-                    Toast.makeText(this@Compras, "OK" + it?.id, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Compras, "COMPRA REGISTRADA EXITOSAMENTE", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this@Compras, "Error", Toast.LENGTH_LONG).show()
                 }
             }
+        }catch (e:Exception){
+            Toast.makeText(this, e.message+" ERROR POR FAVOR VERIFICAR LOS DATOS", Toast.LENGTH_SHORT).show()
+        }
         }
 
 
