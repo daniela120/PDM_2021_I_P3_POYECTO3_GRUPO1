@@ -8,17 +8,17 @@ import retrofit2.http.*
 
 interface DetalleVentaService {
 
-    @GET("VentaDetalle")
+    @GET("detalleventa")
     fun listVentaDetalle(): Call<List<VentaDetalleDataCollectionItem>>
-    @GET("VentaDetalle/id/{id}")
+    @GET("detalleventa/id/{id}")
     fun getVentaDetalleById(@Path("id") id: Long): Call<VentaDetalleDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("VentaDetalle/addCompra")
+    @POST("detalleventa/addDetalleVenta")
     fun addVentaDetalle(@Body VentaDetalleData: VentaDetalleDataCollectionItem): Call<VentaDetalleDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @PUT("VentaDetalle")
+    @PUT("detalleventa")
     fun updateVentaDetalle(@Body VentaDetalleData: VentaDetalleDataCollectionItem): Call<VentaDetalleDataCollectionItem>
-    @DELETE("VentaDetalle/delete/{id}")
+    @DELETE("detalleventa/delete/{id}")
     fun deleteVentaDetalle(@Path("id") id: Long): Call<ResponseBody>
 
 }
