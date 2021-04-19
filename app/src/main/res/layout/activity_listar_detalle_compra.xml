@@ -60,20 +60,28 @@
                 android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="115dp"
+                android:layout_width="88dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="3dip"
                 android:text="IDCOMPRA"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="138dp"
+                android:layout_width="84dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="3dip"
-                android:text="CANTIDAD"
-                android:textAlignment="center" />
+                android:text="PRECIO"
+                android:textAlignment="textStartr" />
+
+            <TextView
+                android:layout_width="76dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="TOTAL"
+                android:textAlignment="textStart" />
 
         </TableRow>
 
