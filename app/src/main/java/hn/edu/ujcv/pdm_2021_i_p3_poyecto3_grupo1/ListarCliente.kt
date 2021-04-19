@@ -35,7 +35,7 @@ class ListarCliente : AppCompatActivity() {
 
     private fun callServiceGetProducto() {
         var lista: java.util.HashSet<String> = hashSetOf()
-
+        var lista1: java.util.HashSet<String> = hashSetOf()
         val tipoService: ClienteService = RestEngine.buildService().create(ClienteService::class.java)
         var result: Call<List<ClienteDataCollectionItem>> = tipoService.listClientes()
 
@@ -50,10 +50,14 @@ class ListarCliente : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add(i.nombrecompleto.toString())
+                        lista.add(i.id.toString())
                     }
 
-                    iniciar2(lista)
+                    for (i in response.body()!!) {
+                        lista1.add(i.nombrecompleto.toString())
+                    }
+
+                    iniciar2(lista,lista1)
 
                 } catch (e: Exception) {
                     println("No hay datos del producto")
@@ -65,16 +69,28 @@ class ListarCliente : AppCompatActivity() {
 
     }
 
-    fun iniciar2(a: java.util.HashSet<String>){
-        val list = findViewById<ListView>(R.id.list_cliente)
+    fun iniciar2(a: java.util.HashSet<String>, b:HashSet<String>){
+        val list = findViewById<ListView>(R.id.list_cliente1)
+        var list1 = findViewById<ListView>(R.id.list_cliente2)
         var valor:String
+        var valor1:String
         var A: java.util.ArrayList<String> = java.util.ArrayList()
+        var B: java.util.ArrayList<String> = java.util.ArrayList()
         for(i in a){
             val data = i.toString().split("|")
             valor=data[0].toString()
             A.add(valor)
 
         }
+
+        for(i in b){
+            val data = i.toString().split("|")
+            valor1=data[0].toString()
+            B.add(valor1)
+
+        }
+
+
 
         val adaptador = ArrayAdapter(this,android.R.layout.simple_list_item_1,A)
 
@@ -90,6 +106,23 @@ class ListarCliente : AppCompatActivity() {
 
             }
         }
+
+
+        val adaptador1 = ArrayAdapter(this,android.R.layout.simple_list_item_1,B)
+
+        list1.adapter =adaptador1
+        list1.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+
+
+
+            }
+        }
+
 
     }
 

@@ -37,16 +37,66 @@
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@mipmap/ic_atras" />
 
-    <ListView
-        android:id="@+id/list_cliente"
-        android:layout_width="312dp"
-        android:layout_height="264dp"
+
+
+    <TableLayout
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:stretchColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+            <TextView
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="ID" />
+            <TextView
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="NOMBRE" />
+        </TableRow>
+
+
+
+        <TableRow>
+            <ListView
+                android:id="@+id/list_cliente1"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.528">
+
+            </ListView>
+
+            <ListView
+                android:id="@+id/list_cliente2"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.528">
+
+            </ListView>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
