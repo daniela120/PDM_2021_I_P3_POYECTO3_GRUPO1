@@ -48,7 +48,7 @@
 
 
         <TableRow
-            android:layout_width="255dp"
+            android:layout_width="match_parent"
             android:layout_height="14dp">
 
             <TextView
