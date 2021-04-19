@@ -62,7 +62,7 @@ class Produccion : AppCompatActivity() {
 
             addProduccion(Info) {
                 if (it?.id != null) {
-                    android.widget.Toast.makeText(this@Produccion, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                    android.widget.Toast.makeText(this@Produccion, "ORDEN DE PRODUCCION GUARDA" , android.widget.Toast.LENGTH_LONG).show()
                 } else {
                     android.widget.Toast.makeText(this@Produccion, "Error", android.widget.Toast.LENGTH_LONG).show()
                 }
