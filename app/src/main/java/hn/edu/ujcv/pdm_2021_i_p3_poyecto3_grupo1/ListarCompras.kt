@@ -21,14 +21,14 @@ class ListarCompras : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_compras)
         btn_regresarListarCompra.setOnClickListener { regresar() }
-        callServiceGetProducto()
+        callServiceGetProducto1()
        
     }
     private fun regresar(){
         val intent = Intent(this,Compras::class.java)
         startActivity(intent)
     }
-    private fun callServiceGetProducto() {
+    private fun callServiceGetProducto1() {
         var listac: java.util.HashSet<String> = hashSetOf()
         val tipoService: ComprasService = RestEngine.buildService().create(ComprasService::class.java)
         var result: Call<List<ComprasDataCollectionItem>> = tipoService.listCompras()
@@ -44,7 +44,7 @@ class ListarCompras : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        listac.add(" |"+i.id.toString()+"       " + i.fechaentrega+"       " + i.fechacompra)
+                        listac.add("    "+i.id.toString()+ "                    "+ i.cai )
                     }
 
 
@@ -60,7 +60,7 @@ class ListarCompras : AppCompatActivity() {
 
     }
 
-    fun iniciar2(a: java.util.HashSet<String>/*, b:HashSet<String>*/){
+    fun iniciar2(a: java.util.HashSet<String>){
         val list = findViewById<ListView>(R.id.list_compras)
         var valor:String
 

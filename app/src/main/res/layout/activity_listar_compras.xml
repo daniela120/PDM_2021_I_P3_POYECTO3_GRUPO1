@@ -36,16 +36,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@mipmap/ic_atras" />
-
-    <ListView
-        android:id="@+id/list_compras"
-        android:layout_width="312dp"
-        android:layout_height="264dp"
+    <TableLayout
+        android:layout_width="356dp"
+        android:layout_height="307dp"
+        android:stretchColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintTop_toTopOf="parent">
 
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="179dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="3dip"
+            android:text="     ID   "
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:layout_width="173dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="3dip"
+            android:text="CAI"
+            android:textAlignment="textStart" />
+
+    </TableRow>
+
+        <ListView
+            android:id="@+id/list_compras"
+            android:layout_width="312dp"
+            android:layout_height="264dp"
+            android:entries="@array/valoresPuesto"
+            android:fadingEdge="vertical"
+            android:headerDividersEnabled="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.784" />
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
