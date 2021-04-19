@@ -46,7 +46,7 @@ class Departamento : AppCompatActivity() {
 
         addDepartamento(departamentosInfo) {
             if (it?.id != null) {
-                android.widget.Toast.makeText(this@Departamento, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                android.widget.Toast.makeText(this@Departamento, "DEPARTAMENTO AGREGADO EXITOSAMENTE", android.widget.Toast.LENGTH_LONG).show()
             } else {
                 android.widget.Toast.makeText(this@Departamento, "Error", android.widget.Toast.LENGTH_LONG).show()
             }
@@ -87,7 +87,6 @@ class Departamento : AppCompatActivity() {
                 Toast.makeText(this, "Ingrese el Nombre del Departamento", Toast.LENGTH_SHORT).show()
             } else{
                 callServicePostDepartamento()
-                Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
             }
         }
     }
