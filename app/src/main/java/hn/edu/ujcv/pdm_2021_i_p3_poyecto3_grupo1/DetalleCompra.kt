@@ -34,14 +34,28 @@ class DetalleCompra : AppCompatActivity() {
 
         }
 
+        findViewById<FloatingActionButton>(R.id.idFabCalcular).setOnClickListener {
+            calcular()
+
+        }
+
+
+
         callServiceGetIDCompra()
+        txt_DCTotal.isEnabled = false
 
     }
 
 
 
 
+private fun calcular(){
+    var a = txt_DCCantidad.text.toString().toLong()
+    var b =txt_DCPrecio.text.toString().toLong()
+    var total = a*b
 
+    txt_DCTotal.setText(total.toString())
+}
 
     private fun callServicePostCompraDetalle() {
 
@@ -57,7 +71,7 @@ class DetalleCompra : AppCompatActivity() {
 
         addCompraDetalle(CompraDetalleInfo) {
             if (it?.id != null) {
-                android.widget.Toast.makeText(this@DetalleCompra, "OK" + it?.id, android.widget.Toast.LENGTH_LONG).show()
+                android.widget.Toast.makeText(this@DetalleCompra, "DETALLE DE COMPRA REGISTRADO", android.widget.Toast.LENGTH_SHORT).show()
             } else {
                 android.widget.Toast.makeText(this@DetalleCompra, "Error", android.widget.Toast.LENGTH_LONG).show()
             }
@@ -193,7 +207,7 @@ class DetalleCompra : AppCompatActivity() {
 
                     }else{
                         if(txt_DCTotal.text.toString().isEmpty()) {
-                            Toast.makeText(this, "Ingrese El total", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Por favor de click eb el boton calcular", Toast.LENGTH_SHORT).show()
 
                     }else{
                           validacion()
@@ -216,7 +230,7 @@ class DetalleCompra : AppCompatActivity() {
     fun validacion(){
 
             callServicePostCompraDetalle()
-            Toast.makeText(this, " COMPRA Realizada con exito!", Toast.LENGTH_SHORT).show()
+
 
     }
 }
