@@ -7,17 +7,17 @@ import retrofit2.http.*
 
 interface DetalleCompraService {
 
-    @GET("CompraDetalle")
+    @GET("detallecompras")
     fun listCompraDetalle(): Call<List<CompraDetalleDataCollectionItem>>
-    @GET("CompraDetalle/id/{id}")
+    @GET("detallecompras/id/{id}")
     fun getCompraDetalleById(@Path("id") id: Long): Call<CompraDetalleDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @POST("CompraDetalle/addCompraDetalle")
+    @POST("detallecompras/addDetalleCompra")
     fun addCompraDetalle(@Body CompraDetalleData: CompraDetalleDataCollectionItem): Call<CompraDetalleDataCollectionItem>
     @Headers("Content-Type: application/json")
-    @PUT("CompraDetalle")
+    @PUT("detallecompras")
     fun updateCompraDetalle(@Body CompraDetalleData: CompraDetalleDataCollectionItem): Call<CompraDetalleDataCollectionItem>
-    @DELETE("CompraDetalle/delete/{id}")
+    @DELETE("detallecompras/delete/{id}")
     fun deleteCompraDetalle(@Path("id") id: Long): Call<ResponseBody>
 
 

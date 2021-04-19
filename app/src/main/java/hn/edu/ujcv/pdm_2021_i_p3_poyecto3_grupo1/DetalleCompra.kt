@@ -30,10 +30,18 @@ class DetalleCompra : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListardetallecompra).setOnClickListener {
             Mostrar()}
         findViewById<FloatingActionButton>(R.id.idFabConfirmardetallecompra).setOnClickListener {
-            validacion()
-            callServiceGetIDCompra()
+            guardar()
+
         }
+
+        callServiceGetIDCompra()
+
     }
+
+
+
+
+
 
     private fun callServicePostCompraDetalle() {
 
@@ -154,7 +162,7 @@ class DetalleCompra : AppCompatActivity() {
                     call: Call<ComprasDataCollectionItem>,
                     response: Response<ComprasDataCollectionItem>
             ) {
-                idComp = response.body()!!.id.toString()
+                idComp = response.body()!!.cai.toString()
                 txv_selectIdCompra1.text =  idComp
 
             }
@@ -170,20 +178,25 @@ class DetalleCompra : AppCompatActivity() {
     private  fun guardar() {
         if (spinnerIdCompra3.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese un ID ", Toast.LENGTH_SHORT).show()
+
         } else {
             if (spinnerIdCompra3.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese un ID de Compra", Toast.LENGTH_SHORT).show()
+
             } else{
                 if(txt_DCCantidad.text.toString().isEmpty()) {
                     Toast.makeText(this, "Ingrese una Cantidad", Toast.LENGTH_SHORT).show()
+
                 }else{
                     if(txt_DCPrecio.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese el precio", Toast.LENGTH_SHORT).show()
+
                     }else{
                         if(txt_DCTotal.text.toString().isEmpty()) {
                             Toast.makeText(this, "Ingrese El total", Toast.LENGTH_SHORT).show()
+
                     }else{
-                        Toast.makeText(this, "TRANSACCION EXITOSA!", Toast.LENGTH_SHORT).show()
+                          validacion()
                     }
                 }
             }
@@ -201,10 +214,9 @@ class DetalleCompra : AppCompatActivity() {
     }
 
     fun validacion(){
-        if(guardar().equals(true)){
+
             callServicePostCompraDetalle()
-            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
-        }
+            Toast.makeText(this, " COMPRA Realizada con exito!", Toast.LENGTH_SHORT).show()
 
     }
 }
