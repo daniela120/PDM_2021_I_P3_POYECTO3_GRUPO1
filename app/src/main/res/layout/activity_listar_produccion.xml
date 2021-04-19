@@ -38,7 +38,7 @@
         app:srcCompat="@mipmap/ic_atras" />
 
     <TableLayout
-        android:layout_width="255dp"
+        android:layout_width="wrap_content"
         android:layout_height="307dp"
         android:stretchColumns="3"
         app:layout_constraintBottom_toBottomOf="parent"
