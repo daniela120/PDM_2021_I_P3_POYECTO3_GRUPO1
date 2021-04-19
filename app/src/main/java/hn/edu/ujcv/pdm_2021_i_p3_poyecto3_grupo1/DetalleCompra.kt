@@ -56,11 +56,17 @@ class DetalleCompra : AppCompatActivity() {
     }
 
 private fun calcular(){
-    var a = txt_DCCantidad.text.toString().toLong()
-    var b =txt_DCPrecio.text.toString().toLong()
-    var total = a*b
+    try {
 
-    txt_DCTotal.setText(total.toString())
+
+        var a = txt_DCCantidad.text.toString().toLong()
+        var b = txt_DCPrecio.text.toString().toLong()
+        var total = a * b
+
+        txt_DCTotal.setText(total.toString())
+    }catch (e:Exception){
+        Toast.makeText(this@DetalleCompra, e.message+" ERROR, VERIFIQUE LOS DATOS", Toast.LENGTH_SHORT).show()
+    }
 }
 
     private fun callServicePostCompraDetalle() {
