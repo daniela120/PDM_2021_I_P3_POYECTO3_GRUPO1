@@ -100,6 +100,7 @@ class Proveedores : AppCompatActivity() {
                     if (txt_DireccionProveedor.text.toString().isEmpty()) {
                         Toast.makeText(this, "Ingrese la direccion", Toast.LENGTH_SHORT).show()
                     } else {
+                        Toast.makeText(this, "PROVEEDOR AGREGADO", Toast.LENGTH_SHORT).show()
                         callServicePostProveedores()
                         reset()
                     }

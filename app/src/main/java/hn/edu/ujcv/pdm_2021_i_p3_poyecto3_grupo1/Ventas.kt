@@ -216,6 +216,7 @@ class Ventas : AppCompatActivity() {
     fun validacion(){
         if(guardar().equals(true)){
             callServicePostVenta()
+            Toast.makeText(this, "VENTA REGISTRADA", Toast.LENGTH_SHORT).show()
         }
 
     }

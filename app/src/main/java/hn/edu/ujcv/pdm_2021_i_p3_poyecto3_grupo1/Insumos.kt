@@ -92,6 +92,7 @@ class Insumos : AppCompatActivity() {
                     Toast.makeText(this, "Ingrese una Tipo de Compra", Toast.LENGTH_SHORT).show()
                         } else{
                             callServicePostInsumo()
+                    Toast.makeText(this, "DATO REGISTRADO!", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

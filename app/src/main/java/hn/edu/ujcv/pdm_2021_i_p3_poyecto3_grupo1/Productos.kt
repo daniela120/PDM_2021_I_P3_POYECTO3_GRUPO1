@@ -94,6 +94,7 @@ class Productos : AppCompatActivity() {
                         Toast.makeText(this, "Ingrese el precio de venta del Producto", Toast.LENGTH_SHORT).show()
                         }else{
                             callServicePostProductos()
+                        Toast.makeText(this, "PRODUCTO AGREGADO!", Toast.LENGTH_SHORT).show()
                             reset()
                         }
                     }
