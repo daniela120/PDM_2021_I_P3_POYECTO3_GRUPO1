@@ -18,7 +18,6 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-            collapsing_toolbar.title = "CONFEX"
             collapsing_toolbar.setContentScrimColor(Color.parseColor("#1E213D"));
 
             layoutManager = LinearLayoutManager(this)
