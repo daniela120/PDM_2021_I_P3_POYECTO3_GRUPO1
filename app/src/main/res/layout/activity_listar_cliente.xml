@@ -38,10 +38,9 @@
         app:srcCompat="@mipmap/ic_atras" />
 
 
-
     <TableLayout
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="356dp"
+        android:layout_height="307dp"
         android:stretchColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,51 +48,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="179dp"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="3dip"
-                android:text="ID" />
+                android:text="     ID   "
+                android:textAlignment="textStart" />
+
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="173dp"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="3dip"
-                android:text="NOMBRE" />
-        </TableRow>
-
-
-
-        <TableRow>
-            <ListView
-                android:id="@+id/list_cliente1"
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.528">
-
-            </ListView>
-
-            <ListView
-                android:id="@+id/list_cliente2"
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.528">
-
-            </ListView>
+                android:text=" NOMBRE   "
+              />
 
         </TableRow>
 
+        <ListView
+            android:id="@+id/list_cliente1"
+            android:layout_width="341dp"
+            android:layout_height="283dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.528">
 
+        </ListView>
     </TableLayout>
 
 

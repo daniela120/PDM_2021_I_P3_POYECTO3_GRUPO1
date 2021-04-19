@@ -25,9 +25,15 @@ class Cliente : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Cli).setOnClickListener {
             callServicePostCliente() }
 
-
+        findViewById<FloatingActionButton>(R.id.idListar).setOnClickListener{
+            irclientes()
+        }
     }
 
+    private fun irclientes() {
+        val intent = Intent(this,ListarCliente::class.java)
+        startActivity(intent)
+    }
 
     private fun callServicePostCliente() {
 

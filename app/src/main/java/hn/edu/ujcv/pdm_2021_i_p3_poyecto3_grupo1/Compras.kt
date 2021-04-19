@@ -38,6 +38,9 @@ class Compras : AppCompatActivity() {
         callServiceGetProveedores()
         callServiceGetTipo()
         callServiceGetInsumo()
+        findViewById<FloatingActionButton>(R.id.idListarComp).setOnClickListener{
+            ircompras()
+        }
     }
 
     fun showDatePickerDialog() {
@@ -96,6 +99,10 @@ class Compras : AppCompatActivity() {
         }
     }
 
+    private fun ircompras() {
+        val intent = Intent(this,ListarCompras::class.java)
+        startActivity(intent)
+    }
     private fun callServicePostCompra() {
         try {
 

@@ -30,9 +30,7 @@ class MostrarCLiente:  AppCompatActivity() {
             callServiceDeletePerson()
         }
 
-        findViewById<FloatingActionButton>(R.id.idListar).setOnClickListener{
-            irclientes()
-        }
+
 
         findViewById<FloatingActionButton>(R.id.idFabActualizar_Cli).setOnClickListener{
             callServicePutCliente()
@@ -49,10 +47,6 @@ class MostrarCLiente:  AppCompatActivity() {
         }
 
 
-    private fun irclientes() {
-        val intent = Intent(this,ListarCliente::class.java)
-        startActivity(intent)
-    }
     private fun callServiceGetPerson() {
         val clienteService: ClienteService = RestEngine.buildService().create(ClienteService::class.java)
         var result: Call<ClienteDataCollectionItem> = clienteService.getClienteById(txt_IdCliente2.text.toString().toLong())

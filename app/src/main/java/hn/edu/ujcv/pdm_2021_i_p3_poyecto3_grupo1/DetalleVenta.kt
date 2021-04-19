@@ -13,6 +13,8 @@ import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.VentasDataCollectionIt
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ProductoDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.VentaDetalleDataCollectionItem
 import kotlinx.android.synthetic.main.activity_detalle_ventas.*
+import kotlinx.android.synthetic.main.activity_listar_detalle_venta.*
+import kotlinx.android.synthetic.main.activity_mostrar_detalle_ventas.*
 import kotlinx.android.synthetic.main.activity_produccion.*
 import kotlinx.android.synthetic.main.activity_ventas.*
 
@@ -111,7 +113,7 @@ class DetalleVenta : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add(i.id.toString())
+                      lista.add(i.id.toString())
                     }
 
                     iniciar1(lista)
@@ -132,7 +134,7 @@ class DetalleVenta : AppCompatActivity() {
         var A: java.util.ArrayList<String> = java.util.ArrayList()
         for(i in a){
             val data = i.toString().split("|")
-            valor=data[0].toString()
+            valor=data[2].toString()
             A.add(valor)
 
         }
@@ -168,7 +170,7 @@ class DetalleVenta : AppCompatActivity() {
                     call: Call<VentasDataCollectionItem>,
                     response: Response<VentasDataCollectionItem>
             ) {
-                idven = response.body()!!.id.toString()
+                idven = response.body()!!.descripcion.toString()
                 txv_SeleccionVentaId1.text = idven
 
             }
