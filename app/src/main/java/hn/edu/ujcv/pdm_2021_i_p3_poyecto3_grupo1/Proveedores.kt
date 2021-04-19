@@ -30,7 +30,7 @@ class Proveedores : AppCompatActivity() {
     }
 
     private fun ir() {
-        val intent = Intent(this, Proveedores::class.java)
+        val intent = Intent(this, ListarProveedores::class.java)
         startActivity(intent)
     }
 
