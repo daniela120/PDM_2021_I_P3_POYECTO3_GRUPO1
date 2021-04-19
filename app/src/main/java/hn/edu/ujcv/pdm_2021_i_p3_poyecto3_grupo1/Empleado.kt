@@ -29,8 +29,14 @@ class Empleado : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Empleado).setOnClickListener {
             callServicePostEmpleado() }
+        findViewById<FloatingActionButton>(R.id.idListarE).setOnClickListener {
+            ir()
+        }
     }
-
+    private fun ir() {
+        val intent = Intent(this, ListarEmpleado::class.java)
+        startActivity(intent)
+    }
 
     private fun Regresar() {
         val intent = Intent(this, Menu::class.java)

@@ -31,10 +31,18 @@ class DetalleVenta : AppCompatActivity() {
             Mostrar()}
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_DetalleVenta).setOnClickListener {
             validacion()}
+        findViewById<FloatingActionButton>(R.id.idListarDV).setOnClickListener {
+            ir()
+        }
+
         callServiceGetVenta()
         callServiceGetProducto()
     }
 
+    private fun ir() {
+        val intent = Intent(this, ListarDetalleVenta::class.java)
+        startActivity(intent)
+    }
 
     private fun Mostrar() {
         val intent = Intent(this, MostrarDetalleVenta::class.java)

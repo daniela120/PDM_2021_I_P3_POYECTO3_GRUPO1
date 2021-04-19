@@ -24,8 +24,15 @@ class Productos : AppCompatActivity() {
             Mostrar() }
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Productos).setOnClickListener {
             guardar() }
+        findViewById<FloatingActionButton>(R.id.idListarPROD).setOnClickListener {
+            ir()
+        }
     }
 
+    private fun ir() {
+        val intent = Intent(this, ListarProductos::class.java)
+        startActivity(intent)
+    }
     private fun callServicePostProductos() {
         try {
 

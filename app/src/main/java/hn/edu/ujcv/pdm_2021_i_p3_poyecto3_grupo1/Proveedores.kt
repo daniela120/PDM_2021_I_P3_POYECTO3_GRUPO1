@@ -24,6 +24,14 @@ class Proveedores : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabListar_Proveedores).setOnClickListener {
            Mostrar()
         }
+        findViewById<FloatingActionButton>(R.id.idListarPROV).setOnClickListener {
+            ir()
+        }
+    }
+
+    private fun ir() {
+        val intent = Intent(this, Proveedores::class.java)
+        startActivity(intent)
     }
 
     private fun Regresar() {
