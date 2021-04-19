@@ -32,6 +32,9 @@ class MostrarCLiente:  AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabActualizar_Cli).setOnClickListener{
             callServicePutCliente()
         }
+        findViewById<FloatingActionButton>(R.id.idFabLimpiar_Cliente).setOnClickListener {
+            resteo()
+        }
 
 
     }
@@ -99,6 +102,7 @@ class MostrarCLiente:  AppCompatActivity() {
         txt_rtnCliente2.isEnabled = false
         txt_CorreoCliente2.isEnabled = false
 
+        txt_IdCliente2.setText("")
         txt_NombreCliente2.setText("")
         txt_DireccionCliente2.setText("")
         txt_TelefonoCliente2.setText("")

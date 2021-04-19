@@ -29,6 +29,10 @@ class MostrarTipoPago:  AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabActualizarago).setOnClickListener {
             callServicePutTipoPago()
         }
+        findViewById<FloatingActionButton>(R.id.idFabLimpiar_Pago).setOnClickListener {
+            reset()
+        }
+
 
         findViewById<FloatingActionButton>(R.id.idFabEliminarPago).setOnClickListener {
             callServiceDeleteTipoPago()
@@ -146,6 +150,11 @@ class MostrarTipoPago:  AppCompatActivity() {
 
 
     fun reset(){
+
+        txt_IdPago2.setText("")
+        txt_DescripcionPago2.setText("")
+        txt_EstadoPago2.setText("")
+        
         txt_DescripcionPago2.isEnabled = false
         txt_EstadoPago2.isEnabled = false
 
