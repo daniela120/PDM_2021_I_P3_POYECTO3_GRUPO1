@@ -24,6 +24,11 @@ class Departamento : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.idFabConfirmar_Departamento).setOnClickListener {
             guardar() }
 
+        findViewById<FloatingActionButton>(R.id.idFabListar_Departamento).setOnClickListener {
+            ir() }
+
+
+
     }
     private fun ir() {
         val intent = Intent(this,ListarDepartamento::class.java)
