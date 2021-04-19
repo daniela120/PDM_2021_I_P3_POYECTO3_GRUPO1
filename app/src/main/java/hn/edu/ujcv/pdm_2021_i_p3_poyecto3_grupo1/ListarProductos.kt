@@ -45,7 +45,7 @@ class ListarProductos : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add("  "+i.id.toString()+"                    "+i.nombre+"                            " +i.descripcion)
+                        lista.add("  "+i.id.toString()+"              "+i.nombre+"           " +i.descripcion)
                     }
 
 
