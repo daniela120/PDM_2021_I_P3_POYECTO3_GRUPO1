@@ -130,7 +130,7 @@ class MostrarDetalleCompra : AppCompatActivity() {
                                         response: Response<CompraDetalleDataCollectionItem>) {
                     if (response.isSuccessful) {
                         val updatedDetalleCompra = response.body()!!
-                        Toast.makeText(this@MostrarDetalleCompra, "DEPT ACTUALIZADO", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MostrarDetalleCompra, "DATOS ACTUALIZADO", Toast.LENGTH_LONG).show()
                     } else if (response.code() == 401) {
                         Toast.makeText(this@MostrarDetalleCompra, "Sesion expirada", Toast.LENGTH_LONG).show()
                     } else {
