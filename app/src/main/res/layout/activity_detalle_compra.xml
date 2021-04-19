@@ -185,6 +185,14 @@
             app:fab_icon="@mipmap/ic_mostrar"
             app:fab_size="mini" />
 
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idFabCalcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/black"
+            app:fab_icon="@mipmap/ic_launcher_round"
+            app:fab_size="mini" />
+
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <TextView
