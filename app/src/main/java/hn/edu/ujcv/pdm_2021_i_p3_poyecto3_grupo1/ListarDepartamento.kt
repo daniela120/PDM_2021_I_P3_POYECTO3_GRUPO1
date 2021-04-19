@@ -1,12 +1,10 @@
 package hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES.ClienteService
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollectionItem
@@ -20,6 +18,16 @@ class ListarDepartamento : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_departamento)
         callServiceGetDepto()
+        val btnregresar = findViewById<Button>(R.id.btn_regresarListarDepartamento)
+        btnregresar.setOnClickListener {
+            regresar()
+
+        }
+    }
+
+    fun regresar(){
+        val intent = Intent(this,Departamento::class.java)
+        startActivity(intent)
     }
 
 
