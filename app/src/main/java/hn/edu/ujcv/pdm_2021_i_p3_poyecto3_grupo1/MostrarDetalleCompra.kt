@@ -11,6 +11,7 @@ import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ComprasDataCollectionI
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.InsumosDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.PagoDataCollectionItem
 import kotlinx.android.synthetic.main.activity_compras.*
+import kotlinx.android.synthetic.main.activity_detalle_compra.*
 import kotlinx.android.synthetic.main.activity_mostrar_compras.*
 
 import kotlinx.android.synthetic.main.activity_mostrar_detalle_compra.*
@@ -39,12 +40,27 @@ class MostrarDetalleCompra : AppCompatActivity() {
             callServiceGetDetalleCompra()
 
         }
+
+
+        txt_DCPrecio2.setOnClickListener{calcular()}
+        txt_DCCantidad2.setOnClickListener{calcular()}
+
+
         callServiceGetCompra()
         txv_SeleccionCompraID.setText("")
 
     }
 
+    fun calcular(){
+    try {
 
+
+        var a = txt_DCPrecio2.text.toString().toLong() * txt_DCCantidad2.text.toString().toLong()
+        txt_DCTotal2.setText(a.toString())
+    }catch (e:Exception ){
+
+    }
+    }
 
 
 
