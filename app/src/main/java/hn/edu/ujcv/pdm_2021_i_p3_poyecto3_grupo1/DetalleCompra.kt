@@ -183,7 +183,7 @@ class DetalleCompra : AppCompatActivity() {
                         if(txt_DCTotal.text.toString().isEmpty()) {
                             Toast.makeText(this, "Ingrese El total", Toast.LENGTH_SHORT).show()
                     }else{
-                        Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "TRANSACCION EXITOSA!", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

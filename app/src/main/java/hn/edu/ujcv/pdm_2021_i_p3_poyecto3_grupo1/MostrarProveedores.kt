@@ -105,7 +105,7 @@ class MostrarProveedores : AppCompatActivity() {
                         response: Response<ResponseBody>
                 ) {
                     if (response.isSuccessful) {
-                        resetearall()
+
                         Toast.makeText(this@MostrarProveedores, "ELIMINADO CON EXITO", Toast.LENGTH_LONG).show()
                     } else if (response.code() == 401) {
                         Toast.makeText(this@MostrarProveedores, "Sesion expirada", Toast.LENGTH_LONG).show()

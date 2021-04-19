@@ -282,7 +282,7 @@ class DetalleVenta : AppCompatActivity() {
     fun validacion(){
         if(guardar().equals(true)){
             callServicePostVentaDetalle()
-            Toast.makeText(this, "Realizada con exito!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "TRANSACCION EXITOSA!", Toast.LENGTH_SHORT).show()
         }
 
     }
