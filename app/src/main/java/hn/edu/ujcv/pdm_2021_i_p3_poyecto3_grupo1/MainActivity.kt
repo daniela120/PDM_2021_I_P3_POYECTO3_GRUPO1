@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_login.setOnClickListener { goahead() }
+        btn_login.setOnClickListener { callServiceGetPerson() }
     }
 
-            /*
+
 
         private fun callServiceGetPerson() {
             try {
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-}*/
+}
     fun goahead(){
         val intent = Intent(this, Menu::class.java)
         startActivity(intent)
