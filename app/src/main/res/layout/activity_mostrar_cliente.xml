@@ -39,6 +39,14 @@
             app:fab_colorNormal="@color/black"
             app:fab_icon="@mipmap/ic_delete"
             app:fab_size="mini" />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idListar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/black"
+            app:fab_icon="@mipmap/ic_mostrar"
+            app:fab_size="mini" />
+
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/idFabLimpiar_Cliente"
