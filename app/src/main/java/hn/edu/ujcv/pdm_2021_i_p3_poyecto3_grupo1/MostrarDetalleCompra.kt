@@ -14,7 +14,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
+import kotlin.Exception
 
 class MostrarDetalleCompra : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,19 +22,20 @@ class MostrarDetalleCompra : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_detalle_compra)
         btn_regresarMDetalleCompra.setOnClickListener { Regresar() }
         val botonGetId = findViewById<Button>(R.id.btn_BuscarDetalleCompra)
-        findViewById<FloatingActionButton>(R.id.idFabEliminar_DetalleCompra).setOnClickListener{
-            callServiceDeleteDetalleCompra() }
+        findViewById<FloatingActionButton>(R.id.idFabActualizar_DetalleCompra).setOnClickListener{
+            callServicePutDetalleCompra() }
         findViewById<FloatingActionButton>(R.id.idFabLimpiar_DetalleCompra).setOnClickListener{
             reset() }
         findViewById<FloatingActionButton>(R.id.idFabEliminar_DetalleCompra).setOnClickListener{
-            callServicePutDetalleCompra() }
+            callServiceDeleteDetalleCompra() }
         botonGetId.setOnClickListener { v -> callServiceGetDetalleCompra()}
+        callServiceGetIDCompra()
     }
 
 
     private fun callServiceGetDetalleCompra() {
         val CompraDetalleService: DetalleCompraService= RestEngine.buildService().create(DetalleCompraService::class.java)
-        var result: Call<CompraDetalleDataCollectionItem> = CompraDetalleService.getCompraDetalleById(1)
+        var result: Call<CompraDetalleDataCollectionItem> = CompraDetalleService.getCompraDetalleById(txt_DCID.text.toString().toLong())
 
         result.enqueue(object : Callback<CompraDetalleDataCollectionItem> {
             override fun onFailure(call: Call<CompraDetalleDataCollectionItem>, t: Throwable) {
@@ -48,6 +49,7 @@ class MostrarDetalleCompra : AppCompatActivity() {
 
                 txt_DCCantidad2.isEnabled = true
                 txt_DCPrecio2.isEnabled = true
+                txt_DCTotal2.isEnabled = true
 
 
                 var a = response.body()!!.idcompra
@@ -58,8 +60,8 @@ class MostrarDetalleCompra : AppCompatActivity() {
                 ver()
                 txv_SeleccionCompraID.setText(a.toString())
                 txt_DCCantidad2.setText(b.toString())
-                txt_DCPrecio2.setText(c.toString().toInt())
-                txt_DCTotal2.setText(d.toString().toInt())
+                txt_DCPrecio2.setText(c.toString())
+                txt_DCTotal2.setText(d.toString())
 
             } catch (e: Exception) {
                 Toast.makeText(this@MostrarDetalleCompra, "No existe la informacion con el id: " + txt_DCID.text.toString(), Toast.LENGTH_SHORT).show()
@@ -78,7 +80,7 @@ class MostrarDetalleCompra : AppCompatActivity() {
 
 
     private fun callServiceDeleteDetalleCompra() {
-        try {
+
 
 
             val DetalleCompraService: DetalleCompraService = RestEngine.buildService().create(DetalleCompraService::class.java)
@@ -95,6 +97,7 @@ class MostrarDetalleCompra : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         Toast.makeText(this@MostrarDetalleCompra, "ELIMINADO CON EXITO", Toast.LENGTH_LONG).show()
+                    reset()
                     } else if (response.code() == 401) {
                         Toast.makeText(this@MostrarDetalleCompra, "Sesion expirada", Toast.LENGTH_LONG).show()
                     } else {
@@ -102,16 +105,16 @@ class MostrarDetalleCompra : AppCompatActivity() {
                     }
                 }
             })
-        } catch (e: Exception) {
+        /*} catch (e: Exception) {
             Toast.makeText(this@MostrarDetalleCompra, "NO SE PUEDO ELIMINAR LA INFORMACION CON EL ID: " + txt_DCID.text.toString(), Toast.LENGTH_LONG).show()
 
-        }
+        }*/
     }
 
     private fun callServicePutDetalleCompra() {
-        try {
+
             val Info = CompraDetalleDataCollectionItem(id = txt_DCID.text.toString().toLong(),
-                    idcompra = spinnerIdCompra4.selectedItemId.toString().toLong(),
+                    idcompra = spinnerIdCompra4.selectedItem.toString().toLong(),
                     cantidad = txt_DCCantidad2.text.toString().toLong(),
                     precio = txt_DCPrecio2.text.toString().toLong(),
                     total = txt_DCTotal2.text.toString().toLong()
@@ -139,10 +142,10 @@ class MostrarDetalleCompra : AppCompatActivity() {
                 }
 
             })
-        } catch (e: Exception) {
-            Toast.makeText(this@MostrarDetalleCompra, "NO SE PUEDO ELIMINAR LA INFORMACION CON EL ID: " + txt_DCID.text.toString(), Toast.LENGTH_LONG).show()
+       /* } catch (e: Exception) {
+            Toast.makeText(this@MostrarDetalleCompra, "NO SE PUEDO ACTUALIZAR EL DETALLE CON EL ID: " + txt_DCID.text.toString(), Toast.LENGTH_LONG).show()
 
-        }
+        }*/
     }
     /*Spinner*/
     private fun callServiceGetIDCompra() {
@@ -177,7 +180,7 @@ class MostrarDetalleCompra : AppCompatActivity() {
     }
 
     fun initial(a:HashSet<String>){
-        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdCompra3)
+        val spinner_Puestos = findViewById<Spinner>(R.id.spinnerIdCompra4)
         var valor:String
         println("THIS IS"+a.toString())
         var A:ArrayList<String> = ArrayList()
@@ -205,20 +208,27 @@ class MostrarDetalleCompra : AppCompatActivity() {
     }
     private  fun  callServiceGetCompraById(a:Long) {
         var idComp=""
-        val comprasService:ComprasService =  RestEngine.buildService().create(ComprasService::class.java)
-        var result: Call<ComprasDataCollectionItem> =comprasService.getComprasById(a)
+        val comprasService:DetalleCompraService =  RestEngine.buildService().create(DetalleCompraService::class.java)
+        var result: Call<CompraDetalleDataCollectionItem> =comprasService.getCompraDetalleById(a)
 
-        result.enqueue(object : Callback<ComprasDataCollectionItem> {
-            override fun onFailure(call: Call<ComprasDataCollectionItem>, t: Throwable) {
-                Toast.makeText(this@MostrarDetalleCompra,"Error",Toast.LENGTH_LONG).show()
+        result.enqueue(object : Callback<CompraDetalleDataCollectionItem> {
+            override fun onFailure(call: Call<CompraDetalleDataCollectionItem>, t: Throwable) {
+                Toast.makeText(this@MostrarDetalleCompra, "Error", Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(
-                    call: Call<ComprasDataCollectionItem>,
-                    response: Response<ComprasDataCollectionItem>
+                    call: Call<CompraDetalleDataCollectionItem>,
+                    response: Response<CompraDetalleDataCollectionItem>
             ) {
-                idComp = response.body()!!.id.toString()
-                txv_SeleccionCompraID.text =  idComp
+                try {
+
+
+                    idComp = response.body()!!.id.toString()
+
+                } catch (e: Exception) {
+                    Toast.makeText(this@MostrarDetalleCompra, "ERROR NO HAY COMPRA CON ID: "+txt_DCID.text.toString(), Toast.LENGTH_SHORT).show()
+
+                }
 
             }
         })
