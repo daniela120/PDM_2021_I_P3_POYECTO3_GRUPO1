@@ -115,7 +115,7 @@ class Produccion : AppCompatActivity() {
             ) {
                 try {
                     for (i in response.body()!!) {
-                        lista.add(i.id.toString() + " " + i.descripcion)
+                        lista.add(i.id.toString())
                     }
 
                     iniciar2(lista)
