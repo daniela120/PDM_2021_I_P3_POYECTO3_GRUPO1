@@ -8,10 +8,14 @@ import android.widget.*
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.CLIENTES.ClienteService
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.ClienteDataCollectionItem
 import hn.edu.ujcv.pdm_2021_i_p3_poyecto3_grupo1.entities.DepartamentoDataCollectionItem
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
+import kotlinx.android.synthetic.main.activity_departamento.*
+import kotlinx.android.synthetic.main.activity_departamento.btn_regresarDepartamento
+import kotlinx.android.synthetic.main.activity_listar_departamento.*
 
 class ListarDepartamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +103,15 @@ class ListarDepartamento : AppCompatActivity() {
 
 
     }
+    private fun Regresar() {
+        val intent = Intent(this, Departamento::class.java)
+        startActivity(intent)
+    }
 
 }
+
+
+
+
+
 
